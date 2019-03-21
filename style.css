@@ -1,0 +1,66 @@
+/*
+  Theme Name: Conversational
+  Theme Author: The Childress Agency
+  Theme Author URI: https://childressagency.com
+  Version: 1.0
+*/
+
+
+body{
+  font-family:"Nunito Sans", sans-serif;
+  font-size:18px;
+  font-weight:400;
+}
+
+.btn-main{
+  color:#fff;
+  font-size:22px;
+  display:inline-block;
+  text-align:center;
+  background-color:#87C400;
+  padding:10px 35px;
+  border-radius:6px;
+  font-weight:700;
+  transition:all .2s ease;
+}
+.btn-main:hover,
+.btn-main:focus{
+  background-color:#06091C;
+  color:#fff;
+  text-decoration:none;
+}
+
+#masthead{
+  padding-top:15px;
+}
+.header-trial h3{
+  font-size:22px;
+  text-align:center;
+  color:#000;
+  font-weight:600;
+}
+.header-contact{
+  text-align:left;
+  font-size:16px;
+  margin-left:25px;
+}
+.header-contact h3{
+  font-size:26px;
+  text-align:left;
+  font-weight:700;
+  color:#75AA00;
+}
+.header-contact p{
+  margin-bottom:0;
+}
+.header-contact p>span{
+  font-weight:600;
+  border-bottom:2px solid #87C400;
+}
+.header-contact a{
+  color:#000;
+}
+.header-contact a:hover,
+.header-contact a:focus{
+  color:#000;
+}
