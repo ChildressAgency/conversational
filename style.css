@@ -15,6 +15,9 @@ body{
 a{
   transition:all .2s ease;
 }
+p{
+  line-height:1.2em;
+}
 
 ul{
   list-style:none;
@@ -31,6 +34,11 @@ ul.list-unstyled>li::before{
   width:auto;
   margin-left:0;
   display:block;
+}
+
+hr.dashed{
+  border-top:3px dashed #87C400;
+  max-width:80%;
 }
 
 .btn-main{
@@ -242,6 +250,67 @@ ul.list-unstyled>li::before{
   font-weight:600;
 }
 
+/******************************************
+ * features
+******************************************/
+#features{
+  padding-top:40px;
+  padding-bottom:40px;
+  text-align:center;
+}
+#features .narrow-container{
+  max-width:720px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#features .features-intro{
+  padding-bottom:100px;
+  text-align:center;
+}
+#features .features-intro h2{
+  font-family:"Maitree", serif;
+  font-size:46px;
+  color:#06091C;
+}
+#features .features-intro p{
+  font-size:26px;
+  line-height:1.2em;
+}
+#features .features-intro hr{
+  margin-top:40px;
+}
+#features .features header{
+  margin-bottom:60px;
+}
+#features .features header h2{
+  font-family:"Maitree", serif;
+  font-weight:700;
+  font-size:100px;
+  color:#87C400;
+}
+#features .features header h3{
+  font-size:40px;
+  color:#06091C;
+}
+#features .features header .magnifying-glass{
+  position:absolute;
+  top:-25px;
+  right:-110px;
+}
+#features .features-list li{
+  margin-top:20px;
+  width:50%;
+  padding-left:15px;
+  padding-right:15px;
+}
+#features .features-list li>img{
+  max-width:90px;
+}
+#features .features-list h4{
+  font-size:30px;
+  color:#75AA00;
+  font-weight:600;
+}
 
 /******************************************
  * footer
@@ -407,6 +476,21 @@ ul.list-unstyled>li::before{
   .jumbotron-caption p{
     font-size:26px;
   }
+  #features .features-intro{
+    padding-bottom:60px;
+  }
+  #features .features-intro h2{
+    font-size:32px;
+  }
+  #features .features-intro p{
+    font-size:20px;
+  }
+  #features .features header h2{
+    font-size:60px;
+  }
+  #features .features header h3{
+    font-size:28px;
+  }
 }
 @media (max-width:767px){
   #masthead{
@@ -415,6 +499,16 @@ ul.list-unstyled>li::before{
   }
   #header-contact{
     margin-right:auto;
+  }
+  #features .features-list li{
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+  }
+}
+@media (max-width:991px){
+  #features .features-list li>img{
+    max-width:35px;
   }
 }
 @media (min-width:992px){
