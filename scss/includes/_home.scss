@@ -22,7 +22,7 @@
 #features .features-intro h2{
   font-family:"Maitree", serif;
   font-size:46px;
-  color:#06091C;
+  color:$cyprus;
 
   @include media-breakpoint-down(xs){
     font-size:32px;
@@ -46,7 +46,7 @@
   font-family:"Maitree", serif;
   font-weight:700;
   font-size:100px;
-  color:#87C400;
+  color:$citrus;
 
   @include media-breakpoint-down(xs){
     font-size:60px;
@@ -54,7 +54,7 @@
 }
 #features .features header h3{
   font-size:40px;
-  color:#06091C;
+  color:$cyprus;
 
   @include media-breakpoint-down(xs){
     font-size:28px;
@@ -86,7 +86,7 @@
 }
 #features .features-list h4{
   font-size:30px;
-  color:#75AA00;
+  color:$olive;
   font-weight:600;
 }
 
@@ -94,14 +94,26 @@
  * growth
 ******************************************/
 #growth{
-  background-color:#06091C;
+  background-color:$cyprus;
   padding-top:80px;
   padding-bottom:60px;
   position:relative;
   color:#fff;
-}
-#growth .narrow-container{
-  max-width:640px;
-  margin-left:auto;
-  margin-right:auto;
+  text-align:center;
+
+  .narrow-container{
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  h2{
+    font-family:"Maitree", serif;
+    font-size:40px;
+  }
+  p{
+    font-size:20px;
+  }
+  .btn-main{
+    margin-top:40px;
+  }
 }

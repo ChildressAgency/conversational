@@ -7134,6 +7134,7 @@ a.text-dark:hover, a.text-dark:focus {
     margin-right: auto; } }
 
 #header-contact .header-trial h3 {
+  font-family: "Nunito Sans", sans-serif;
   font-size: 22px;
   text-align: center;
   color: #000;
@@ -7143,20 +7144,21 @@ a.text-dark:hover, a.text-dark:focus {
   text-align: left;
   font-size: 16px;
   margin-left: 25px; }
-  #header-contact .header-contact .header-contact h3 {
+  #header-contact .header-contact h3 {
+    font-family: "Nunito Sans", sans-serif;
     font-size: 26px;
     text-align: left;
     font-weight: 700;
     color: #75AA00; }
-  #header-contact .header-contact .header-contact p {
+  #header-contact .header-contact p {
     margin-bottom: 0; }
-  #header-contact .header-contact .header-contact p > span {
-    font-weight: 600;
+  #header-contact .header-contact p > span {
+    font-weight: 700;
     border-bottom: 2px solid #87C400; }
-  #header-contact .header-contact .header-contact a {
+  #header-contact .header-contact a {
     color: #000; }
-  #header-contact .header-contact .header-contact a:hover,
-  #header-contact .header-contact .header-contact a:focus {
+  #header-contact .header-contact a:hover,
+  #header-contact .header-contact a:focus {
     color: #000; }
 
 /* navbar */
@@ -7181,11 +7183,11 @@ a.text-dark:hover, a.text-dark:focus {
 @media (min-width: 992px) {
   #header-nav .navbar-nav .last-nav-item .nav-link {
     text-transform: none;
-    box-shadow: -11px 0px 0px -9px #06091c;
+    box-shadow: -11px 0px 0px -9px #06091C;
     margin-left: 25px; } }
 
 #header-nav .dropdown-menu {
-  background-color: #EEEEEE;
+  background-color: #eee;
   padding-top: 0;
   padding-bottom: 0; }
 
@@ -7414,18 +7416,25 @@ a.text-dark:hover, a.text-dark:focus {
   padding-top: 80px;
   padding-bottom: 60px;
   position: relative;
-  color: #fff; }
-
-#growth .narrow-container {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto; }
+  color: #fff;
+  text-align: center; }
+  #growth .narrow-container {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto; }
+  #growth h2 {
+    font-family: "Maitree", serif;
+    font-size: 40px; }
+  #growth p {
+    font-size: 20px; }
+  #growth .btn-main {
+    margin-top: 40px; }
 
 /******************************************
  * footer
 ******************************************/
 #footer-top {
-  background-color: #EEEEEE;
+  background-color: #eee;
   padding-top: 40px;
   padding-bottom: 40px; }
 

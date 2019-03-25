@@ -11,10 +11,10 @@
   max-width:715px;
 }
 .jumbotron-caption h1{
-  font-family:"Nunito Sans", sans-serif;
+  font-family:$sans-serif;
   font-size:60px;
-  font-weight:700;
-  color:#75AA00;
+  font-weight:$bold;
+  color:$olive;
   line-height:1.1em;
   margin-bottom:25px;
 
@@ -23,7 +23,7 @@
   }
 }
 .jumbotron-caption p{
-  font-family:"Maitree", serif;
+  font-family:$serif;
   font-size:30px;
   max-width:590px;
   line-height:1.1em;
@@ -36,7 +36,7 @@
   }
 }
 .jumbotron-caption p.bookings{
-  font-family:"Nunito", sans-serif;
+  font-family:$main-font;
   font-size:26px;
-  font-weight:600;
+  font-weight:$semibold;
 }

@@ -4,9 +4,9 @@
 
 
 body{
-  font-family:"Nunito", sans-serif;
+  font-family:$main-font;
   font-size:18px;
-  font-weight:400;
+  font-weight:$normal;
 }
 
 a{
@@ -34,6 +34,6 @@ ul.list-unstyled>li::before{
 }
 
 hr.dashed{
-  border-top:3px dashed #87C400;
+  border-top:3px dashed $citrus;
   max-width:80%;
 }

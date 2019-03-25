@@ -3,14 +3,14 @@
 ******************************************/
 
 #footer-top{
-  background-color:#EEEEEE;
+  background-color:#eee;
   padding-top:40px;
   padding-bottom:40px;
 }
 #footer-top h5{
   font-size:20px;
   text-transform:uppercase;
-  font-weight:600;
+  font-weight:$semibold;
 }
 #footer-top ul{
   padding-left:0;
@@ -37,12 +37,12 @@
 }
 #footer-top .footer-contact h5,
 #footer-top .footer-social h5{
-  color:#87C400;
-  font-weight:700;
+  color:$citrus;
+  font-weight:$bold;
 }
 #footer-top .footer-contact ul>li>a{
   color:#000;
-  font-weight:600;
+  font-weight:$semibold;
 }
 #footer-top .footer-contact ul>li>a:hover,
 #footer-top .footer-contact ul>li>a:focus{
@@ -74,18 +74,18 @@
   }
 }
 .social-icon-small{
-  color:#06091C;
+  color:$cyprus;
 }
 .social-icon-small + .social-icon-small{
   margin-left:10px;
 }
 .social-icon-small:hover,
 .social-icon-small:focus{
-  color:#75AA00
+  color:$olive;
 }
 
 #footer-middle{
-  background-color:#06091C;
+  background-color:$cyprus;
   padding-top:40px;
   padding-bottom:40px;
   position:relative;
@@ -97,18 +97,18 @@
   color:#fff;
   text-transform:uppercase;
   font-size:22px;
-  font-weight: 700;
+  font-weight: $bold;
   padding-left:10px;
   padding-right:10px;
 }
 #footer-nav .sub-footer-nav{
-  border-top:3px dashed #87C400;
+  border-top:3px dashed $citrus;
   margin-top:15px;
 }
 #footer-nav .sub-footer-nav>li>a{
   font-size:16px;
   color:#fff;
-  font-weight:600;
+  font-weight:$semibold;
   text-align:center;
   display:block;
   width:160px;
@@ -119,7 +119,7 @@
 #footer-nav ul>li>a:hover,
 #footer-nav ul>li>a:focus{
   text-decoration:none;
-  color:#75AA00;
+  color:$olive;
 }
 #page-up{
   position:absolute;
@@ -133,7 +133,7 @@
 }
 
 #copyright{
-  background-color:#75AA00;
+  background-color:$olive;
   text-align: center;
   color:#fff;
   padding-top:40px;

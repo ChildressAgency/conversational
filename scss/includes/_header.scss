@@ -20,33 +20,35 @@
   }
 
   .header-trial h3{
+    font-family:$sans-serif;
     font-size:22px;
     text-align:center;
     color:#000;
-    font-weight:600;
+    font-weight:$semibold;
   }
   .header-contact{
     text-align:left;
     font-size:16px;
     margin-left:25px;
-    .header-contact h3{
+    h3{
+      font-family:$sans-serif;
       font-size:26px;
       text-align:left;
-      font-weight:700;
-      color:#75AA00;
+      font-weight:$bold;
+      color:$olive;
     }
-    .header-contact p{
+    p{
       margin-bottom:0;
     }
-    .header-contact p>span{
-      font-weight:600;
-      border-bottom:2px solid #87C400;
+    p>span{
+      font-weight:$bold;
+      border-bottom:2px solid $citrus;
     }
-    .header-contact a{
+    a{
       color:#000;
     }
-    .header-contact a:hover,
-    .header-contact a:focus{
+    a:hover,
+    a:focus{
       color:#000;
     }
   }
@@ -56,14 +58,14 @@
 #header-nav{
   .navbar-nav{
     .nav-item>.nav-link{
-      font-weight:700;
-      color:#06091C;
+      font-weight:$bold;
+      color:$cyprus;
       text-transform:uppercase;
     }
     .nav-item.active>.nav-link,
     .nav-item>.nav-link:hover,
     .nav-item>.nav-link:focus{
-      color:#75AA00;
+      color:$olive;
     }
 
     .dropdown-toggle::after{
@@ -76,14 +78,14 @@
     .last-nav-item .nav-link{
       @include media-breakpoint-up(lg){
         text-transform:none;
-        box-shadow:-11px 0px 0px -9px #06091c;
+        box-shadow:-11px 0px 0px -9px $cyprus;
         margin-left:25px;
       }
     }
   }
 
   .dropdown-menu{
-    background-color:#EEEEEE;
+    background-color:#eee;
     padding-top:0;
     padding-bottom:0;
   }
@@ -100,7 +102,7 @@
   .dropdown-item:hover,
   .dropdown-item:focus,
   .dropdown-item.active{
-    background-color:#D7E6BD;
+    background-color:$tusk;
   }
   .dropdown-item:hover::before,
   .dropdown-item.active::before{
@@ -127,7 +129,7 @@
 
 /* quick links section */
 #header-quick-links{
-  background-color:#06091C;
+  background-color:$cyprus;
   padding-top:15px;
   padding-bottom:15px;
 
