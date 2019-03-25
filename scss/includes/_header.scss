@@ -1,0 +1,191 @@
+/*********************************************
+ * header
+*********************************************/
+#masthead{
+  padding-top:15px;
+
+  @include media-breakpoint-down(sm){
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+#header-contact{
+  @include media-breakpoint-down(xs){
+    flex-direction:column;
+  }
+
+  @include media-breakpoint-down(sm){
+    margin-right:auto;
+  }
+
+  .header-trial h3{
+    font-size:22px;
+    text-align:center;
+    color:#000;
+    font-weight:600;
+  }
+  .header-contact{
+    text-align:left;
+    font-size:16px;
+    margin-left:25px;
+    .header-contact h3{
+      font-size:26px;
+      text-align:left;
+      font-weight:700;
+      color:#75AA00;
+    }
+    .header-contact p{
+      margin-bottom:0;
+    }
+    .header-contact p>span{
+      font-weight:600;
+      border-bottom:2px solid #87C400;
+    }
+    .header-contact a{
+      color:#000;
+    }
+    .header-contact a:hover,
+    .header-contact a:focus{
+      color:#000;
+    }
+  }
+}
+
+/* navbar */
+#header-nav{
+  .navbar-nav{
+    .nav-item>.nav-link{
+      font-weight:700;
+      color:#06091C;
+      text-transform:uppercase;
+    }
+    .nav-item.active>.nav-link,
+    .nav-item>.nav-link:hover,
+    .nav-item>.nav-link:focus{
+      color:#75AA00;
+    }
+
+    .dropdown-toggle::after{
+      transition:all .2s ease;
+    }
+    .nav-item.show>.dropdown-toggle::after{
+      transform:rotate(-180deg);
+      transition:all .2s ease;
+    }
+    .last-nav-item .nav-link{
+      @include media-breakpoint-up(lg){
+        text-transform:none;
+        box-shadow:-11px 0px 0px -9px #06091c;
+        margin-left:25px;
+      }
+    }
+  }
+
+  .dropdown-menu{
+    background-color:#EEEEEE;
+    padding-top:0;
+    padding-bottom:0;
+  }
+  .dropdown-item{
+    color:#4D4D4D;
+    border-bottom:1px solid #ccc;
+    padding-left:40px;
+    padding:.5rem 1.5rem .5rem 60px;
+    position:relative;
+  }
+  .dropdown-item:last-child{
+    border-bottom:none;
+  }
+  .dropdown-item:hover,
+  .dropdown-item:focus,
+  .dropdown-item.active{
+    background-color:#D7E6BD;
+  }
+  .dropdown-item:hover::before,
+  .dropdown-item.active::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    height:28px;
+    width:31px;
+    background-image:url(images/sprites.png);
+    background-repeat: no-repeat;
+    background-position:-499px -119px;
+  }
+}
+
+/* navbar toggler */
+#header-nav{
+  .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(6, 9, 28, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .navbar-toggler{
+    border-color:rgba(6, 9, 28, 1);
+  }
+}
+
+/* quick links section */
+#header-quick-links{
+  background-color:#06091C;
+  padding-top:15px;
+  padding-bottom:15px;
+
+  @include media-breakpoint-down(xs){
+    padding-bottom:0;
+  }
+
+  ul{
+    text-align:center;
+  }
+}
+
+.header-quick-link{
+  position:relative;
+  display:block;
+  max-width:140px;
+  margin-left:auto;
+  margin-right:auto;
+  color:#fff;
+  font-size:16px;
+  padding-top:70px;
+  line-height:1.2em;
+  text-align:center;
+
+  @include media-breakpoint-down(xs){
+    margin-bottom:15px;
+  }
+}
+.header-quick-link:hover,
+.header-quick-link:focus{
+  color:#fff;
+}
+.header-quick-link::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  background-image:url(images/sprites.png);
+  background-repeat:no-repeat;
+}
+#north-america.header-quick-link::before{
+  background-position:-400px -261px;
+  height:66px;
+  width:84px;
+}
+#voip-solutions.header-quick-link::before{
+  background-position:-400px -190px;
+  height:64px;
+  width:72px;
+}
+#fully-customized.header-quick-link::before{
+  background-position:-394px -110px;
+  height:64px;
+  width:79px;
+}
+#call-reporting.header-quick-link::before{
+  background-position:-330px -220px;
+  height:64px;
+  width:45px;
+}

@@ -1,0 +1,42 @@
+/******************************************
+ * homepage jumbotron
+******************************************/
+#jumbotron{
+  background-repeat:no-repeat;
+  background-size:cover;
+  min-height:850px;
+  text-align:center;
+}
+.jumbotron-caption{
+  max-width:715px;
+}
+.jumbotron-caption h1{
+  font-family:"Nunito Sans", sans-serif;
+  font-size:60px;
+  font-weight:700;
+  color:#75AA00;
+  line-height:1.1em;
+  margin-bottom:25px;
+
+  @include media-breakpoint-down(xs){
+    font-size:50px;
+  }
+}
+.jumbotron-caption p{
+  font-family:"Maitree", serif;
+  font-size:30px;
+  max-width:590px;
+  line-height:1.1em;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:40px;
+
+  @include media-breakpoint-down(xs){
+    font-size:26px;
+  }
+}
+.jumbotron-caption p.bookings{
+  font-family:"Nunito", sans-serif;
+  font-size:26px;
+  font-weight:600;
+}

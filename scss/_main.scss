@@ -1,0 +1,39 @@
+/*****************************
+ custom styles
+*****************************/
+
+
+body{
+  font-family:"Nunito", sans-serif;
+  font-size:18px;
+  font-weight:400;
+}
+
+a{
+  transition:all .2s ease;
+}
+p{
+  line-height:1.2em;
+}
+
+ul{
+  list-style:none;
+}
+li::before{
+  content:"\2022";
+  color:#87C400;
+  display:inline-block;
+  width:1em;
+  margin-left:-1em;
+}
+ul.list-unstyled>li::before{
+  content:"";
+  width:auto;
+  margin-left:0;
+  display:block;
+}
+
+hr.dashed{
+  border-top:3px dashed #87C400;
+  max-width:80%;
+}
