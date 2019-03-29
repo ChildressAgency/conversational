@@ -5,7 +5,9 @@
   Version: 1.0
 */
 
-@import "variables";
+@import "variables"; /* custom variables*/
+
+@import "includes/bootstrap";
 
 @import "includes/buttons";
 @import "includes/header";
