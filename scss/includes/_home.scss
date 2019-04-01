@@ -212,3 +212,111 @@
     opacity:1;
   }
 }
+
+#pricing-plans{
+  padding-top:60px;
+  padding-bottom:60px;
+
+  .card{
+    text-align:center;
+    border-radius:0;
+
+    &.card-small{
+      margin-top:60px;
+      margin-bottom:60px;
+    }
+
+    .card-header{
+      background-color:#575757;
+      color:#fff;
+      border-radius:0;
+
+      h2{
+        font-size:36px;
+        font-weight:$semibold;
+
+        @include top-sprite(100px);
+
+        &::before{
+          top:0px;
+        }
+
+        &#entrepreneur::before{
+          background-position:0 -630px;
+          height:81px;
+          width:62px;
+        }
+        &#business::before{
+          background-position:-72px -630px;
+          height:89px;
+          width:55px;
+        }
+        &#corporate::before{
+          background-position:0 -724px;
+          height:77px;
+          width:86px;
+        }
+      }
+      h2>small{
+        color:$citrus;
+        font-size:26px;
+        font-weight:$normal;
+        display:block;
+      }
+    }
+
+    .card-title{
+      background-color:$olive;
+      color:#fff;
+      padding-top:25px;
+      margin-bottom:0;
+
+      h3{
+        font-size:50px;
+        font-weight:$bold;
+        line-height:.7em;
+      }
+      h3>sup{
+        font-size:30px;
+      }
+      h3>small{
+        font-size:26px;
+        font-weight:$normal;
+        display:block;
+      }
+    }
+
+    .card-body{
+      background-color:#27282B;
+      color:#fff;
+      padding-top:30px;
+      padding-bottom:30px;
+
+      li{
+        padding-top:10px;
+        padding-bottom:10px;
+      }
+
+      .btn-main{
+        margin-top:40px;
+      }
+    }
+
+    &:not(.card-small) .card-body .btn-main{
+      margin-top:100px;
+    }
+
+    @include media-breakpoint-down(sm){
+      flex:1 0 auto;
+    }
+  }
+}
+.pricing-plans{
+  header{
+    text-align:center;
+  }
+  h1{
+    font-size:100px;
+    color:$cyprus;
+  }
+}
