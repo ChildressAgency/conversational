@@ -320,3 +320,44 @@
     color:$cyprus;
   }
 }
+
+#business-boost{
+  background-color:$cyprus;
+  padding-top:60px;
+  padding-bottom:60px;
+  color:#fff;
+  text-align:center;
+  position:relative;
+
+  h2{
+    font-family:$serif;
+    font-size:40px;
+    max-width:695px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .card{
+    background-color:transparent;
+    border:none;
+    margin-top:60px;
+  }
+  .card-header{
+    border-bottom:3px dashed $citrus;
+    h3{
+      color:$citrus;
+      font-size:32px;
+      font-weight:$semibold;
+    }
+    p{
+      font-size:24px;
+    }
+  }
+  .card-body{
+    h4{
+      font-family:$serif;
+      font-weight:$bold;
+      font-size:18px;
+    }
+  }
+}
