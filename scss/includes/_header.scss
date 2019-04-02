@@ -140,13 +140,12 @@
 
 .header-quick-link{
   display:block;
-  max-width:140px;
-  margin-left:auto;
-  margin-right:auto;
   color:#fff;
   font-size:16px;
   line-height:1.2em;
   text-align:center;
+
+  @include max-width-centered(140px);
 
   @include top-sprite(70px);
 

@@ -9,6 +9,10 @@
 }
 .jumbotron-caption{
   max-width:715px;
+
+  @include media-breakpoint-up(md){
+    margin-right:5%;
+  }
 }
 .jumbotron-caption h1{
   font-family:$main-font;
@@ -25,11 +29,10 @@
 .jumbotron-caption p{
   font-family:$serif;
   font-size:30px;
-  max-width:590px;
   line-height:1.1em;
-  margin-left:auto;
-  margin-right:auto;
   margin-bottom:40px;
+
+  @include max-width-centered(590px);
 
   @include media-breakpoint-down(xs){
     font-size:26px;
