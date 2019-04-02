@@ -459,3 +459,102 @@
   right:15px;
   width:35%;
 }
+
+#how-it-works{
+  background-color:$cyprus;
+  padding-top:40px;
+  padding-bottom:60px;
+  color:#fff;
+  text-align:center;
+
+  article{
+    @include max-width-centered(730px);
+
+    &>p{
+      font-size:20px;
+      margin-bottom:25px;
+    }
+
+    .btn-main{
+      margin-top:60px;
+    }
+  }
+
+  header h2{
+    font-size:100px;
+    font-weight:normal;
+    margin-bottom:0;
+    line-height:1em;
+
+    @include media-breakpoint-down(sm){
+      font-size:64px;
+    }
+    @include media-breakpoint-down(xs){
+      font-size:43px;
+    }
+  }
+  header p{
+    font-family:$serif;
+    font-size:40px;
+    margin-top:40px;
+    margin-bottom:40px;
+
+    @include media-breakpoint-only(xs){
+      font-size:30px;
+    }
+  }
+}
+
+#mobile-app{
+  padding-top:60px;
+  padding-bottom:60px;
+
+  article{
+    header h2{
+      text-align:center;
+      font-size:40px;
+      font-family:$serif;
+      color:#575757;
+      margin-bottom:25px;
+
+      @include max-width-centered(520px);
+    }
+
+    p{
+      @include max-width-centered(440px);
+    }
+  }
+
+  .media{
+    margin-top:25px;
+
+    &>img{
+      @include media-breakpoint-only(xs){
+        width:75px;
+      }
+    }
+
+    .media-body{
+      margin-left:20px;
+
+      li{
+        font-family:$serif;
+        font-size:20px;
+        font-weight:$bold;
+        padding-bottom:15px;
+      }
+    }
+  }
+
+  .app-links{
+    margin-top:80px;
+    text-align:center;
+
+    a{
+      display:block;
+    }
+    a + a{
+      margin-top:15px;
+    }
+  }
+}
