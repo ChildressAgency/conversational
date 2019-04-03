@@ -36,9 +36,10 @@ ul.list-unstyled>li::before{
   display:block;
 }
 
-hr.dashed{
+hr{
   border-top:3px dashed $citrus;
-  width:80%;
+  margin-top:25px;
+  margin-bottom:25px;
 }
 
 .white-overlay{
@@ -57,12 +58,122 @@ hr.dashed{
   height:100%;
   width:100%;
   z-index:1;
-background: rgba(255,255,255,0.35);
-background: -moz-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.35)), color-stop(38%, rgba(255,255,255,0.79)), color-stop(50%, rgba(255,255,255,0.79)), color-stop(62%, rgba(255,255,255,0.79)), color-stop(100%, rgba(255,255,255,0.35)));
-background: -webkit-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
-background: -o-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
-background: -ms-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
-background: linear-gradient(to bottom, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+  background: rgba(255,255,255,0.35);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.35)), color-stop(38%, rgba(255,255,255,0.79)), color-stop(50%, rgba(255,255,255,0.79)), color-stop(62%, rgba(255,255,255,0.79)), color-stop(100%, rgba(255,255,255,0.35)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+}
+
+%post-img{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+.alignnone,
+.aligncenter{
+  @extend %post-img;
+  margin:20px auto;
+}
+.alignleft{
+  @extend %post-img;
+  float:left;
+  margin:20px 20px 20px 0px;
+}
+.alignright{
+  @extend %post-img;
+  float:right;
+  margin:20px 0px 20px 20px;
+}
+
+#main{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+
+.page-header{
+  text-align:center;
+
+  h2{
+    font-size:38px;
+    color:$cyprus;
+
+    @include media-breakpoint-only(xs){
+      font-size:29px;
+    }
+  }
+
+  .sub-title{
+    font-size:38px;
+
+    .hilight-text{
+      font-family:$serif;
+      font-weight:$bold;
+      font-size:46px;
+      color:$olive;
+      display:block;
+      text-align:right;
+    }
+
+    @include max-width-centered(870px);
+    @include media-breakpoint-only(xs){
+      font-size:29px;
+
+      .hilight-text{
+        font-size:35px;
+      }
+    }
+  }
+
+  hr{
+    @include max-width-centered(400px);
+  }
+}
+
+.page-body{
+  @include max-width-centered(870px);
+
+  h2{
+    font-weight:$semibold;
+    font-size:40px;
+    color:$cyprus;
+  }
+  h3{
+    font-weight:$normal;
+    color:$cyprus;
+    font-size:32px;
+  }
+}
+
+.page-callout{
+  background-color:$cyprus;
+  padding:40px 15px;
+  margin:40px -15px;
+  color:#fff;
+
+  .media{
+    @include max-width-centered(870px);
+
+    img{
+      margin-right:20px;
+    }
+
+    @include media-breakpoint-down(sm){
+      flex-direction:column;
+    }
+  }
+
+  .media-body{
+    padding-top:50px;
+  }
+
+  @include media-breakpoint-up(md){
+    .two-col{
+      column-count:2;
+      column-gap:60px;
+    }
+  }
 }

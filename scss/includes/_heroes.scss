@@ -66,11 +66,19 @@
       vertical-align: middle;
       margin-right:15px;
     }
+
+    @include media-breakpoint-only(xs){
+      font-size:30px;
+    }
   }
 
   h1{
     font-family:$serif;
     font-size:66px;
+
+    @include media-breakpoint-only(xs){
+      font-size:40px;
+    }
   }
 
   .dashed{
