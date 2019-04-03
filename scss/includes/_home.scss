@@ -558,3 +558,151 @@
     }
   }
 }
+
+#get-started{
+  background-color:$cyprus;
+  color:#fff;
+  text-align:center;
+  padding-top:80px;
+  padding-bottom:60px;
+  overflow:hidden;
+
+  header h2{
+    font-size:100px;
+    position:relative;
+
+    @include media-breakpoint-down(sm){
+      font-size:60px;
+      padding-top:150px;
+    }
+
+    &::after{
+      content:"";
+      position:absolute;
+      background-image:url(images/sprites.png);
+      background-repeat:no-repeat;
+      height:147px;
+      width:149px;
+      background-position:0 -222px;
+      top:-30px;
+      right:-7%;
+
+      @include media-breakpoint-only(xl){
+        right:0;
+      }
+      @include media-breakpoint-down(sm){
+        top:0;
+        right:auto;
+        left:50%;
+        transform:translateX(-50%);
+      }
+    }
+  }
+  header p{
+    font-family:$serif;
+    font-size:40px;
+
+    @include media-breakpoint-down(sm){
+      font-size:30px;
+    }
+  }
+
+  article>p{
+    @include max-width-centered(730px);
+  }
+  article>.btn-main{
+    margin-top:40px;
+  }
+}
+
+#try-free{
+  padding-top:60px;
+  padding-bottom:60px;
+  text-align:center;
+
+  header h2{
+    font-family:$serif;
+    color:$citrus;
+    font-size:66px;
+    font-weight:$bold;
+  }
+  header p{
+    font-size:66px;
+    color:$cyprus;
+  }
+
+  article>p{
+    font-family:$serif;
+    font-size:26px;
+    margin-top:40px;
+    
+    @include max-width-centered(547px);
+  }
+
+  .dashed{
+    margin-top:40px;
+    margin-bottom:60px;
+
+    @include max-width-centered(400px);
+  }
+
+  .phone-email{
+    font-size:36px;
+    margin-top:40px;
+
+    a{
+      color:#000;
+
+      &:hover{
+        color:#000;
+        text-decoration:underline;
+      }
+    }
+  }
+
+  .try-us-form{
+    .form-control{
+      border-radius:0;
+      border-color:$cyprus;
+
+      @include media-breakpoint-only(xs){
+        margin-bottom:10px;
+      }
+    }
+  }
+
+  .social{
+    margin-top:80px;
+
+    h4{
+      display:inline;
+      font-size:44px;
+      font-weight:$bold;
+      color:$cyprus;
+      vertical-align:middle;
+      margin-right:25px;
+
+      @include media-breakpoint-down(lg){
+        display:block;
+      }
+    }
+
+    .fa-circle{
+      color:$olive;
+      transition:all .2s ease;
+    }
+    .fab{
+      color:$cyprus;
+      transition:all .2s ease;
+    }
+
+    .fa-stack:hover{
+      .fa-circle{
+        color:$cyprus;
+      }
+      .fab{
+        color:#fff;
+      }
+    }
+  }
+}
