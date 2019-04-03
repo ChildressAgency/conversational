@@ -364,9 +364,69 @@
 
   #rocket{
     position:absolute;
-    bottom:20px;
+    bottom:0px;
     left:50%;
     transform:translateX(-50%);
+  }
+  .flames{
+    margin-top:-33px;
+    margin-left:6px;
+  }
+
+  .animation-go{
+    #rocket{
+      animation:liftoff;
+      animation-delay:2000ms;
+      animation-duration:2000ms;
+      animation-fill-mode:forwards;
+      animation-timing-function: ease-in;
+    }
+
+    .flames{
+      animation:flames;
+      animation-duration:500ms;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count:infinite;
+    }
+  }
+}
+
+@keyframes liftoff{
+  0%{
+    bottom:0px;
+    opacity:1;
+  }
+  95%{
+    opacity:1;
+  }
+  100%{
+    bottom:2000px;
+    opacity:0;
+  }
+}
+@keyframes flames{
+  0%,
+  100%{
+    transform-origin:top center;
+    transform:scalex(1);
+  }
+  10%{
+    transform: scale(.9,.8);
+  }
+  50%{
+    transform: scaleY(.98);
+  }
+  50%{
+    transform: scaleY(.68);
+  }
+  70%{
+    transform:scaleY(.88);
+  }
+  80%{
+    transform:scaleY(.78);
+  }
+  90%{
+    transform:scaleY(.88);
   }
 }
 
