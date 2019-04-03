@@ -35,7 +35,8 @@ gulp.task('serve', gulp.series('sass', function () {
 
   browserSync.init({
     server: "./",
-    index:'demo-home.html'
+    //index:'demo-home.html'
+    index:'demo-about.html'
   });
 
   gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/**/*.scss'], gulp.series('sass'));

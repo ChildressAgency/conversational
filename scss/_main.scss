@@ -38,5 +38,31 @@ ul.list-unstyled>li::before{
 
 hr.dashed{
   border-top:3px dashed $citrus;
-  max-width:80%;
+  width:80%;
+}
+
+.white-overlay{
+  position:absolute;
+  height:100%;
+  width:100%;
+  left:0;
+  top:0;
+  background-color:rgba(255,255,255,.6);
+  z-index:1;
+}
+.white-gradient{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  z-index:1;
+background: rgba(255,255,255,0.35);
+background: -moz-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.35)), color-stop(38%, rgba(255,255,255,0.79)), color-stop(50%, rgba(255,255,255,0.79)), color-stop(62%, rgba(255,255,255,0.79)), color-stop(100%, rgba(255,255,255,0.35)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
 }
