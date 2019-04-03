@@ -7,6 +7,7 @@ body{
   font-family:$main-font;
   font-size:18px;
   font-weight:$normal;
+  color:#000;
 }
 
 a{
@@ -97,6 +98,8 @@ hr{
 .page-header{
   text-align:center;
 
+  @include max-width-centered(950px);
+
   h2{
     font-size:38px;
     color:$cyprus;
@@ -106,24 +109,28 @@ hr{
     }
   }
 
-  .sub-title{
-    font-size:38px;
+  p{
+    font-size:24px;
 
-    .hilight-text{
-      font-family:$serif;
-      font-weight:$bold;
-      font-size:46px;
-      color:$olive;
-      display:block;
-      text-align:right;
-    }
-
-    @include max-width-centered(870px);
-    @include media-breakpoint-only(xs){
-      font-size:29px;
+    &.sub-title{
+      font-size:38px;
 
       .hilight-text{
-        font-size:35px;
+        font-family:$serif;
+        font-weight:$bold;
+        font-size:46px;
+        color:$olive;
+        display:block;
+        text-align:right;
+      }
+
+      @include max-width-centered(870px);
+      @include media-breakpoint-only(xs){
+        font-size:29px;
+
+        .hilight-text{
+          font-size:35px;
+        }
       }
     }
   }
@@ -175,5 +182,20 @@ hr{
       column-count:2;
       column-gap:60px;
     }
+  }
+}
+
+blockquote{
+  font-family:$serif;
+  
+  p{
+    line-height: 1.4em;
+  }
+
+  cite{
+    font-family:$main-font;
+    font-weight:$bold;
+    font-size:18px;
+    font-style:normal;
   }
 }
