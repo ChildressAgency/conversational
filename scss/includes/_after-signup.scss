@@ -31,6 +31,8 @@
   margin-top:70px;
   padding-top:60px;
 
+  @include max-width-centered(1100px);
+
   [class^="col"]{
     z-index:10;
   }
