@@ -81,7 +81,8 @@
     }
   }
 
-  .dashed{
+  hr{
+    width:400px;
     @include max-width-centered(400px);
   }
 }

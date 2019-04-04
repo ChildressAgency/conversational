@@ -1,0 +1,78 @@
+/*********************************************
+** styles for what happens after signup page
+*********************************************/
+
+.easy-as{
+  margin-top:40px;
+  margin-bottom:40px;
+
+  @include max-width-centered(525px);
+
+  h2{
+    font-family:$serif;
+    font-size:46px;
+
+    span{
+      font-size:66px;
+      color:$citrus;
+      font-weight:$bold;
+      display:block;
+      text-align:right;
+    }
+  }
+}
+
+.steps{
+  overflow:hidden;
+  padding-bottom:80px;
+}
+.step{
+  position:relative;
+  margin-top:70px;
+  padding-top:60px;
+
+  [class^="col"]{
+    z-index:10;
+  }
+
+  &::after{
+    content:"";
+    position:absolute;
+    height:500px;
+    width:400px;
+    z-index:1;
+  }
+  &:nth-child(odd)::after{
+    background-color:$ecru;
+    top:0px;
+    left:56%;
+    transform:translateX(-50%);
+  }
+  &:nth-child(even)::after{
+    background-color:$light-green;
+    top:-100px;
+    left:50%;
+    transform:translateX(-50%);
+    height:730px;
+    width:470px;
+  }
+}
+
+.step-content{
+  @include max-width-centered(380px);
+
+  h3{
+    font-family:$serif;
+    font-size:32px;
+    color:$olive;
+    font-weight:$bold;
+  }
+  p{
+    padding-left:20px;
+    font-size:24px;
+  }
+
+  @include media-breakpoint-down(sm){
+    margin-top:25px;
+  }
+}
