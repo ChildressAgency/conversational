@@ -25,7 +25,7 @@
     @include max-width-centered(547px);
   }
 
-  .dashed{
+  hr{
     margin-top:40px;
     margin-bottom:60px;
 
@@ -38,6 +38,7 @@
 
     a{
       color:#000;
+      text-decoration:none;
 
       &:hover{
         color:#000;
@@ -115,6 +116,7 @@
 }
 #footer-top ul>li>a{
   color:#000;
+  text-decoration:none;
 }
 #footer-top ul>li>a:hover,
 #footer-top ul>li>a:focus{
@@ -133,6 +135,7 @@
 #footer-top .footer-contact ul>li>a{
   color:#000;
   font-weight:$semibold;
+  text-decoration:none;
 }
 #footer-top .footer-contact ul>li>a:hover,
 #footer-top .footer-contact ul>li>a:focus{
@@ -190,6 +193,7 @@
   font-weight: $bold;
   padding-left:10px;
   padding-right:10px;
+  text-decoration:none;
 }
 #footer-nav .sub-footer-nav{
   border-top:3px dashed $citrus;
@@ -205,6 +209,7 @@
   padding-left:10px;
   padding-right:10px;
   padding:10px 10px 0px;
+  text-decoration:none;
 }
 #footer-nav ul>li>a:hover,
 #footer-nav ul>li>a:focus{
@@ -234,4 +239,5 @@
 }
 #copyright a{
   color:#fff;
+  text-decoration:none;
 }

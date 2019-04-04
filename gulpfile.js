@@ -38,7 +38,8 @@ gulp.task('serve', gulp.series('sass', function () {
     //index:'demo-home.html'
     //index:'demo-meet-team.html'
     //index:'demo-after-signup.html'
-    index:'demo-testimonials.html'
+    //index:'demo-testimonials.html'
+    index:'demo-faqs.html'
   });
 
   gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/**/*.scss'], gulp.series('sass'));

@@ -458,7 +458,7 @@
     @include max-width-centered(720px);
   }
 
-  .dashed{
+  hr{
     max-width:490px;
     margin-top:40px;
   }
@@ -612,6 +612,7 @@
 
     a{
       display:block;
+      text-decoration:none;
     }
     a + a{
       margin-top:15px;

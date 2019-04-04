@@ -11,7 +11,13 @@ body{
 }
 
 a{
+  color:$olive;
+  text-decoration:underline;
   transition:all .2s ease;
+}
+a:hover,
+a:focus{
+  color:$cyprus;
 }
 p{
   line-height:1.2em;
@@ -198,4 +204,9 @@ blockquote{
     font-size:18px;
     font-style:normal;
   }
+}
+
+.form-control{
+  border-radius:0;
+  border-color:$cyprus;
 }
