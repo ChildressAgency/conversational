@@ -52,6 +52,10 @@
         display:block;
         font-weight:$semibold;
       }
+
+      @include media-breakpoint-only(xs){
+        margin-top:15px;
+      }
     }
   }
 }

@@ -103,6 +103,8 @@ hr{
 
 .page-header{
   text-align:center;
+  position:relative;
+  z-index:10;
 
   @include max-width-centered(950px);
 

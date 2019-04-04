@@ -82,7 +82,7 @@
   }
 
   hr{
-    width:400px;
+    width:100%;
     @include max-width-centered(400px);
   }
 }

@@ -11,10 +11,18 @@
     color:$citrus;
     font-size:66px;
     font-weight:$bold;
+
+    @include media-breakpoint-only(xs){
+      font-size:54px;
+    }
   }
   header p.sub-header{
     font-size:66px;
     color:$cyprus;
+
+    @include media-breakpoint-only(xs){
+      font-size:38px;
+    }
   }
 
   .signup-intro p{

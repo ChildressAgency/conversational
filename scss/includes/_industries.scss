@@ -1,12 +1,32 @@
 /*************************************
 * styles for the industries template
 *************************************/
+.industries{
+  overflow:hidden;
+}
 .industries-body{
   padding-top:60px;
 }
 
 .industries-main{
+  position:relative;
   @include max-width-centered(800px);
+
+  & *{
+    position:relative;
+    z-index:10;
+  }
+
+  &::before{
+    content:"";
+    position:absolute;
+    height:806px;
+    width:720px;
+    left:150px;
+    top:-270px;
+    background-color:$ecru;
+    z-index:1;
+  }
 
   h2{
     font-family:$serif;
@@ -72,6 +92,10 @@
     border-bottom:3px dashed $olive;
     padding-bottom:10px;
     margin-bottom:25px;
+
+    @include media-breakpoint-only(xs){
+      font-size:34px;
+    }
   }
 
   &.work-home h2{
@@ -81,6 +105,10 @@
     color:$citrus;
     position:relative;
 
+    @include media-breakpoint-only(xs){
+      font-size:40px;
+    }
+
     span{
       display:block;
       font-family:$main-font;
@@ -88,6 +116,10 @@
       font-size:46px;
       color:#fff;
       margin-left:40px;
+
+      @include media-breakpoint-only(xs){
+        font-size:34px;
+      }
     }
 
     img{
