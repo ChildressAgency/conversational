@@ -149,6 +149,15 @@
     }
   }
 
+  &.medical{
+    padding-left:15px;
+    padding-right:15px;
+
+    .industries-callout-main{
+      @include max-width-centered(815px);
+    }
+  }
+
   .narrow-section{
     @include max-width-centered(600px);
   }
@@ -191,5 +200,17 @@
       font-size:20px;
       display:block;
     }
+  }
+}
+
+.medical-pros{
+  .row{
+    margin-top:40px;
+    margin-left:0;
+    margin-right:0;
+  }
+
+  h3{
+    margin-top:0;
   }
 }
