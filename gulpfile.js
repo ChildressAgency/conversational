@@ -40,8 +40,8 @@ gulp.task('serve', gulp.series('sass', function () {
     //index:'demo-after-signup.html'
     //index:'demo-testimonials.html'
     //index:'demo-faqs.html'
-    index:'demo-work-at-home.html'
-    //index:'demo-small-business.html'
+    //index:'demo-work-at-home.html'
+    index:'demo-small-business.html'
   });
 
   gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/**/*.scss'], gulp.series('sass'));

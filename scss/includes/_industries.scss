@@ -8,9 +8,34 @@
   padding-top:60px;
 }
 
+#industries-nav{
+  h3{
+    font-size:30px;
+    font-weight:$semibold;
+    border-bottom:2px solid $olive;
+    color:$cyprus;
+  }
+
+  .nav-link{
+    font-size:24px;
+    font-weight:$semibold;
+    color:$cyprus;
+    text-decoration:none;
+    padding-left:0;
+
+    &.active,
+    &:hover,
+    &:focus{
+      color:$olive;
+      text-decoration:none;
+    }
+  }
+}
+
 .industries-main{
   position:relative;
-  @include max-width-centered(800px);
+  /*@include max-width-centered(1200px);*/
+  max-width:1200px;
 
   & *{
     position:relative;
@@ -43,28 +68,15 @@
       clear:both;
     }
   }
-}
 
-#industries-nav{
-  h3{
-    font-size:30px;
-    font-weight:$semibold;
-    border-bottom:2px solid $olive;
-    color:$cyprus;
-  }
+  ul{
+    @include media-breakpoint-up(md){
+      column-count:2;
+      column-gap:40px;
 
-  .nav-link{
-    font-size:24px;
-    font-weight:$semibold;
-    color:$cyprus;
-    text-decoration:none;
-    padding-left:0;
-
-    &.active,
-    &:hover,
-    &:focus{
-      color:$olive;
-      text-decoration:none;
+      li{
+        break-inside:avoid-column;
+      }
     }
   }
 }
@@ -84,7 +96,8 @@
   }
 
   .industries-callout-main{
-    @include max-width-centered(800px);
+    /*@include max-width-centered(1200px);*/
+    max-width:1200px;
   }
 
   h2{
@@ -96,6 +109,13 @@
     @include media-breakpoint-only(xs){
       font-size:34px;
     }
+  }
+
+  h3{
+    font-family:$serif;
+    font-size:36px;
+    margin-top:40px;
+    margin-bottom:15px;
   }
 
   &.work-home h2{
@@ -126,6 +146,50 @@
       position:absolute;
       top:-20px;
       right:0;
+    }
+  }
+
+  .narrow-section{
+    @include max-width-centered(600px);
+  }
+
+  ul{
+    @include media-breakpoint-up(md){
+      column-count:2;
+      column-gap:40px;
+
+      li{
+        break-inside:avoid-column;
+      }
+    }
+  }
+}
+
+#small-biz-pricing .card{
+  margin-top:40px;
+  background-color:transparent;
+  border:none;
+  text-align:center;
+
+  @include max-width-centered(300px);
+
+  .card-header{
+    background-color:transparent;
+    border:none;
+    border-bottom:3px dashed $citrus;
+
+    h4{
+      color:$citrus;
+      font-size:30px;
+    }
+  }
+
+  p{
+    font-size:24px;
+
+    small{
+      font-size:20px;
+      display:block;
     }
   }
 }
