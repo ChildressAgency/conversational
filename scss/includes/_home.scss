@@ -315,6 +315,10 @@
   h1{
     font-size:100px;
     color:$cyprus;
+
+    @include media-breakpoint-only(xs){
+      font-size:75px;
+    }
   }
 }
 
