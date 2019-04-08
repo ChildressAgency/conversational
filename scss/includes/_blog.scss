@@ -65,3 +65,100 @@
     }
   }
 }
+
+.blog-post{
+  margin-top:60px;
+
+  @include max-width-centered(750px);
+
+  h1{
+    font-size:44px;
+  }
+  h2{
+    font-size:40px;
+  }
+  h3{
+    font-size:32px;
+  }
+
+  .post-date{
+    font-size:25px;
+    font-weight:$semibold;
+    color:$olive;
+  }
+
+  .tags{
+    position:relative;
+    padding-left:40px;
+
+    &::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      height:26px;
+      width:27px;
+      background-image:url(images/sprites.png);
+      background-repeat:no-repeat;
+      background-position:0 -990px;
+    }
+  }
+}
+
+.post-nav{
+  @include max-width-centered(750px);
+
+  hr{
+    width:100%;
+    margin-top:60px;
+    margin-bottom:10px;
+  }
+
+  a{
+    font-size:20px;
+    color:#000;
+    text-decoration:none;
+
+    &:hover,
+    &:focus{
+      color:#000;
+      text-decoration:underline;
+    }
+  }
+
+  .post-pagination{
+    span{
+      color:$olive;
+    }
+  }
+}
+.related-cat-posts{
+  margin-top:60px;
+  @include max-width-centered(750px);
+
+  h3{
+    font-size:32px;
+    color:$olive;
+  }
+
+  ol>li{
+    font-weight:$bold;
+
+    &::before{
+      content:"";
+    }
+
+    a{
+      font-size:20px;
+      font-weight:$normal;
+      color:#000;
+      text-decoration:none;
+
+      &:hover,
+      &:focus{
+        color:#000;
+        text-decoration:underline;
+      }
+    }
+  }
+}
