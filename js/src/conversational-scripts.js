@@ -42,4 +42,20 @@ jQuery(document).ready(function($){
       percentPosition: true
     });
   }
+
+  $('.file-input').on('change', function(e){
+    var fileName = '';
+    var $selectedFileField = $('.selected-file');
+
+    if(e.target.value){
+      fileName = e.target.value.split('\\').pop();
+    }
+
+    if(fileName){
+      $selectedFileField.text(fileName);
+    }
+    else{
+      $selectedFileField.text('No File Chosen');
+    }
+  });
 });
