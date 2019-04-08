@@ -50,7 +50,8 @@ gulp.task('serve', gulp.series('sass', function () {
     //index:'demo-single.html'
     //index:'demo-contact.html'
     //index:'demo-apply-now.html'
-    index:'demo-vr-services.html'
+    //index:'demo-vr-services.html'
+    index:'demo-compare.html'
   });
 
   gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/**/*.scss'], gulp.series('sass'));
