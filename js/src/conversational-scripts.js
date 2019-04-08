@@ -58,4 +58,20 @@ jQuery(document).ready(function($){
       $selectedFileField.text('No File Chosen');
     }
   });
+
+  $('#select-competitor').on('change', function(){
+    var newTab = $(this).val();
+    var $currentTab = $('.tab-pane.active');
+
+
+    $currentTab.fadeOut('fast', function(){
+      $currentTab.removeClass('show active');
+
+      $('#' + newTab).fadeIn('fast', function(){
+        $('#' + newTab).addClass('show active');
+      });
+    });
+
+    //$('#' + newTab).fadeIn('fast').addClass('show active');
+  });
 });
