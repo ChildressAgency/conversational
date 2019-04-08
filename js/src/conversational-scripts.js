@@ -34,4 +34,12 @@ jQuery(document).ready(function($){
   }
 
   $window.on('scroll', checkIfInView);
+
+  if(jQuery.fn.masonry){
+    $('.post-grid').masonry({
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
+  }
 });

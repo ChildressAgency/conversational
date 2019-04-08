@@ -45,7 +45,8 @@ gulp.task('serve', gulp.series('sass', function () {
     //index:'demo-medical.html'
     //index:'demo-salon.html'
     //index:'demo-franchise.html'
-    index:'demo-vrplans.html'
+    //index:'demo-vrplans.html'
+    index:'demo-blog.html'
   });
 
   gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/**/*.scss'], gulp.series('sass'));
