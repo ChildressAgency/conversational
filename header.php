@@ -27,8 +27,8 @@
           </div>
           <div class="header-contact mt-2">
             <?php
-              $phone = get_field('phone', 'option');
-              $email = get_field('email', 'option');
+              $phone = get_option('options_phone');
+              $email = get_option('options_email');
             ?>
             <h3>Contact Us</h3>
             <p><span>TOLL FREE:</span> <a href="tel:<?php echo esc_html($phone); ?>"><?php echo esc_html($phone); ?></a></p>
@@ -83,14 +83,29 @@
     </div>
   </header>
 
+<?php 
+  $page_id = get_the_ID(); 
+  if(is_home()){
+    $blog_page = get_page_by_path('blog');
+    $page_id = $blog_page->ID;
+  }
+?>
+
 <?php if(is_front_page()): ?>
-  <section id="jumbotron" class="d-flex align-items-center" style="background-image:url(<?php echo esc_url(get_field('hero_background_image')); ?>); <?php echo esc_html(get_field('hero_background_image_css')); ?>">
+  <?php 
+    $hero_image_id = get_post_meta($page_id, 'hero_background_image', true);
+    $hero_image = wp_get_attachment_image_src($hero_image_id, 'full');
+    $hero_image_url = $hero_image[0];
+
+    $hero_image_css = get_post_meta($page_id, 'hero_background_image_css', true);
+  ?>
+  <section id="jumbotron" class="d-flex align-items-center" style="background-image:url(<?php echo esc_url($hero_image_url); ?>); <?php echo esc_html($hero_image_css); ?>">
     <div class="container-fluid">
       <div class="jumbotron-caption d-flex flex-column ml-auto">
-        <h1><?php echo esc_html(get_field('hero_title'); ?></h1>
+        <h1><?php echo esc_html(get_post_meta($page_id, 'hero_title', true)); ?></h1>
         <?php 
-          $subtitle = get_field('hero_subtitle'); 
-          $sub_subtitle = get_field('hero_sub_subtitle');
+          $subtitle = get_post_meta($page_id, 'hero_subtitle', true); 
+          $sub_subtitle = get_post_meta($page_id, 'hero_sub_subtitle', true);
           if($subtitle){
             echo '<p>' . esc_html($subtitle) . '</p>';
           }
@@ -98,8 +113,8 @@
             echo '<p class="bookings">' . esc_html($sub_subtitle) . '</p>';
           }
         
-          $hero_button = get_field('hero_button_link');
-          $hero_button_style = get_field('hero_button_style');
+          $hero_button = get_post_meta($page_id, 'hero_button_link', true);
+          $hero_button_style = get_post_meta($page_id, 'hero_button_style', true);
           if($hero_button): ?>
             <a href="<?php echo esc_url($hero_button['url']); ?>" class="btn-main align-self-center<?php if($hero_button_style == 'rounded'){ echo ' btn-rounded'; } ?>"><?php echo esc_html($hero_button['title']); ?></a>
         <?php endif; ?>
@@ -109,33 +124,40 @@
 <?php else: ?>
   <?php
     $page_section = '';
-    if(get_field('page_section')){
-      $page_section = get_field('page_section');
+    if(get_post_meta($page_id, 'page_section', true)){
+      $page_section = get_post_meta($page_id, 'page_section', true);
     }
 
     $hero_title = ''
     if(is_home() || is_singular('post')){
       $hero_title = 'Conversational Blog';
     }
-    elseif(get_field('hero_title')){
-      $hero_title = get_field('hero_title');
+    elseif(get_post_meta($page_id, 'hero_title', true)){
+      $hero_title = get_post_meta($page_id, 'hero_title', true);
     }
     else{
       $hero_title = get_the_title();
     }
   
-    $hero_image = get_field('hero_image');
+    $hero_image_id = get_post_meta($page_id, 'hero_image', true);
+    $hero_image = wp_get_attachment_image_src($hero_image_id, 'full');
+
     $hero_image_css = '';
+
     if($hero_image){
-      $hero_image_css = get_field('hero_image_css');
+      $hero_image_url = $hero_image[0];
+      $hero_image_css = get_post_meta($post_id, 'hero_image_css', true);
     }
     else{
-      $hero_image = get_field('default_hero_image', 'option');
-      $hero_image_css = get_field('default_hero_image_css', 'option');
+      $hero_image_id = get_option('options_default_hero_image');
+      $hero_image = wp_get_attachment_image_src($hero_image_id, 'full');
+      $hero_image_url = $hero_image[0];
+
+      $hero_image_css = get_option('options_default_hero_image_css');
     }
   ?>
 
-  <section id="hero" class="d-flex align-items-center" style="background-image:url(<?php echo esc_url($hero_image); ?>); <?php echo esc_html($hero_image_css); ?>">
+  <section id="hero" class="d-flex align-items-center" style="background-image:url(<?php echo esc_url($hero_image_url); ?>); <?php echo esc_html($hero_image_css); ?>">
     <div class="container-fluid">
       <div class="hero-caption d-flex flex-column">
         <?php if($page_section !== ''): ?>
