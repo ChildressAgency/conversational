@@ -122,3 +122,61 @@ function conversational_setup(){
 }
 
 require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
+
+function conversational_header_fallback_menu(){ ?>
+  <div id="navbar" class="collapse navbar-collapse justify-content-end">
+    <ul class="navbar-nav list-unstyled">
+      <li class="nav-item<?php if(is_front_page()){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url()); ?>" class="nav-link"><?php echo esc_html__('Home', 'conversational'); ?></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo esc_html__('About', 'conversational'); ?></a>
+        <div class="dropdown-menu">
+          <a href="<?php echo esc_url(home_url('about-conversational')); ?>" class="dropdown-item<?php if(is_page('about-conversational')){ echo ' active'; } ?>"><?php echo esc_html__('About Conversational', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('meet-the-team')); ?>" class="dropdown-item<?php if(is_page('meet-the-team')){ echo ' active'; } ?>"><?php echo esc_html__('Meet The Team', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('what-happens-after-sign-up')); ?>" class="dropdown-item<?php if(is_page('what-happens-after-sign-up')){ echo ' active'; } ?>"><?php echo esc_html__('What Happens After Sign Up', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('faqs')); ?>" class="dropdown-item<?php if(is_page('faqs')){ echo ' active'; } ?>"><?php echo esc_html__('FAQs', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('client-testimonials')); ?>" class="dropdown-item<?php if(is_page('client-testimonials')){ echo ' active'; } ?>"><?php echo esc_html__('Client Testimonials', 'conversational'); ?></a>
+        </div>
+      </li>
+      <li class="nav-item<?php if(is_page('compare')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('compare')); ?>" class="nav-link"><?php echo esc_html__('Compare', 'conversational'); ?></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo esc_html__('Industries', 'conversational'); ?></a>
+        <div class="dropdown-menu">
+          <a href="<?php echo esc_url(home_url('work-at-home-professionals')); ?>" class="dropdown-item<?php if(is_page('work-at-home-professionals')){ echo ' active'; } ?>"><?php echo esc_html__('Work at Home Professionals', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('small-business')); ?>" class="dropdown-item<?php if(is_page('small-business')){ echo ' active'; } ?>"><?php echo esc_html__('Small Business', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('medical')); ?>" class="dropdown-item<?php if(is_page('medical')){ echo ' active'; } ?>"><?php echo esc_html__('Medical', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('legal')); ?>" class="dropdown-item<?php if(is_page('legal')){ echo ' active'; } ?>"><?php echo esc_html__('Legal', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('real-estate')); ?>" class="dropdown-item<?php if(is_page('real-estate')){ echo ' active'; } ?>"><?php echo esc_html__('Real Estate', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('dental')); ?>" class="dropdown-item<?php if(is_page('dental')){ echo ' active'; } ?>"><?php echo esc_html__('Dental', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('financial')); ?>" class="dropdown-item<?php if(is_page('financial')){ echo ' active'; } ?>"><?php echo esc_html__('Financial', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('marketing')); ?>" class="dropdown-item<?php if(is_page('marketing')){ echo ' active'; } ?>"><?php echo esc_html__('Marketing', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('salon')); ?>" class="dropdown-item<?php if(is_page('salon')){ echo ' active'; } ?>"><?php echo esc_html__('Salon', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('technology')); ?>" class="dropdown-item<?php if(is_page('technology')){ echo ' active'; } ?>"><?php echo esc_html__('Technology', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('franchise')); ?>" class="dropdown-item<?php if(is_page('franchise')){ echo ' active'; } ?>"><?php echo esc_html__('Franchise', 'conversational'); ?></a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle text-nowrap" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo esc_html__('Services', 'conversational'); ?></a>
+        <div class="dropdown-menu">
+          <a href="<?php echo esc_url(home_url('virtual-receptionist-plans')); ?>" class="dropdown-item<?php if(is_page('virtual-receptionist-plans')){ echo ' active'; } ?>"><?php echo esc_html__('Virtual Receptionist Plans', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('auto-attendant')); ?>" class="dropdown-item<?php if(is_page('auto-attendant')){ echo ' active'; } ?>"><?php echo esc_html__('Auto Attendant', 'conversation'); ?></a>
+        </div>
+      </li>
+      <li class="nav-item<?php if(is_home()|| is_archive()){ echo ' active'; } ?>">
+        <a href="<?php echo esc_html(home_url('blog')); ?>" class="nav-link"><?php echo esc_html__('Blog', 'conversational'); ?></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle text-nowrap" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo esc_html__('Contact', 'conversational'); ?></a>
+        <div class="dropdown-menu">
+          <a href="<?php echo esc_url(home_url('contact-us')); ?>" class="dropdown-item<?php if(is_page('contact-us')){ echo ' active'; } ?>"><?php echo esc_html__('Contact Us', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('careers')); ?>" class="dropdown-item<?php if(is_page('careers')){ echo ' active'; } ?>"><?php echo esc_html__('Careers', 'conversational'); ?></a>
+      </li>
+      <li class="nav-item last-nav-item">
+        <a href="<?php echo esc_url(get_field('client_login', 'option')); ?>" class="nav-link"><?php echo esc_html__('Client Login', 'conversational'); ?></a>
+      </li>
+    </ul>
+  </div>
+<?php }
