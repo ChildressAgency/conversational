@@ -54,8 +54,8 @@
               <h5>Contact</h5>
               <ul>
                 <?php
-                  $phone = get_field('phone', 'option');
-                  $email = get_field('email', 'option');
+                  $phone = get_option('options_phone');
+                  $email = get_option('options_email');
                 ?>
                 <li class="contact-phone"><a href="tel:<?php echo esc_html($phone); ?>"><?php echo esc_html($phone); ?></a></li>
                 <li class="contact-email text-nowrap"><a href="mailto:<?php echo esc_html($email); ?>"><?php echo esc_html($email); ?></a></li>
@@ -64,14 +64,20 @@
 
             <div class="footer-social">
               <h5>Follow Us</h5>
-              <?php if(get_field('facebook', 'option')): ?>
-                <a href="<?php echo esc_url(get_field('facebook', 'option')); ?>" class="social-icon-small facebook"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-              <?php endif; if(get_field('twitter', 'option')): ?>
-                <a href="<?php echo esc_url(get_field('twitter', 'option')); ?>" class="social-icon-small twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
-              <?php endif; if(get_field('linkedin', 'option')): ?>
-                <a href="<?php echo esc_url(get_field('linkedin', 'option')); ?>" class="social-icon-small linkedin"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
-              <?php endif; if(get_field('pinterest', 'option')): ?>
-                <a href="<?php echo esc_url(get_field('pinterest', 'option')); ?>" class="social-icon-small pinterest"><i class="fab fa-pinterest-p"></i><span class="sr-only">Pinterest</span></a>
+              <?php 
+                $facebook = get_option('options_facebook');
+                $twitter = get_option('options_twitter');
+                $linkedin = get_option('options_linkedin');
+                $pinterest = get_option('options_pinterest');
+              ?>
+              <?php if($facebook): ?>
+                <a href="<?php echo esc_url($facebook); ?>" class="social-icon-small facebook"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+              <?php endif; if($twitter): ?>
+                <a href="<?php echo esc_url($twitter); ?>" class="social-icon-small twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+              <?php endif; if($linkedin): ?>
+                <a href="<?php echo esc_url($linkedin); ?>" class="social-icon-small linkedin"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
+              <?php endif; if($pinterest): ?>
+                <a href="<?php echo esc_url($pinterest); ?>" class="social-icon-small pinterest"><i class="fab fa-pinterest-p"></i><span class="sr-only">Pinterest</span></a>
               <?php endif; ?>
             </div>
           </div>
