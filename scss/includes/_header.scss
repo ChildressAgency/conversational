@@ -69,6 +69,9 @@
     color:$olive;
   }
 
+  .dropdown-toggle{
+    white-space:nowrap;
+  }
   .dropdown-toggle::after{
     transition:all .2s ease;
   }
@@ -132,8 +135,6 @@
 /* quick links section */
 #header-quick-links{
   background-color:$cyprus;
-  padding-top:15px;
-  padding-bottom:15px;
 
   @include media-breakpoint-down(xs){
     padding-bottom:0;
@@ -151,18 +152,22 @@
   line-height:1.2em;
   text-align:center;
   text-decoration:none;
+  padding-bottom:15px;
 
-  @include max-width-centered(140px);
+  @include max-width-centered(218px);
 
-  @include top-sprite(70px);
+  @include top-sprite(85px);
 
   &:hover,
-  &:focus{
+  &:focus,
+  &.active{
     color:#fff;
+    text-decoration:none;
+    background-color:$citrus;
   }
 
   &::before{
-    top:0;
+    top:15px;
   }
 
   &#north-america::before{
@@ -184,9 +189,5 @@
     background-position:-330px -220px;
     height:64px;
     width:45px;
-  }
-
-  @include media-breakpoint-down(xs){
-    margin-bottom:15px;
   }
 }
