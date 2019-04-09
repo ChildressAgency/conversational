@@ -14,4 +14,6 @@
 
   <?php get_template_part('partials/home-section', 'growth'); ?>
 
+  <?php get_template_part('partials/home-section', 'pricing'); ?>
+
 <?php get_footer();
