@@ -113,10 +113,10 @@
             echo '<p class="bookings">' . esc_html($sub_subtitle) . '</p>';
           }
         
-          $hero_button = get_post_meta($page_id, 'hero_button_link', true);
-          $hero_button_style = get_post_meta($page_id, 'hero_button_style', true);
+          $hero_button = get_post_meta($page_id, 'hero_button_button_link', true);
+          $hero_button_style = get_post_meta($page_id, 'hero_button_button_style', true);
           if($hero_button): ?>
-            <a href="<?php echo esc_url($hero_button['url']); ?>" class="btn-main align-self-center<?php if($hero_button_style == 'rounded'){ echo ' btn-rounded'; } ?>"><?php echo esc_html($hero_button['title']); ?></a>
+            <a href="<?php echo esc_url($hero_button['url']); ?>" class="btn-main align-self-center <?php echo esc_attr($hero_button_style); ?>"><?php echo esc_html($hero_button['title']); ?></a>
         <?php endif; ?>
       </div>
     </div>
