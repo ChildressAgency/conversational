@@ -116,6 +116,8 @@ function conversational_setup(){
   register_nav_menus(array(
     'header-nav' => 'Header Navigation',
     'footer-nav' => 'Footer Navigation',
+    'company-menu' => 'Company Footer Menu',
+    'services-menu' => 'Services Footer Menu'
   ));
 
   load_theme_textdomain('conversational', get_stylesheet_directory_uri() . '/languages');
@@ -179,4 +181,34 @@ function conversational_header_fallback_menu(){ ?>
       </li>
     </ul>
   </div>
+<?php }
+
+function conversational_company_fallback_menu(){ ?>
+  <ul>
+    <li><a href="<?php echo esc_url(home_url('about-conversational')); ?>"><?php echo esc_html__('About Us', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('meet-the-team')); ?>"><?php echo esc_html__('Meet the Team', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('north-american-based-company')); ?>"><?php echo esc_html__('North American Based Company', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('why-conversational')); ?>"><?php echo esc_html__('Why Conversational', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('terms-of-service')); ?>"><?php echo esc_html__('Terms of Service', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('privacy-policy')); ?>"><?php echo esc_html__('Privacy Policy', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('careers')); ?>"><?php echo esc_html__('Careers', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('contact-us')); ?>"><?php echo esc_html__('Contact Us', 'conversational'); ?></a></li>
+  </ul>
+<?php }
+
+function conversational_services_fallback_menu(){ ?>
+  <ul>
+    <li><a href="<?php echo esc_url(home_url('virtual-receptionist-services')); ?>"><?php echo esc_html__('Virtual Receptionist Services', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('auto-receptionist-services')); ?>"><?php echo esc_html__('Auto Receptionist Services', 'conversational'); ?></a></li>
+  </ul>
+<?php }
+
+function conversational_footer_fallback_menu(){ ?>
+  <ul class="list-unstyled d-flex justify-content-around mb-0 main-footer-nav text-center flex-wrap">
+    <li><a href="<?php echo esc_url(home_url()); ?>"><?php echo esc_html__('Home', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('about-conversational')); ?>"><?php echo esc_html__('About', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('industries')); ?>"><?php echo esc_html__('Industries', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('services')); ?>"><?php echo esc_html__('Services', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('blog')); ?>"><?php echo esc_html__('Blog', 'conversational'); ?></a></li>
+  </ul>
 <?php }
