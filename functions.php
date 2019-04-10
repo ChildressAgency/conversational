@@ -213,6 +213,22 @@ function conversational_footer_fallback_menu(){ ?>
   </ul>
 <?php }
 
+function conversational_industries_fallback_menu(){ ?>
+  <ul>
+    <li><a href="<?php echo esc_url(home_url('work-at-home-professionals')); ?>" class="nav-link<?php if(is_page('work-at-home-professionals')){ echo ' active'; } ?>"><?php echo esc_html__('Home Based', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('small-business')); ?>" class="nav-link<?php if(is_page('small-business')){ echo ' active'; } ?>"><?php echo esc_html__('Small Business', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('medical')); ?>" class="nav-link<?php if(is_page('medical')){ echo ' active'; } ?>"><?php echo esc_html__('Medical', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('legal')); ?>" class="nav-link<?php if(is_page('legal')){ echo ' active'; } ?>"><?php echo esc_html__('Legal', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('real-estate')); ?>" class="nav-link<?php if(is_page('real-estate')){ echo ' active'; } ?>"><?php echo esc_html__('Real Estate', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('dental')); ?>" class="nav-link<?php if(is_page('dental')){ echo ' active'; } ?>"><?php echo esc_html__('Dental', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('financial')); ?>" class="nav-link<?php if(is_page('financial')){ echo ' active'; } ?>"><?php echo esc_html__('Financial', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('marketing')); ?>" class="nav-link<?php if(is_page('marketing')){ echo ' active'; } ?>"><?php echo esc_html__('Marketing', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('salon')); ?>" class="nav-link<?php if(is_page('salon')){ echo ' active'; } ?>"><?php echo esc_html__('Salon', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('technology')); ?>" class="nav-link<?php if(is_page('technology')){ echo ' active'; } ?>"><?php echo esc_html__('Technology', 'conversational'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('franchise')); ?>" class="nav-link<?php if(is_page('franchise')){ echo ' active'; } ?>"><?php echo esc_html__('Franchise', 'conversational'); ?></a></li>
+  </ul>
+<?php }
+
 add_filter('excerpt_more', 'conversational_read_more');
 function conversational_read_more($more){
   global $post;
