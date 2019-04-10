@@ -16,6 +16,18 @@
     color:$cyprus;
   }
 
+  ul{
+    list-style:none;
+    padding-left:0;
+
+    &>li{
+      line-height:1em;
+    }
+    &>li::before{
+      content:"";
+    }
+  }
+
   .nav-link{
     font-size:24px;
     font-weight:$semibold;
