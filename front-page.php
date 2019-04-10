@@ -18,4 +18,6 @@
 
   <?php get_template_part('partials/home-section', 'boost'); ?>
 
+  <?php get_template_part('partials/home-section', 'testimonials'); ?>
+
 <?php get_footer();
