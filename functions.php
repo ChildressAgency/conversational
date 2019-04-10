@@ -218,3 +218,19 @@ function conversational_read_more($more){
   global $post;
   return '<a href="' . esc_url(get_permalink($post->ID)) . '"> Read more...</a>';
 }
+
+/**
+ * Disabling the Gutenberg editor all post types except post.
+ *
+ * @param bool   $can_edit  Whether to use the Gutenberg editor.
+ * @param string $post_type Name of WordPress post type.
+ * @return bool  $can_edit
+ */
+add_filter( 'gutenberg_can_edit_post_type', 'conversational_gutenberg_can_edit_post_type', 10, 2 );
+function conversational_gutenberg_can_edit_post_type( $can_edit, $post_type ) {
+	$gutenberg_supported_types = array( 'post' );
+	if ( ! in_array( $post_type, $gutenberg_supported_types, true ) ) {
+		$can_edit = false;
+	}
+	return $can_edit;
+}
