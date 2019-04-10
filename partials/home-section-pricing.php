@@ -20,15 +20,9 @@
               <p>excess minutes $<?php echo esc_html(get_post_meta($page_id, 'pricing_plan_1_excess_minutes', true)); ?>/min</p>
             </div>
             <div class="card-body">
-              <ul class="list-unstyled">
-                <?php 
-                  $pricing_plan_1_details = get_post_meta($page_id, 'pricing_plan_1_details', true);
-                  for($p1 = 0; $p1 < $pricing_plan_1_details; $p1++){
-                    echo '<li>' . esc_html(get_post_meta($page_id, 'pricing_plan_1_details_' . $p1 . '_detail', true)) . '</li>';
-                  }
-                ?>
-              </ul>
-              <?php
+              <?php 
+                echo wp_kses_post(get_post_meta($page_id, 'pricing_plan_1_details', true));
+
                 $pricing_plan_1_btn = get_post_meta($page_id, 'pricing_plan_1_learn_more_button_link', true);
                 $pricing_plan_1_btn_style = get_post_meta($page_id, 'pricing_plan_1_learn_more_button_style', true);
               ?>
@@ -49,15 +43,9 @@
               <p>excess minutes $<?php echo esc_html(get_post_meta($page_id, 'pricing_plan_2_excess_minutes', true)); ?>/min</p>
             </div>
             <div class="card-body">
-              <ul class="list-unstyled">
-                <?php
-                  $pricing_plan_2_details = get_post_meta($page_id, 'pricing_plan_2_details', true);
-                  for($p2 = 0; $p2 < $pricing_plan_2_details; $p2++){
-                    echo '<li>' . esc_html(get_post_meta($page_id, 'pricing_plan_2_details_' . $p2 . '_detail', true)) . '</li>';
-                  }
-                ?>
-              </ul>
               <?php 
+                echo wp_kses_post(get_post_meta($page_id, 'pricing_plan_2_details', true));
+
                 $pricing_plan_2_btn = get_post_meta($page_id, 'pricing_plan_2_learn_more_button_link', true);
                 $pricing_plan_2_btn_style = get_post_meta($page_id, 'pricing_plan_2_learn_more_button_style', true);
               ?>
@@ -78,15 +66,9 @@
               <p>excess minutes $<?php echo esc_html(get_post_meta($page_id, 'pricing_plan_3_excess_minutes', true)); ?>/min</p>
             </div>
             <div class="card-body">
-              <ul class="list-unstyled">
-                <?php 
-                  $pricing_plan_3_details = get_post_meta($page_id, 'pricing_plan_3_details', true);
-                  for($p3 = 0; $p3 < $pricing_plan_3_details; $p3++){
-                    echo '<li>' . esc_html(get_post_meta($page_id, 'pricing_plan_3_details_' . $p3 . '_detail', true)) . '</li>';
-                  }
-                ?>
-              </ul>
               <?php 
+                echo wp_kses_post(get_post_meta($page_id, 'pricing_plan_3_details', true));
+               
                 $pricing_plan_3_btn = get_post_meta($page_id, 'pricing_plan_3_learn_more_button_link', true);
                 $pricing_plan_3_btn_style = get_post_meta($page_id, 'pricing_plan_3_learn_more_button_style', true);
               ?>

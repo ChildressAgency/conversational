@@ -288,9 +288,18 @@
       padding-top:30px;
       padding-bottom:30px;
 
+      ul{
+        list-style:none;
+        padding-left:0;
+      }
+
       li{
         padding-top:10px;
         padding-bottom:10px;
+
+        &::before{
+          content:"";
+        }
       }
 
       .btn-main{
@@ -359,9 +368,17 @@
       font-size:18px;
     }
 
+    ul{
+      list-style:none;
+      padding-left:0;
+    }
     li{
       padding-top:10px;
       padding-bottom:10px;
+
+      &::before{
+        content:"";
+      }
     }
   }
 
