@@ -212,3 +212,9 @@ function conversational_footer_fallback_menu(){ ?>
     <li><a href="<?php echo esc_url(home_url('blog')); ?>"><?php echo esc_html__('Blog', 'conversational'); ?></a></li>
   </ul>
 <?php }
+
+add_filter('excerpt_more', 'conversational_read_more');
+function conversational_read_more($more){
+  global $post;
+  return '<a href="' . esc_url(get_permalink($post->ID)) . '"> Read more...</a>';
+}
