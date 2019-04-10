@@ -22,4 +22,6 @@
 
   <?php get_template_part('partials/home-section', 'howitworks'); ?>
 
+  <?php get_template_part('partials/home-section', 'app'); ?>
+
 <?php get_footer();
