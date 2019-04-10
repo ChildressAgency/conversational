@@ -3,9 +3,8 @@
 <main id="main">
   <div class="container-fluid">
     <article class="standard-page">
-      <header class="page-header">
-        <?php echo wp_kses_post(get_post_meta($page_id, 'page_intro', true)); ?>
-      </header>
+      <?php get_template_part('partials', 'page-intro'); ?>
+
       <div class="page-body">
         <?php 
           if(have_posts()){

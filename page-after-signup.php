@@ -3,9 +3,8 @@
 <main id="main" class="after-signup">
   <div class="container-fluid">
     <article class="standard-page">
-      <header class="page-header">
-        <?php echo wp_kses_post(get_post_meta($page_id, 'page_intro', true)); ?>
-      </header>
+      <?php get_template_part('partials', 'page-intro'); ?>
+
       <div class="steps">
         <p style="text-align:center; font-size:24px;"><strong><?php echo esc_html(get_post_meta($page_id, 'easy_as_intro', true)); ?></strong></p>
         <div class="easy-as">
