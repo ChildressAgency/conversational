@@ -16,4 +16,6 @@
 
   <?php get_template_part('partials/home-section', 'pricing'); ?>
 
+  <?php get_template_part('partials/home-section', 'boost'); ?>
+
 <?php get_footer();
