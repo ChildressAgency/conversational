@@ -20,4 +20,6 @@
 
   <?php get_template_part('partials/home-section', 'testimonials'); ?>
 
+  <?php get_template_part('partials/home-section', 'howitworks'); ?>
+
 <?php get_footer();
