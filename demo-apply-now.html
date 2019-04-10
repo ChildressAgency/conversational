@@ -129,49 +129,56 @@
 
   <main id="main" class="contact">
     <div class="container-fluid">
-      <div class="apply-now-form contact-form">
-        <h2>Apply Now</h2>
-        <p class="required-fields">*Required Fields</p>
-        <div class="form-row">
-          <label for="fname">Name*</label>
-          <div class="col-sm-6">
-            <input type="text" id="fname" class="form-control form-control-lg" />
-            <small>First</small>
+      <article class="standard-page">
+        <header class="page-header">
+
+        </header>
+        <div class="page-body">
+          <div class="apply-now-form contact-form">
+            <h2>Apply Now</h2>
+            <p class="required-fields">*Required Fields</p>
+            <div class="form-row">
+              <label for="fname">Name*</label>
+              <div class="col-sm-6">
+                <input type="text" id="fname" class="form-control form-control-lg" />
+                <small>First</small>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" id="lname" class="form-control form-control-lg" />
+                <small>Last</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="your-email">Email*</label>
+              <input type="email" id="your-email" class="form-control form-control-lg" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Telephone Number</label>
+              <input type="text" id="phone" class="form-control form-control-lg" />
+            </div>
+            <div class="form-group">
+              <label for="state">State or Province</label>
+              <input type="text" id="state" class="form-control form-control-lg" />
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input type="text" id="country" class="form-control form-control-lg" />
+            </div>
+            <div class="form-group">
+              <label for="why">Why would you make a great team member?</label>
+              <textarea rows="6" id="why" class="form-control form-control-lg"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Resume</label>
+              <input type="file" id="resume" class="file-input" />
+              <label for="resume" class="btn-file-input">Choose File</label>
+              <span class="selected-file">No File Chosen</span>
+              <!-- filetypes:pdf|docx limit:2mb-->
+            </div>
+            <input type="submit" class="btn-main" value="Submit" />
           </div>
-          <div class="col-sm-6">
-            <input type="text" id="lname" class="form-control form-control-lg" />
-            <small>Last</small>
-          </div>
         </div>
-        <div class="form-group">
-          <label for="your-email">Email*</label>
-          <input type="email" id="your-email" class="form-control form-control-lg" />
-        </div>
-        <div class="form-group">
-          <label for="phone">Telephone Number</label>
-          <input type="text" id="phone" class="form-control form-control-lg" />
-        </div>
-        <div class="form-group">
-          <label for="state">State or Province</label>
-          <input type="text" id="state" class="form-control form-control-lg" />
-        </div>
-        <div class="form-group">
-          <label for="country">Country</label>
-          <input type="text" id="country" class="form-control form-control-lg" />
-        </div>
-        <div class="form-group">
-          <label for="why">Why would you make a great team member?</label>
-          <textarea rows="6" id="why" class="form-control form-control-lg"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Resume</label>
-          <input type="file" id="resume" class="file-input" />
-          <label for="resume" class="btn-file-input">Choose File</label>
-          <span class="selected-file">No File Chosen</span>
-          <!-- filetypes:pdf|docx limit:2mb-->
-        </div>
-        <input type="submit" class="btn-main" value="Submit" />
-      </div>
+      </article>
     </div>
   </main>
 
