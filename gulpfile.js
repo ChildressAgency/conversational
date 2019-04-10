@@ -35,12 +35,12 @@ gulp.task('serve', gulp.series('sass', function () {
 
   browserSync.init({
     server: "./",
-    index:'demo-home.html'
+    //index:'demo-home.html'
     //index:'demo-meet-team.html'
     //index:'demo-after-signup.html'
     //index:'demo-testimonials.html'
     //index:'demo-faqs.html'
-    //index:'demo-work-at-home.html'
+    index:'demo-work-at-home.html'
     //index:'demo-small-business.html'
     //index:'demo-medical.html'
     //index:'demo-salon.html'
