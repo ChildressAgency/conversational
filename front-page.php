@@ -10,18 +10,22 @@
     </div>
   </section>
 
-  <?php get_template_part('partials/home-section', 'features'); ?>
+  <?php 
+    get_template_part('partials/home-section', 'features');
 
-  <?php get_template_part('partials/home-section', 'growth'); ?>
+    get_template_part('partials/home-section', 'growth');
 
-  <?php get_template_part('partials/home-section', 'pricing'); ?>
+    get_template_part('partials/home-section', 'pricing');
 
-  <?php get_template_part('partials/home-section', 'boost'); ?>
+    get_template_part('partials/home-section', 'boost');
 
-  <?php get_template_part('partials/home-section', 'testimonials'); ?>
+    get_template_part('partials/home-section', 'testimonials');
 
-  <?php get_template_part('partials/home-section', 'howitworks'); ?>
+    get_template_part('partials/home-section', 'howitworks');
 
-  <?php get_template_part('partials/home-section', 'app'); ?>
+    get_template_part('partials/home-section', 'app');
+
+    get_template_part('partials/home-section', 'getstarted');
+  ?>
 
 <?php get_footer();
