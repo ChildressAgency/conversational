@@ -1,0 +1,43 @@
+<div class="apply-now-form contact-form">
+  <h2>Apply Now</h2>
+  <p class="required-fields">*Required Fields</p>
+  <div class="form-row">
+    <label for="fname">Name*</label>
+    <div class="col-sm-6">
+      [text* fname id:fname class:form-control class:form-control-lg]
+      <small>First</small>
+    </div>
+    <div class="col-sm-6">
+      [text* lname id:lname class:form-control class:form-control-lg]
+      <small>Last</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="your-email">Email*</label>
+    [email* your-email id:your-email class:form-control class:form-control-lg]
+  </div>
+  <div class="form-group">
+    <label for="phone">Telephone Number</label>
+    [text phone id:phone class:form-control class:form-control-lg]
+  </div>
+  <div class="form-group">
+    <label for="state">State or Province</label>
+    [text state id:state class:form-control class:form-control-lg]
+  </div>
+  <div class="form-group">
+    <label for="country">Country</label>
+    [text country id:country class:form-control class:form-control-lg]
+  </div>
+  <div class="form-group">
+    <label for="why">Why would you make a great team member?</label>
+    [textarea why x6 id:why class:form-control class:form-control-lg]
+  </div>
+  <div class="form-group">
+    <label>Resume</label>
+    [file resume id:resume class:file-input]
+    <label for="resume" class="btn-file-input">Choose File</label>
+    <span class="selected-file">No File Chosen</span>
+    <!-- filetypes:pdf|docx limit:2mb-->
+  </div>
+  [submit class:btn-main "Submit"]
+</div>
