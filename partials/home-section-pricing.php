@@ -1,4 +1,8 @@
-<?php $page_id = get_the_ID(); ?>
+<?php //$page_id = get_the_ID(); ?>
+<?php
+  $home_page = get_page_by_path('home');
+  $page_id = $home_page->ID;
+?>
   <section id="pricing-plans">
     <div class="container">
       <article class="pricing-plans">
@@ -77,5 +81,26 @@
           </div>
         </div>
       </article>
+
+      <?php if(is_page('vr-plans')): ?>
+        <?php $vr_plans_page_id = get_the_ID(); ?>
+        <div class="coverage">
+          <div class="row">
+            <div class="col-md-3">
+              <?php 
+                $coverage_time_icon_id = get_post_meta($vr_plans_page_id, 'coverage_time_section_icon', true);
+                $coverage_time_icon = wp_get_attachment_image_src($coverage_time_icon_id, 'full');
+                $coverage_time_icon_alt = get_post_meta($coverage_time_icon_id, '_wp_attachment_image_alt', true);
+              ?>
+              <img src="<?php echo esc_url($coverage_time_icon[0]); ?>" class="img-fluid d-block mx-auto mb-3" alt="<?php echo esc_attr($coverage_time_icon_alt); ?>" />
+            </div>
+            <div class="col-md-9">
+              <h3><?php echo esc_html(get_post_meta($vr_plans_page_id, 'coverage_time_section_title', true)); ?></h3>
+              <hr />
+              <?php echo wp_kses_post(get_post_meta($vr_plans_page_id, 'coverage_time_section_content', true)); ?>
+            </div>
+          </div>
+        </div>
+      <?php endif; ?>
     </div>
   </section>
