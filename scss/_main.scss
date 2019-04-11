@@ -161,6 +161,17 @@ hr{
     color:$cyprus;
     font-size:32px;
   }
+
+  ul{
+    @include media-breakpoint-up(sm){
+      column-count:2;
+      column-gap:40px;
+    }
+
+    li{
+      break-inside:avoid-column;
+    }
+  }
 }
 
 .page-callout{
