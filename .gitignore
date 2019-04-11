@@ -78,3 +78,4 @@ Archive/
 *.zip
 .vscode/
 node_modules/
+*/vendors/
