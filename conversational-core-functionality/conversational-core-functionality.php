@@ -69,3 +69,6 @@ require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/page-intro.php
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/homepage.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/vr-plans-page.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/get-started-section.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/page-main-content.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/after-signup-page.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/compare-services-page.php';

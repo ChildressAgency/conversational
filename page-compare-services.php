@@ -99,8 +99,8 @@
 
                     case 'button':
                       echo '<p class="text-center">';
-                        $btn = get_post_meta($page_id, 'comparison_content_' . $count . '_button_link', true);
-                        $btn_style = get_post_meta($page_id, 'comparison_content_' . $count . '_button_style', true);
+                        $btn = get_post_meta($page_id, 'comparison_content_' . $count . '_section_button_link', true);
+                        $btn_style = get_post_meta($page_id, 'comparison_content_' . $count . '_section_button_style', true);
 
                         echo '<a href="' . esc_url($btn['url']) . '" class="btn-main ' . esc_attr($btn_style) . '">' . esc_html($btn['title']) . '</a>';
                       echo '</p>';
@@ -108,7 +108,7 @@
                       break;
 
                     case 'disclaimer':
-                      echo '<p class="comparison-disclaimer">* ' . wp_kses_post(get_post_meta($page_id, 'comparison_content_' . $count . '_disclaimer', true)) . '</p>';
+                      echo '<p class="comparison-disclaimer">* ' . wp_kses_post(get_post_meta($page_id, 'comparison_content_' . $count . '_disclaimer_content', true)) . '</p>';
 
                       break;
                   } //end switch
