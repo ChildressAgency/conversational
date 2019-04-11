@@ -2,7 +2,8 @@
   if(!is_page('contact-us') 
       && !is_page('careers') 
       && !is_page('apply-now')
-      && !is_page('client-portal')){
+      && !is_page('client-portal')
+      && !is_page('vr-services')){
         get_template_part('partials', 'try_free');
   }
 ?>
