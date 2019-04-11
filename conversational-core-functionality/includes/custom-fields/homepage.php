@@ -1,0 +1,156 @@
+<?php
+/**
+ * ACF fields
+ * HomePage Fields
+ */
+if(!defined('ABSPATH')){ exit; }
+
+ /**
+  * HomePage Hero Fields
+  */
+acf_add_local_field_group(array(
+	'key' => 'group_5cafa85775057',
+	'title' => esc_html__('Home Page Settings - Hero', 'conversational'),
+	'fields' => array(
+		array(
+			'key' => 'field_5cafa8620f061',
+			'label' => esc_html__('Hero Background Image', 'conversational'),
+			'name' => 'hero_background_image',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'id',
+			'preview_size' => 'full',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_5cafa8840f062',
+			'label' => esc_html__('Hero Background Image CSS', 'conversational'),
+			'name' => 'hero_background_image_css',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5cafa8b40f063',
+			'label' => esc_html__('Hero Title', 'conversational'),
+			'name' => 'hero_title',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5cafa8c40f064',
+			'label' => esc_html__('Hero Subtitle', 'conversational'),
+			'name' => 'hero_subtitle',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5cafa8cb0f065',
+			'label' => esc_html__('Hero Sub Subtitle', 'conversational'),
+			'name' => 'hero_sub_subtitle',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5cafac9327f88',
+			'label' => esc_html__('Hero Button', 'conversational'),
+			'name' => 'hero_button',
+			'type' => 'clone',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'clone' => array(
+				0 => 'group_5cafac19ddd23',
+			),
+			'display' => 'group',
+			'layout' => 'block',
+			'prefix_label' => 0,
+			'prefix_name' => 1,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '5',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array(
+		0 => 'the_content',
+	),
+	'active' => true,
+	'description' => '',
+));

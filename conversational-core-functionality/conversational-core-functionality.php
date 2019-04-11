@@ -63,3 +63,6 @@ function conversational_acf_options_page(){
     'redirect' => false
   ));
 }
+
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/general-fields.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/homepage.php';
