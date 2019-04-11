@@ -56,8 +56,8 @@ function conversational_scripts(){
   wp_enqueue_script('conversational-scripts');
 }
 
-add_filter('script_loader_tag', 'fedcon_add_script_meta', 10, 2);
-function fedcon_add_script_meta($tag, $handle){
+add_filter('script_loader_tag', 'conversational_add_script_meta', 10, 2);
+function conversational_add_script_meta($tag, $handle){
   switch($handle){
     case 'jquery':
       $tag = str_replace('></script>', ' integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>', $tag);
