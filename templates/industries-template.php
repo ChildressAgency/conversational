@@ -78,119 +78,154 @@ get_header(); ?>
           </div>
         </div>
 
-        <?php 
-          $alt_content = get_post_meta($page_id, 'alt_content_style', true);
-          foreach($alt_content as $count => $content_style){
-            switch($content_style){
-              case 'accordion':
-                $accordion_fields = get_post_meta($page_id, 'alt_content_style_' . $count . '_accordion_fields', true);
-                if($accordion_fields){
-                  echo '<section id="franchise-pros" class="accordion">';
-                  $accordion_fields_name = 'alt_content_style_' . $count . '_accordion_fields';
-
-                  for($i = 0; $i < $accordion_fields; $i++){
-                    echo '<div class="card"><div class="card-container">';
-                      echo '<div id="pros-heading-' . $i . '" class="card-header">';
-                        echo '<h2><a href="#pros-' . $i . '" class="collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pros-' . $i . '">';
-                          echo '<span class="expander"></span>';
-                          echo get_post_meta($page_id, $accordion_fields_name . '_' . $i . '_accordion_field_title', true);
-                        echo '</a></h2>';
-                      echo '</div>';
-                      echo '<div id="pros-' . $i . '" class="collapse" aria-labelledby="pros-heading-' . $i . '" data-parent="#franchise-pros"><div class="card-body">';
-                        echo get_post_meta($page_id, $accordion_fields_name . '_' . $i . '_accordion_field_content', true);
-                      echo '</div></div>';
-                    echo '</div></div>';
-                  }//end for
-                }//end if $accordion_fields
-
-                break;
-
-              case 'callout':
-                $callout_style = get_post_meta($page_id, 'alt_content_style_' . $count . '_callout_style', true);
-                foreach($callout_style as $c_count => $style){
-                  switch($style){
-                    case 'with_icon':
-                      //flexible: regular content or pricing content (like small biz)
-                      break;
-
-                    case 'without_icon':
-                      if(is_page('work-at-home-professionals')){
-                        //header is this
-                      }//end if work-at-home
-                      else{
-                        //header is normal
-                      }
-                      //callout-main
-                        //flexible: regular content or icon content(like medical)
-
-                      break;
-                  }//end switch
-                }//end foreach
-
-                break;
-            }//end switch
-          }//end foreach
-
-        <section class="industries-callout medical mt-0">
-          <div class="industries-callout-main">
-            <h2>Choose Conversational medical answering services</h2>
-            <p>Our answering service plans offer a host of important benefits for medical offices. As part of our medical answering services package, we provide incoming customer service in addition to friendly appointment reminder calls. Our data shows that appointment reminder calls are effective at reducing no shows. Our clients say the practice reduces no shows by as much as 75%. Other benefits include:</p>
-            <section class="pros">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="images/icon-bell.png" class="img-fluid d-block ml-md-auto mb-3" alt="" />
+        <?php //accordion
+          $accordion = get_post_meta($page_id, 'accordion', true);
+          if($accordion): ?>
+            <section id="franchise-pros" class="accordion">
+              <?php for($a = 0; $a < $accordion; $a++): ?>
+                <div class="card">
+                  <div class="card-container">
+                    <div id="pros-heading-<?php echo $a; ?>" class="card-header">
+                      <h2>
+                        <a href="#pros-<?php echo $a; ?>" class="collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pros-<?php echo $a; ?>">
+                          <span class="expander"></span>
+                          <?php echo esc_html(get_post_meta($page_id, 'accordion_' . $a . '_accordion_field_title', true)); ?>
+                        </a>
+                      </h2>
+                    </div>
+                    <div id="pros-<?php echo $a; ?>" class="collapse" aria-labelledby="pros-heading-<?php echo $a; ?>" data-parent="#franchise-pros">
+                      <div class="card-body">
+                        <?php echo wp_kses_post(get_post_meta($page_id, 'accordion_' . $a . '_accordion_field_content', true)); ?>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-8">
-                  <h3>Never miss a call</h3>
-                  <p>Employees take breaks, sick days, federal holidays, and vacations, but medical answering services don’t. You define when you want your answering service to be available and answering calls, and they will ensure you never miss a call during that time frame.</p>
-                  <p>Our appointment reminder calls encourage patients to remember to confirm or cancel their upcoming appointments with your medical practice, making sure your appointment schedule is as accurate as possible.</p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="images/icon-piggybank.png" class="img-fluid d-block ml-md-auto mb-3" alt="" />
-                </div>
-                <div class="col-md-8">
-                  <h3>Cost effective</h3>
-                  <p>We make it easy to expand your team in a cost effective, efficient way. Our medical answering specialists eliminate the need to hire a full-time or part-time receptionist. By going virtual, you avoid the costs of hourly pay, vacation, employee benefits, certain taxes, and other employee packages.</p>
-                  <p>Because you can define the exact times and days you want your virtual receptionist to answer calls, schedule appointments, and provide customer service to callers during, you can ensure the phones are always covered while side-stepping the much higher cost of hiring a full-time receptionist.</p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="images/icon-calltime.png" class="img-fluid d-block ml-md-auto mb-3" alt="" />
-                </div>
-                <div class="col-md-8">
-                  <h3>Pay for call time only</h3>
-                  <p>You never pay for medical answering services to take breaks, sit and wait, or any other down time. You only pay for the time Conversational’s call specialists are actually on the phone with your callers.</p>
-                  <p>That means you only pay for your answering service when you need it, not full time. That’s part of the reason medical answering services are much more cost effective than hiring–even part-time.</p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="images/icon-calendar-2.png" class="img-fluid d-block ml-md-auto mb-3" alt="" />
-                </div>
-                <div class="col-md-8">
-                  <h3>Integrate your scheduling programs</h3>
-                  <p>A good medical answering service understands that your existing scheduling programs have become an important cog in the gears that run your medical practice. Conversational seamlessly integrates with your preferred scheduling programs and doesn’t try to sell you an unfamiliar program you’re not used to.</p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="images/icon-stopwatch.png" class="img-fluid d-block ml-md-auto mb-3" alt="" />
-                </div>
-                <div class="col-md-8">
-                  <h3>Better manage your time</h3>
-                  <p>You will save time and better manage your in-house employees when you opt for specialized medical answering services. By enabling you to take the time you and your staff need to work on your highest priority tasks, our virtual receptionists help you manage your business and time more efficiently.</p>
-                </div>
-              </div>
+              <?php endfor; ?>
             </section>
-          </div>
-        </section>
+        <?php endif; //accordion
+
+          $alt_content = get_post_meta($page_id, 'alt_content_style', true);
+          foreach($alt_content as $count => $alt_content_style){
+            switch($alt_content_style){
+              case 'with_icon': ?>
+
+                <section class="industries-callout<?php if(is_page('work-at-home-professionals')){ echo ' work-home'; } ?>">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <?php
+                        $alt_content_icon_id = get_post_meta($page_id, 'alt_content_style_' . $count . '_alt_content_icon', true);
+                        $alt_content_icon = wp_get_attachment_image_src($alt_content_icon_id, 'full');
+                        $alt_content_icon_alt = get_post_meta($alt_content_icon_id, '_wp_attachment_image_alt', true);
+                      ?>
+                      <img src="<?php echo esc_url($alt_content_icon[0]); ?>" class="callout-icon img-fluid d-block mx-md-auto mb-3" alt="<?php echo esc_attr($alt_content_icon_alt); ?>" />
+                    </div>
+                    <div class="col-md-9">
+                      <div class="industries-callout-main">
+                        <?php if(is_page('work-at-home-professionals')): ?>
+                          <h2>Conversational <span>is the affordable solution</span></h2>
+                        <?php else: ?>
+                          <h2><?php echo esc_html(get_post_meta($page_id, 'alt_content_style_' . $count .'_alt_content_title', true)); ?></h2>
+                        <?php endif; 
+
+                        $icon_content_style = get_post_meta($page_id, 'alt_content_style_' . $count . '_icon_content_style', true);
+                        foreach($icon_content_style as $c_count => $content_style){
+                          $field_string = 'alt_content_style_' . $count . '_icon_content_style';
+
+                          switch($content_style){
+                            case 'regular_content':
+                              echo wp_kses_post(get_post_meta($page_id, $field_string . '_' . $c_count . '_content', true));
+                            break;
+
+                            case 'pricing':
+                              $pricing_field_string = $field_string . '_' . $c_count . '_plan_';
+                              echo '<section id="small-biz-pricing"><div class="row">';
+                                echo '<div class="col-lg-4"><div class="card">';
+                                  echo '<div class="card-header">';
+                                    echo '<h4>' . esc_html(get_post_meta($page_id, $pricing_field_string . '1_title', true)) . '</h4>';
+                                    echo '<p>' . esc_html(get_post_meta($page_id, $pricing_field_string . '1_subtitle', true)) . '</p>';
+                                  echo '</div><div class="card-body">';
+                                    $price_1_per_month = get_post_meta($page_id, $pricing_field_string . '1_price_per_month', true);
+                                    $price_1_per_minute = get_post_meta($page_id, $pricing_field_string . '1_price_per_minute', true);
+                                    echo '<p><sup>$</sup>' . esc_html($price_1_per_month) . ' per month<small>or $' . esc_html($price_1_per_minute) . ' per minute</small></p>';
+                                  echo '</div>';
+                                echo '</div></div>';
+                                echo '<div class="col-lg-4"><div class="card">';
+                                  echo '<div class="card-header">';
+                                    echo '<h4>' . esc_html(get_post_meta($page_id, $pricing_field_string . '2_title', true)) . '</h4>';
+                                    echo '<p>' . esc_html(get_post_meta($page_id, $pricing_field_string . '2_subtitle', true)) . '</p>';
+                                  echo '</div><div class="card-body">';
+                                    $price_2_per_month = get_post_meta($page_id, $pricing_field_string . '2_price_per_month', true);
+                                    $price_2_per_minute = get_post_meta($page_id, $pricing_field_string . '2_price_per_minute', true);
+                                    echo '<p><sup>$</sup>' . esc_html($price_2_per_month) . ' per month<small>or $' . esc_html($price_2_per_minute) . ' per minute</small></p>';
+                                  echo '</div>';
+                                echo '</div></div>';
+                                echo '<div class="col-lg-4"><div class="card">';
+                                  echo '<div class="card-header">';
+                                    echo '<h4>' . esc_html(get_post_meta($page_id, $pricing_field_string . '3_title', true)) . '</h4>';
+                                    echo '<p>' . esc_html(get_post_meta($page_id, $pricing_field_string . '3_subtitle', true)) . '</p>';
+                                  echo '</div><div class="card-body">';
+                                    $price_3_per_month = get_post_meta($page_id, $pricing_field_string . '3_price_per_month', true);
+                                    $price_3_per_minute = get_post_meta($page_id, $pricing_field_string . '3_price_per_minute', true);
+                                    echo '<p><sup>$</sup>' . esc_html($price_3_per_month) . ' per month<small>or $' . esc_html($price_3_per_minute) . ' per minute</small></p>';
+                                  echo '</div>';
+                                echo '</div></div>';
+                              echo '</div></section>';
+
+                              $pricing_content = get_post_meta($page_id, $pricing_field_string . 'pricing_content', true);
+                              if($pricing_content){
+                                echo '<div class="narrow-section">';
+                                echo wp_kses_post($pricing_content);
+                                echo '</div>';
+                              }
+                            break;
+                          }//end switch content_style
+                        }//end foreach icon_content_style
+                        ?>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              
+              <?php break;
+
+              case 'without_icon':
+                echo '<section class="industries-callout medical"><div class="industries-callout-main">';
+                echo '<h2>' . esc_html(get_post_meta($page_id, 'alt_content_style_' . $count . '_alt_content_title', true)) . '</h2>';
+
+                $no_icon_content_style = get_post_meta($page_id, 'alt_content_style_' . $count . '_no_icon_content_style', true);
+                foreach($no_icon_content_style as $c_count => $content_style){
+                  $field_string = 'alt_content_style_' . $count . '_no_icon_content_style';
+
+                  switch($content_style){
+                    case 'regular_content':
+                      echo wp_kses_post(get_post_meta($page_id, $field_string . '_' . $c_count . '_content', true));
+                    break;
+
+                    case 'icon_field':
+                      echo '<section class="pros">';
+                        $icon_field_fields = get_post_meta($page_id, $field_string . '_' . $c_count . '_icon_fields', true);
+                        $icon_fields_string = $field_string . '_' . $c_count . '_icon_fields';
+                        for($f = 0; $f < $icon_field_fields; $f++){
+                          echo '<div class="row"><div class="col-md-4">';
+                            $icon_field_icon_id = get_post_meta($page_id, $icon_fields_string . '_' . $f . '_icon', true);
+                            $icon_field_icon = wp_get_attachment_image_src($icon_field_icon_id, 'full');
+                            $icon_field_icon_alt = get_post_meta($icon_field_icon_id, '_wp_attachment_image_alt', true);
+                            echo '<img src="' . esc_url($icon_field_icon[0]) . '" class="img-fluid d-block ml-md-auto mb-3" alt="' . esc_attr($icon_field_icon_alt) . '" />';
+                          echo '</div><div class="col-md-8">';
+                            echo '<h3>' . esc_html(get_post_meta($page_id, $icon_fields_string . '_' . $f . '_icon_field_title', true)) . '</h3>';
+                            echo wp_kses_post(get_post_meta($page_id, $icon_fields_string . '_' . $f . '_icon_field_content', true));
+                          echo '</div></div>';
+                        } //end for
+                      echo '</section>';
+                    break;
+                  } //end switch content_style
+                } //end foreach no_icon_content_style
+
+                echo '</div></section>';
+              break;
+            }//end switch alt_content_style
+          }//end foreach alt_content
+        ?>
       </div>
     </article>
   </div>
