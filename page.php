@@ -6,14 +6,7 @@
       <?php get_template_part('partials', 'page-intro'); ?>
 
       <div class="page-body">
-        <?php 
-          if(have_posts()){
-            while(have_posts()){
-              the_post();
-              the_content();
-            }
-          }
-        ?>
+        <?php echo wp_kses_post(get_post_meta($page_id, 'page_content', true)); ?>
       </div>
     </article>
   </div>
