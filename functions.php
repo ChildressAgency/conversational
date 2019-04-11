@@ -269,3 +269,58 @@ function conversational_esc_iframe($iframe){
   $allowed_tags = array_merge($kses_defaults, $iframe_args);
   echo wp_kses($iframe, $allowed_tags);
 }
+
+//custom font settings for acf editor
+add_filter('mce_buttons_2', 'conversational_wp_buttons');
+function conversational_wp_buttons($buttons){
+  array_unshift($buttons, 'fontselect');
+  array_unshift($buttons, 'fontsizeselect');
+  return $buttons;
+}
+
+add_filter('tiny_mce_before_init', 'conversational_wp_font_sizes');
+function conversational_wp_font_sizes($initArray){
+  $initArray['fonsize_formats'] = '12px 14px 16px 18px 20px 24px 26px 28px 30px 32px 36px 38px 40px 42px 44px 46px 50px 52px 60px 66px';
+  $initArray['font_formats'] = 'Nunito=Nunito;Nunito Sans=Nunito Sans;Maitree=Maitree';
+  return $initArray;
+}
+
+add_filter('init', 'conversational_mce_font_styles');
+function conversational_mce_font_styles(){
+  $font_url = 'https://fonts.googleapis.com/css?family=Maitree:400,700|Nunito+Sans:400,600,700|Nunito:700';
+  add_editor_style(str_replace(',', '%2C', $font_url));
+}
+
+//add formats dropdown to mce
+add_filter('mce_buttons', 'conversational_style_select');
+function conversational_style_select($buttons){
+  array_push($buttons, 'styleselect');
+  return $buttons;
+}
+
+//add new styles to mce formats dropdown
+add_filter('tiny_mce_before_init', 'conversational_styles_dropdown');
+function conversational_styles_dropdown($settings){
+  $new_styles = array(
+    array(
+      'title' => esc_html__('Custom Styles', 'conversational'),
+      'items' => array(
+        array(
+          'title' => esc_html__('Theme Button', 'conversational'),
+          'selector' => 'a',
+          'classes' => 'btn-main'
+        ),
+        array(
+          'title' => esc_html__('Theme Button Rounded', 'conversational'),
+          'selector' => 'a',
+          'classes' => 'btn-main btn-rounded'
+        )
+      )
+    )
+  );
+
+  $settings['style_formats_merge'] = true;
+  $settings['style_formats'] = json_encode($new_styles);
+  return $settings;
+}
+//end custom font settings
