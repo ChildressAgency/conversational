@@ -72,8 +72,8 @@
   </div>
 </main>
 
-<?php get_template_part('partials/home', 'section-pricing'); ?>
+<?php get_template_part('partials/section', 'pricing'); ?>
 
-<?php get_template_part('partials/home', 'section-getstarted'); ?>
+<?php get_template_part('partials/section', 'getstarted'); ?>
 
 <?php get_footer();

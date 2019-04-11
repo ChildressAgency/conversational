@@ -13,7 +13,7 @@
 
     get_template_part('partials/home-section', 'growth');
 
-    get_template_part('partials/home-section', 'pricing');
+    get_template_part('partials/section', 'pricing');
 
     get_template_part('partials/home-section', 'boost');
 
@@ -23,7 +23,7 @@
 
     get_template_part('partials/home-section', 'app');
 
-    get_template_part('partials/home-section', 'getstarted');
+    get_template_part('partials/section', 'getstarted');
   ?>
 
 <?php get_footer();
