@@ -123,9 +123,9 @@
   </section>
 <?php else: ?>
   <?php
-    $page_section = '';
-    if(get_post_meta($page_id, 'page_section', true)){
-      $page_section = get_post_meta($page_id, 'page_section', true);
+    $site_section = '';
+    if(get_post_meta($page_id, 'site_section', true)){
+      $site_section = get_post_meta($page_id, 'site_section', true);
     }
 
     $hero_title = ''
@@ -139,14 +139,14 @@
       $hero_title = get_the_title();
     }
   
-    $hero_image_id = get_post_meta($page_id, 'hero_image', true);
+    $hero_image_id = get_post_meta($page_id, 'hero_background_image', true);
     $hero_image = wp_get_attachment_image_src($hero_image_id, 'full');
 
     $hero_image_css = '';
 
     if($hero_image){
       $hero_image_url = $hero_image[0];
-      $hero_image_css = get_post_meta($post_id, 'hero_image_css', true);
+      $hero_image_css = get_post_meta($post_id, 'hero_background_image_css', true);
     }
     else{
       $hero_image_id = get_option('options_default_hero_image');
@@ -160,8 +160,8 @@
   <section id="hero" class="d-flex align-items-center" style="background-image:url(<?php echo esc_url($hero_image_url); ?>); <?php echo esc_html($hero_image_css); ?>">
     <div class="container-fluid">
       <div class="hero-caption d-flex flex-column">
-        <?php if($page_section !== ''): ?>
-          <h2 class="section-name"><i class="far fa-circle"></i><?php echo esc_html($page_section); ?></h2>
+        <?php if($site_section !== ''): ?>
+          <h2 class="section-name"><i class="far fa-circle"></i><?php echo esc_html($site_section); ?></h2>
         <?php endif; ?>
         <?php if($hero_title !== ''): ?>
           <h1><?php echo esc_html($hero_title); ?></h1>
