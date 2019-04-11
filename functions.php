@@ -250,3 +250,22 @@ function conversational_gutenberg_can_edit_post_type( $can_edit, $post_type ) {
 	}
 	return $can_edit;
 }
+
+function conversational_esc_iframe($iframe){
+  $kses_defaults = wp_kses_allowed_html('post');
+
+  $iframe_args = array(
+    'iframe' => array(
+      'src' => true,
+      'height' => true,
+      'width' => true,
+      'frameborder' => true,
+      'allowfullscreen' => true,
+      'class' => true,
+      'style' => true
+    )
+  );
+
+  $allowed_tags = array_merge($kses_defaults, $iframe_args);
+  echo wp_kses($iframe, $allowed_tags);
+}
