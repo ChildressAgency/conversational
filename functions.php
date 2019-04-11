@@ -235,20 +235,15 @@ function conversational_read_more($more){
   return '<a href="' . esc_url(get_permalink($post->ID)) . '"> Read more...</a>';
 }
 
-/**
- * Disabling the Gutenberg editor all post types except post.
- *
- * @param bool   $can_edit  Whether to use the Gutenberg editor.
- * @param string $post_type Name of WordPress post type.
- * @return bool  $can_edit
- */
-add_filter( 'gutenberg_can_edit_post_type', 'conversational_gutenberg_can_edit_post_type', 10, 2 );
-function conversational_gutenberg_can_edit_post_type( $can_edit, $post_type ) {
-	$gutenberg_supported_types = array( 'post' );
-	if ( ! in_array( $post_type, $gutenberg_supported_types, true ) ) {
-		$can_edit = false;
-	}
-	return $can_edit;
+//disable gutenberg for pages
+add_filter('use_block_editor_for_post_type', 'conversational_disable_gutenberg', 10, 2);
+function conversational_disable_gutenberg($can_edit, $post_type){
+  if(!(is_admin() && !empty($_GET['post']))){ return $can_edit; }
+
+  if($post_type == 'page'){
+    $can_edit = false;
+  }
+  return $can_edit;
 }
 
 function conversational_esc_iframe($iframe){
