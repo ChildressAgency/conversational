@@ -3,7 +3,7 @@
   <section id="hp-intro">
     <div class="container-fluid">
       <article class="standard-page">
-        <?php get_template_part('partials', 'page-intro'); ?>
+        <?php get_template_part('partials/page', 'intro'); ?>
       </article>
     </div>
   </section>

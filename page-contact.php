@@ -2,7 +2,7 @@
 <?php $page_id = get_the_ID(); ?>
 <main id="main" class="contact">
   <div class="container-fluid">
-    <?php get_template_part('partials', 'page-intro'); ?>
+    <?php get_template_part('partials/page', 'intro'); ?>
     <div class="row">
       <div class="col-md-8">
         <?php

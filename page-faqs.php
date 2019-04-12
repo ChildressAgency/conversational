@@ -3,7 +3,7 @@
 <main id="main">
   <div class="container-fluid">
     <article class="standard-page">
-      <?php get_template_part('partials', 'page-intro'); ?>
+      <?php get_template_part('partials/page', 'intro'); ?>
       <div class="page-body">
         <?php
           $faqs = get_post_meta($page_id, 'faqs', true);

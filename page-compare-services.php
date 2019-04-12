@@ -3,7 +3,7 @@
 <main id="main" class="compare">
   <div class="container-fluid">
     <article class="standard-page">
-      <?php get_template_part('partials', 'page-intro'); ?>
+      <?php get_template_part('partials/page', 'intro'); ?>
 
       <div class="page-body">
         <?php
