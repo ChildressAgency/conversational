@@ -3,7 +3,7 @@
 <main id="main">
   <div class="container-fluid">
     <article class="standard-page">
-      <?php get_template_part('partials', 'page-intro'); ?>
+      <?php get_template_part('partials/page', 'intro'); ?>
       <div class="page-body">
         <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'meet_the_team_intro', true))); ?>
       </div>
@@ -46,7 +46,7 @@
                         <div class="team-quote">
                           <h4><?php printf(esc_html__('%s\'s favorite quote', 'conversational'), $team_member_first_name); ?></h4>
                           <p><?php echo esc_html($team_member_quote); ?></p>
-                          <cite>&mdash; <?php echo esc_html($page_id, 'team_members_' . $i . '_quote_author', true)); ?></cite>
+                          <cite>&mdash; <?php echo esc_html(get_post_meta($page_id, 'team_members_' . $i . '_quote_author', true)); ?></cite>
                         </div>
                     <?php endif; ?>
                   </article>
