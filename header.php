@@ -146,7 +146,7 @@
 
     if($hero_image){
       $hero_image_url = $hero_image[0];
-      $hero_image_css = get_post_meta($post_id, 'hero_background_image_css', true);
+      $hero_image_css = get_post_meta($page_id, 'hero_background_image_css', true);
     }
     else{
       $hero_image_id = get_option('options_default_hero_image');
