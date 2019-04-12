@@ -3,7 +3,7 @@
   <div class="container">
     <article class="features">
       <header class="narrow-container position-relative text-center">
-        <h2>Features</h2>
+        <h2><?php echo esc_html__('Features', 'conversational'); ?></h2>
         <?php echo wp_kses_post(get_post_meta($page_id, 'home_page_features_section_intro', true)); ?>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifying-glass.png" class="magnifying-glass d-none d-md-block" alt="magnifying glass" />
       </header>

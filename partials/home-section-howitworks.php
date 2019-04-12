@@ -4,7 +4,7 @@
     <article>
       <header>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/headphones-top.png" class="img-fuild mx-auto" alt="" />
-        <h2>How it Works</h2>
+        <h2><?php esc_html__('How it Works', 'conversational'); ?></h2>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/headphone-bottom.png" class="img-fluid mx-auto" alt="" />
         <p><?php echo esc_html(get_post_meta($page_id, 'how_it_works_section_intro', true)); ?></p>
       </header>
