@@ -134,7 +134,7 @@ acf_add_local_field_group(array(
 			'label' => esc_html__('Accordion Section', 'conversational'),
 			'name' => 'accordion_section',
 			'type' => 'repeater',
-			'instructions' => esc_html__('Leave this section empty if you don\'t want to display an accordion  'conversational'),section.',
+			'instructions' => esc_html__('Leave this section empty if you don\'t want to display an accordion section.', 'conversational'),
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
