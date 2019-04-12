@@ -7,11 +7,11 @@ if(!defined('ABSPATH')){ exit; }
 
 acf_add_local_field_group(array(
 	'key' => 'group_5cafc2bbbcd2c',
-	'title' => esc_html__'Compare Page Settings', 'conversational'),
+	'title' => esc_html__('Compare Page Settings', 'conversational'),
 	'fields' => array(
 		array(
 			'key' => 'field_5cafc2c8a1f00',
-			'label' => esc_html__'Competitors', 'conversational'),
+			'label' => esc_html__('Competitors', 'conversational'),
 			'name' => 'competitors',
 			'type' => 'repeater',
 			'instructions' => '',
@@ -26,11 +26,11 @@ acf_add_local_field_group(array(
 			'min' => 0,
 			'max' => 0,
 			'layout' => 'table',
-			'button_label' => esc_html__'Add Competitor', 'conversational'),
+			'button_label' => esc_html__('Add Competitor', 'conversational'),
 			'sub_fields' => array(
 				array(
 					'key' => 'field_5cafc2d7a1f01',
-					'label' => esc_html__'Competitor Name', 'conversational'),
+					'label' => esc_html__('Competitor Name', 'conversational'),
 					'name' => 'competitor_name',
 					'type' => 'text',
 					'instructions' => '',
@@ -49,7 +49,7 @@ acf_add_local_field_group(array(
 				),
 				array(
 					'key' => 'field_5cafc314a1f02',
-					'label' => esc_html__'Competitor Intro', 'conversational'),
+					'label' => esc_html__('Competitor Intro', 'conversational'),
 					'name' => 'competitor_intro',
 					'type' => 'wysiwyg',
 					'instructions' => '',
@@ -68,7 +68,7 @@ acf_add_local_field_group(array(
 				),
 				array(
 					'key' => 'field_5cafc334a1f03',
-					'label' => esc_html__'Comparison Chart', 'conversational'),
+					'label' => esc_html__('Comparison Chart', 'conversational'),
 					'name' => 'comparison_chart',
 					'type' => 'repeater',
 					'instructions' => '',

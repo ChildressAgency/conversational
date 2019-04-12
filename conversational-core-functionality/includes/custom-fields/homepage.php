@@ -160,7 +160,7 @@ acf_add_local_field_group(array(
  */
 acf_add_local_field_group(array(
 	'key' => 'group_5cafb260770f2',
-	'title' => esc_html__'Home Page Settings - Features Section', 'conversational'),
+	'title' => esc_html__('Home Page Settings - Features Section', 'conversational'),
 	'fields' => array(
 		array(
 			'key' => 'field_5cafb26d0bf5d',
@@ -362,7 +362,7 @@ acf_add_local_field_group(array(
 			),
 		),
 	),
-	'menu_order' => 0,
+	'menu_order' => 3,
 	'position' => 'normal',
 	'style' => 'default',
 	'label_placement' => 'top',
@@ -1076,11 +1076,11 @@ acf_add_local_field_group(array(
  */
 acf_add_local_field_group(array(
 	'key' => 'group_5cafb9ca34c0f',
-	'title' => esc_html__'Home Page Settings - Testimonials Section', 'conversational'),
+	'title' => esc_html__('Home Page Settings - Testimonials Section', 'conversational'),
 	'fields' => array(
 		array(
 			'key' => 'field_5cafb9d5a6d6c',
-			'label' => esc_html__'Testimonials Section Title', 'conversational'),
+			'label' => esc_html__('Testimonials Section Title', 'conversational'),
 			'name' => 'testimonials_section_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -1099,7 +1099,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafb9e7a6d6d',
-			'label' => esc_html__'Testimonials Section Intro', 'conversational'),
+			'label' => esc_html__('Testimonials Section Intro', 'conversational'),
 			'name' => 'testimonials_section_intro',
 			'type' => 'wysiwyg',
 			'instructions' => '',
@@ -1118,7 +1118,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafb9f1a6d6e',
-			'label' => esc_html__'Testimonials Card 1', 'conversational'),
+			'label' => esc_html__('Testimonials Card 1', 'conversational'),
 			'name' => '',
 			'type' => 'tab',
 			'instructions' => '',
@@ -1134,7 +1134,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafb9ffa6d6f',
-			'label' => esc_html__'Testimonials Card 1 Title', 'conversational'),
+			'label' => esc_html__('Testimonials Card 1 Title', 'conversational'),
 			'name' => 'testimonials_card_1_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -1153,7 +1153,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafba09a6d70',
-			'label' => esc_html__'Testimonials Card 1 Description', 'conversational'),
+			'label' => esc_html__('Testimonials Card 1 Description', 'conversational'),
 			'name' => 'testimonials_card_1_description',
 			'type' => 'text',
 			'instructions' => '',
@@ -1172,7 +1172,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafba1da6d71',
-			'label' => esc_html__'Testimonials Card 2', 'conversational'),
+			'label' => esc_html__('Testimonials Card 2', 'conversational'),
 			'name' => '',
 			'type' => 'tab',
 			'instructions' => '',
@@ -1188,7 +1188,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafba2ba6d72',
-			'label' => esc_html__'Testimonials Card 2 Title', 'conversational'),
+			'label' => esc_html__('Testimonials Card 2 Title', 'conversational'),
 			'name' => 'testimonials_card_2_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -1207,7 +1207,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafba33a6d73',
-			'label' => esc_html__'Testimonials Card 2 Description', 'conversational'),
+			'label' => esc_html__('Testimonials Card 2 Description', 'conversational'),
 			'name' => 'testimonials_card_2_description',
 			'type' => 'text',
 			'instructions' => '',
@@ -1226,7 +1226,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafba44a6d74',
-			'label' => esc_html__'Testimonials Card 3', 'conversational'),
+			'label' => esc_html__('Testimonials Card 3', 'conversational'),
 			'name' => '',
 			'type' => 'tab',
 			'instructions' => '',
@@ -1242,7 +1242,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafba53a6d75',
-			'label' => esc_html__'Testimonials Card 3 Title', 'conversational'),
+			'label' => esc_html__('Testimonials Card 3 Title', 'conversational'),
 			'name' => 'testimonials_card_3_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -1261,7 +1261,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafba5da6d76',
-			'label' => esc_html__'Testimonials Card 3 Description', 'conversational'),
+			'label' => esc_html__('Testimonials Card 3 Description', 'conversational'),
 			'name' => 'testimonials_card_3_description',
 			'type' => 'text',
 			'instructions' => '',
