@@ -25,6 +25,7 @@
                 ?>
               </select>
             </div>
+        <?php endif; ?>
       </div>
 
       <?php if($competitors): ?>
@@ -34,9 +35,9 @@
               $competitor_name = get_post_meta($page_id, 'competitors_' . $i . '_competitor_name', true);
               $competitor_slug = sanitize_title($competitor_name);
             ?>
-            <div id="<?php esc_html($competitor_slug); ?>" class="tab-pane fade<?php if($i == 0){ echo ' show active'; } ?>" role="tabpanel" aria-labelledby="select-competitor">
+            <div id="<?php echo esc_html($competitor_slug); ?>" class="tab-pane fade<?php if($i == 0){ echo ' show active'; } ?>" role="tabpanel" aria-labelledby="select-competitor">
               <header>
-                <h2><?php echo esc_html($competitor_name); ?> vs. <strong>Conversational</strong><small>One Clear Choice</small></h2>
+                <h2><?php echo esc_html($competitor_name); ?> vs. <strong>Conversational</strong><small><?php echo esc_html__('One Clear Choice', 'conversational'); ?></small></h2>
                 <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'competitors_' . $i . '_competitor_intro', true))); ?>
               </header>
 
@@ -70,12 +71,13 @@
               <?php endif; ?>
 
               <?php
-                $comparison_content = get_post_meta($page_id, 'comparison_content', true);
-                foreach($comparison_content as $count => $content){
+                $comparison_content = get_post_meta($page_id, 'competitors_' . $i . '_comparison_content', true);
+                $comparison_content_field = 'competitors_' . $i . '_comparison_content';
+                foreach((array)$comparison_content as $count => $content){
                   switch($content){
                     case 'regular_content':
                       echo '<div class="panel-body">';
-                      echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'comparison_content_' . $count . '_content', true)));
+                      echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, $comparison_content_field . '_' . $count . '_content', true)));
                       echo '</div>';
 
                       break;
@@ -99,8 +101,8 @@
 
                     case 'button':
                       echo '<p class="text-center">';
-                        $btn = get_post_meta($page_id, 'comparison_content_' . $count . '_section_button_link', true);
-                        $btn_style = get_post_meta($page_id, 'comparison_content_' . $count . '_section_button_style', true);
+                        $btn = get_post_meta($page_id, $comparison_content_field . '_' . $count . '_section_button_link', true);
+                        $btn_style = get_post_meta($page_id, $comparison_content_field . '_' . $count . '_section_button_style', true);
 
                         echo '<a href="' . esc_url($btn['url']) . '" class="btn-main ' . esc_attr($btn_style) . '">' . esc_html($btn['title']) . '</a>';
                       echo '</p>';
@@ -108,7 +110,7 @@
                       break;
 
                     case 'disclaimer':
-                      echo '<p class="comparison-disclaimer">* ' . wp_kses_post(get_post_meta($page_id, 'comparison_content_' . $count . '_disclaimer_content', true)) . '</p>';
+                      echo '<p class="comparison-disclaimer">* ' . wp_kses_post(get_post_meta($page_id, $comparison_content_field . '_' . $count . '_disclaimer_content', true)) . '</p>';
 
                       break;
                   } //end switch

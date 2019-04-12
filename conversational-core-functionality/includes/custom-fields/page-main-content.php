@@ -65,6 +65,11 @@ acf_add_local_field_group(array(
 				'param' => 'page',
 				'operator' => '!=',
 				'value' => '9',
+      ),
+      array(
+				'param' => 'page_template',
+				'operator' => '!=',
+				'value' => 'templates/industries-template.php',
 			),
 		),
 	),

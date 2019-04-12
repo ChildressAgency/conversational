@@ -25,7 +25,7 @@ acf_add_local_field_group(array(
 			'collapsed' => 'field_5cafc2d7a1f01',
 			'min' => 0,
 			'max' => 0,
-			'layout' => 'table',
+			'layout' => 'row',
 			'button_label' => esc_html__('Add Competitor', 'conversational'),
 			'sub_fields' => array(
 				array(

@@ -175,6 +175,11 @@
   }
 
   ul{
+
+    &>li{
+      padding-top:10px;
+      padding-bottom:10px;
+    }
     @include media-breakpoint-up(md){
       column-count:2;
       column-gap:40px;

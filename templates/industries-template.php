@@ -9,7 +9,7 @@ get_header(); ?>
 <main id="main" class="industries">
   <div class="container-fluid">
     <article class="industries-page">
-      <?php get_template_part('partials', 'page-intro'); ?>
+      <?php get_template_part('partials/page', 'intro'); ?>
 
       <div class="industries-body">
         <div class="row">
