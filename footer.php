@@ -1,12 +1,12 @@
 <?php
-  if(!is_page('contact-us') 
-      && !is_page('careers') 
-      && !is_page('apply-now')
-      && !is_page('client-portal')
-      && !is_page('vr-services')
-      && !is_page('vr-plans')){
-        get_template_part('partials', 'try_free');
-  }
+  //if(!is_page('contact-us') 
+  //    && !is_page('careers') 
+  //    && !is_page('apply-now')
+  //    && !is_page('client-portal')
+  //    && !is_page('vr-services')
+  //    && !is_page('vr-plans')){
+        get_template_part('partials/section', 'tryfree');
+  //}
 ?>
 
   <footer id="footer">
