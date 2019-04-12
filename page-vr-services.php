@@ -10,7 +10,7 @@
         <section id="features">
           <div class="features">
             <header class="narrow-container position-relative text-center">
-              <h2>Features</h2>
+              <h2><?php echo esc_html__('Features', 'conversational'); ?></h2>
               <h3><?php echo esc_html(get_post_meta($page_id, 'features_section_subtitle', true)); ?></h3>
               <img src="<?php echo get_stylesheet_directory_url(); ?>/images/magnifying-glass.png" class="magnifying-glass d-none d-md-block" alt="magnifying glass" />
             </header>

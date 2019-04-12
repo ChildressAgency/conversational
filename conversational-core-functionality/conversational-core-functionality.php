@@ -72,3 +72,7 @@ require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/get-started-se
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/page-main-content.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/after-signup-page.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/compare-services-page.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/contact-us.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/faqs.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/meet-the-team.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/vr-services.php';
