@@ -134,7 +134,7 @@ function conversational_header_fallback_menu(){ ?>
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo esc_html__('About', 'conversational'); ?></a>
         <div class="dropdown-menu">
-          <a href="<?php echo esc_url(home_url('about-conversational')); ?>" class="dropdown-item<?php if(is_page('about-conversational')){ echo ' active'; } ?>"><?php echo esc_html__('About Conversational', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('about-us')); ?>" class="dropdown-item<?php if(is_page('about-us')){ echo ' active'; } ?>"><?php echo esc_html__('About Conversational', 'conversational'); ?></a>
           <a href="<?php echo esc_url(home_url('meet-the-team')); ?>" class="dropdown-item<?php if(is_page('meet-the-team')){ echo ' active'; } ?>"><?php echo esc_html__('Meet The Team', 'conversational'); ?></a>
           <a href="<?php echo esc_url(home_url('what-happens-after-sign-up')); ?>" class="dropdown-item<?php if(is_page('what-happens-after-sign-up')){ echo ' active'; } ?>"><?php echo esc_html__('What Happens After Sign Up', 'conversational'); ?></a>
           <a href="<?php echo esc_url(home_url('faqs')); ?>" class="dropdown-item<?php if(is_page('faqs')){ echo ' active'; } ?>"><?php echo esc_html__('FAQs', 'conversational'); ?></a>
