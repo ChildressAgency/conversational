@@ -79,7 +79,7 @@ get_header(); ?>
         </div>
 
         <?php //accordion
-          $accordion = get_post_meta($page_id, 'accordion', true);
+          $accordion = get_post_meta($page_id, 'accordion_section', true);
           if($accordion): ?>
             <section id="franchise-pros" class="accordion">
               <?php for($a = 0; $a < $accordion; $a++): ?>
@@ -89,13 +89,13 @@ get_header(); ?>
                       <h2>
                         <a href="#pros-<?php echo $a; ?>" class="collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pros-<?php echo $a; ?>">
                           <span class="expander"></span>
-                          <?php echo esc_html(get_post_meta($page_id, 'accordion_' . $a . '_accordion_field_title', true)); ?>
+                          <?php echo esc_html(get_post_meta($page_id, 'accordion_section_' . $a . '_accordion_field_title', true)); ?>
                         </a>
                       </h2>
                     </div>
                     <div id="pros-<?php echo $a; ?>" class="collapse" aria-labelledby="pros-heading-<?php echo $a; ?>" data-parent="#franchise-pros">
                       <div class="card-body">
-                        <?php echo wp_kses_post(get_post_meta($page_id, 'accordion_' . $a . '_accordion_field_content', true)); ?>
+                        <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'accordion_section_' . $a . '_accordion_field_content', true))); ?>
                       </div>
                     </div>
                   </div>
