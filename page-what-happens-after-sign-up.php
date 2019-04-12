@@ -65,6 +65,7 @@
                   $step_3_img_alt = get_post_meta($step_3_img_id, '_wp_attachment_image_alt', true); ?>
 
                   <img src="<?php echo esc_url($step_3_img[0]); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_html($step_3_img_alt); ?>" />
+              <?php endif; ?>
             </div>
             <div class="col-md-6">
               <div class="step-content">
