@@ -8,16 +8,7 @@
       <div class="page-body">
         <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'page_content', true))); ?>
 
-        <?php
-          $get_started_btn = get_post_meta($page_id, 'get_started_btn_link', true);
-          if($get_started_btn){
-            $get_started_btn_style = get_post_meta($page_id, 'get_started_btn_style', true)
-
-            echo '<a href="' . esc_url($get_started_btn['url']) . '" class="btn-main ' . esc_attr($get_started_btn_style) . '">' . esc_html($get_started_btn['title']) . '</a>';
-          }
-        ?>
-
-        <div class="embed-responsive embed-responsive-16by9">
+        <div class="embed-responsive embed-responsive-16by9" style="min-height:800px;">
           <?php echo conversational_esc_iframe(get_post_meta($page_id, 'testimonials_iframe', true)); ?>
         </div>
 

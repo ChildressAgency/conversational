@@ -79,3 +79,4 @@ require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/vr-services.ph
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/heroes.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/template-industries.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/about-us.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/testimonials.php';
