@@ -44,7 +44,7 @@ acf_add_local_field_group(array(
 			'collapsed' => 'field_5cb09f8e88a0f',
 			'min' => 0,
 			'max' => 0,
-			'layout' => 'table',
+			'layout' => 'row',
 			'button_label' => esc_html__('Add Team Member', 'conversational'),
 			'sub_fields' => array(
 				array(
