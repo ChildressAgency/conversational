@@ -6,7 +6,7 @@
       <?php get_template_part('partials', 'page-intro'); ?>
 
       <div class="page-body">
-        <?php echo wp_kses_post(get_post_meta($page_id, 'page_content', true)); ?>
+        <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'page_content', true))); ?>
 
         <?php
           $get_started_btn = get_post_meta($page_id, 'get_started_btn_link', true);
@@ -28,7 +28,7 @@
             </div>
             <div class="col-sm-7">
               <div class="team-located__content">
-                <?php echo wp_kses_post(get_post_meta($page_id, 'team_located_section_content', true)); ?>
+                <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'team_located_section_content', true))); ?>
               </div>
             </div>
           </div>

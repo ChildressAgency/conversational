@@ -13,7 +13,7 @@
         </div>
         <p class="btn-p">Click here to see our<br /><a href="<?php echo esc_url(home_url('client-testimonials')); ?>" class="btn-main btn-rounded">client reviews</a></p>
       </header>
-      <?php echo wp_kses_post(get_post_meta($page_id, 'testimonials_section_intro', true)); ?>
+      <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'testimonials_section_intro', true))); ?>
     </article>
     <hr class="dashed" />
     <div class="row">

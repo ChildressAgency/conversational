@@ -44,7 +44,7 @@ get_header(); ?>
                 foreach($main_content as $count => $content_style){
                   switch($content_style){
                     case 'regular_content':
-                      echo get_post_meta($page_id, 'main_content_style_' . $count . '_content', true);
+                      echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'main_content_style_' . $count . '_content', true)));
 
                       break;
 
@@ -64,7 +64,7 @@ get_header(); ?>
                             echo '<img src="' . esc_url($icon[0]) . '" class="img-fluid d-block mx-auto mb-3" alt="' . esc_attr($icon_alt) . '" />';
                           echo '</div><div class="col-md-9">';
                             echo '<h3>' . esc_html(get_post_meta($page_id, $icon_fields_name . '_' . $i . '_icon_field_title', true)) . '</h3>';
-                            echo wp_kses_post(get_post_meta($page_id, $icon_fields_name . '_' . $i . '_icon_field_content', true));
+                            echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, $icon_fields_name . '_' . $i . '_icon_field_content', true)));
                           echo '</div></div>';
                         } //end for
                         echo '</section>';
@@ -133,7 +133,7 @@ get_header(); ?>
 
                           switch($content_style){
                             case 'regular_content':
-                              echo wp_kses_post(get_post_meta($page_id, $field_string . '_' . $c_count . '_content', true));
+                              echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, $field_string . '_' . $c_count . '_content', true)));
                             break;
 
                             case 'pricing':
@@ -174,7 +174,7 @@ get_header(); ?>
                               $pricing_content = get_post_meta($page_id, $pricing_field_string . 'pricing_content', true);
                               if($pricing_content){
                                 echo '<div class="narrow-section">';
-                                echo wp_kses_post($pricing_content);
+                                echo apply_filters('the_content', wp_kses_post($pricing_content));
                                 echo '</div>';
                               }
                             break;
@@ -198,7 +198,7 @@ get_header(); ?>
 
                   switch($content_style){
                     case 'regular_content':
-                      echo wp_kses_post(get_post_meta($page_id, $field_string . '_' . $c_count . '_content', true));
+                      echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, $field_string . '_' . $c_count . '_content', true)));
                     break;
 
                     case 'icon_field':
@@ -213,7 +213,7 @@ get_header(); ?>
                             echo '<img src="' . esc_url($icon_field_icon[0]) . '" class="img-fluid d-block ml-md-auto mb-3" alt="' . esc_attr($icon_field_icon_alt) . '" />';
                           echo '</div><div class="col-md-8">';
                             echo '<h3>' . esc_html(get_post_meta($page_id, $icon_fields_string . '_' . $f . '_icon_field_title', true)) . '</h3>';
-                            echo wp_kses_post(get_post_meta($page_id, $icon_fields_string . '_' . $f . '_icon_field_content', true));
+                            echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, $icon_fields_string . '_' . $f . '_icon_field_content', true)));
                           echo '</div></div>';
                         } //end for
                       echo '</section>';

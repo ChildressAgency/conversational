@@ -128,7 +128,7 @@
       $site_section = get_post_meta($page_id, 'site_section', true);
     }
 
-    $hero_title = ''
+    $hero_title = '';
     if(is_home() || is_singular('post')){
       $hero_title = 'Conversational Blog';
     }

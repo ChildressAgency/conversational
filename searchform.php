@@ -6,7 +6,7 @@
     </div>
     <div class="col-auto">
       <button type="submit" class="btn-search" aria-label="Search">
-        <span class="sr-only">Search</span>
+        <span class="sr-only"><?php echo esc_html__('Search', 'conversational'); ?></span>
       </button>
     </div>
   </div>

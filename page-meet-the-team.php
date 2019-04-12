@@ -5,7 +5,7 @@
     <article class="standard-page">
       <?php get_template_part('partials', 'page-intro'); ?>
       <div class="page-body">
-        <?php echo wp_kses_post(get_post_meta($page_id, 'meet_the_team_intro', true)); ?>
+        <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'meet_the_team_intro', true))); ?>
       </div>
     </article>
 
@@ -38,7 +38,7 @@
                     <header>
                       <h2><?php echo esc_html($team_member_name); ?> <small><?php echo esc_html($team_member_title); ?></small></h2>
                     </header>
-                    <?php echo wp_kses_post(get_post_meta($page_id, 'team_members_' . $i . '_team_member_bio', true)); ?>
+                    <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'team_members_' . $i . '_team_member_bio', true))); ?>
 
                     <?php 
                       $team_member_quote = get_post_meta($page_id, 'team_members_' . $i . '_team_member_quote', true);

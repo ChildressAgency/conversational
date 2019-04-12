@@ -37,7 +37,7 @@
             <div id="<?php esc_html($competitor_slug); ?>" class="tab-pane fade<?php if($i == 0){ echo ' show active'; } ?>" role="tabpanel" aria-labelledby="select-competitor">
               <header>
                 <h2><?php echo esc_html($competitor_name); ?> vs. <strong>Conversational</strong><small>One Clear Choice</small></h2>
-                <?php echo wp_kses_post(get_post_meta($page_id, 'competitors_' . $i . '_competitor_intro', true)); ?>
+                <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'competitors_' . $i . '_competitor_intro', true))); ?>
               </header>
 
               <?php
@@ -49,8 +49,8 @@
                       <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col"><span>Category</span></th>
-                            <th scope="col"><span>Conversational</span></th>
+                            <th scope="col"><span><?php echo esc_html__('Category', 'conversational'); ?></span></th>
+                            <th scope="col"><span><?php echo esc_html__('Conversational', 'conversational'); ?></span></th>
                             <th scope="col"><span><?php echo esc_html($competitor_name); ?></span></th>
                           </tr>
                         </thead>
@@ -75,7 +75,7 @@
                   switch($content){
                     case 'regular_content':
                       echo '<div class="panel-body">';
-                      echo wp_kses_post(get_post_meta($page_id, 'comparison_content_' . $count . '_content', true));
+                      echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'comparison_content_' . $count . '_content', true)));
                       echo '</div>';
 
                       break;
@@ -87,7 +87,7 @@
                             <p>Are you a current client of <?php echo esc_html($competitor_name); ?>?<span>SHOW US</span></p>
                           </div>
                           <div class="col-lg-6 d-flex align-items-center">
-                            <img src="images/your-bill.png" class="img-fluid d-block mx-auto" alt="Cut your bill" />
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/your-bill.png" class="img-fluid d-block mx-auto" alt="Cut your bill" />
                           </div>
                           <div class="col-lg-3 d-flex align-items-center">
                             <p>AND WE'LL <span>CUT YOUR BILL</span> WITH CONVERSATIONAL</p>

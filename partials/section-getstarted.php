@@ -3,9 +3,9 @@
   <div class="container">
     <article>
       <header>
-        <?php echo wp_kses_post(get_post_meta($page_id, 'get_started_section_intro', true)); ?>
+        <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'get_started_section_intro', true))); ?>
       </header>
-      <?php echo wp_kses_post(get_post_meta($page_id, 'get_started_section_content', true)); ?>
+      <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'get_started_section_content', true))); ?>
 
       <?php
         $get_started_btn = get_post_meta($page_id, 'get_started_section_button_link', true);

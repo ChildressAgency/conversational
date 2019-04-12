@@ -22,7 +22,7 @@
                   </div>
                   <div id="answer-<?php echo $i; ?>" class="collapse" aria-labelledby="question-<?php echo $i; ?>" data-parent="#faqs">
                     <div class="card-body">
-                      <?php echo wp_kses_post(get_post_meta($page_id, 'faqs_' . $i . '_answer', true)); ?>
+                      <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'faqs_' . $i . '_answer', true))); ?>
                     </div>
                   </div>
                 </div>

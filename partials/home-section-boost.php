@@ -3,7 +3,7 @@
   <div class="container">
     <article>
       <header>
-        <?php echo wp_kses_post(get_post_meta($page_id, 'boost_section_intro', true)); ?>
+        <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'boost_section_intro', true))); ?>
       </header>
       <div class="row">
         <div class="col-md-5">
@@ -13,7 +13,7 @@
               <p><?php echo esc_html(get_post_meta($page_id, 'advanced_call_services_1_subtitle', true)); ?></p>
             </div>
             <div class="card-body">
-              <?php echo wp_kses_post(get_post_meta($page_id, 'advanced_call_services_1_details', true)); ?>
+              <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'advanced_call_services_1_details', true))); ?>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
               <p><?php echo esc_html(get_post_meta($page_id, 'advanced_call_services_2_subtitle', true)); ?></p>
             </div>
             <div class="card-body">
-              <?php echo wp_kses_post(get_post_meta($page_id, 'advanced_call_services_2_details', true)); ?>
+              <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'advanced_call_services_2_details', true))); ?>
             </div>
           </div>
         </div>

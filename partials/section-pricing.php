@@ -7,7 +7,7 @@
     <div class="container">
       <article class="pricing-plans">
         <header>
-          <?php echo wp_kses_post(get_post_meta($page_id, 'pricing_plans_section_intro', true)); ?>
+          <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'pricing_plans_section_intro', true))); ?>
         </header>
 
         <div class="card-group">
@@ -25,7 +25,7 @@
             </div>
             <div class="card-body">
               <?php 
-                echo wp_kses_post(get_post_meta($page_id, 'pricing_plan_1_details', true));
+                echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'pricing_plan_1_details', true)));
 
                 $pricing_plan_1_btn = get_post_meta($page_id, 'pricing_plan_1_learn_more_button_link', true);
                 $pricing_plan_1_btn_style = get_post_meta($page_id, 'pricing_plan_1_learn_more_button_style', true);
@@ -48,7 +48,7 @@
             </div>
             <div class="card-body">
               <?php 
-                echo wp_kses_post(get_post_meta($page_id, 'pricing_plan_2_details', true));
+                echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'pricing_plan_2_details', true)));
 
                 $pricing_plan_2_btn = get_post_meta($page_id, 'pricing_plan_2_learn_more_button_link', true);
                 $pricing_plan_2_btn_style = get_post_meta($page_id, 'pricing_plan_2_learn_more_button_style', true);
@@ -71,7 +71,7 @@
             </div>
             <div class="card-body">
               <?php 
-                echo wp_kses_post(get_post_meta($page_id, 'pricing_plan_3_details', true));
+                echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'pricing_plan_3_details', true)));
                
                 $pricing_plan_3_btn = get_post_meta($page_id, 'pricing_plan_3_learn_more_button_link', true);
                 $pricing_plan_3_btn_style = get_post_meta($page_id, 'pricing_plan_3_learn_more_button_style', true);
@@ -97,7 +97,7 @@
             <div class="col-md-9">
               <h3><?php echo esc_html(get_post_meta($vr_plans_page_id, 'coverage_time_section_title', true)); ?></h3>
               <hr />
-              <?php echo wp_kses_post(get_post_meta($vr_plans_page_id, 'coverage_time_section_content', true)); ?>
+              <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($vr_plans_page_id, 'coverage_time_section_content', true))); ?>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@
         </div>
         <div class="col-12 col-md-6">
           <article class="narrow-container">
-            <?php echo wp_kses_post(get_post_meta($page_id, 'growth_section_content', true)); ?>
+            <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'growth_section_content', true))); ?>
 
             <?php 
               $learn_more_btn = get_post_meta($page_id, 'growth_section_learn_more_button_link', true);

@@ -5,7 +5,7 @@
     <article class="standard-page">
       <?php get_template_part('partials', 'page-intro'); ?>
       <div class="page-body">
-        <?php echo wp_kses_post(get_post_meta($page_id, 'page_content', true)); ?>
+        <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'page_content', true))); ?>
 
         <section id="features">
           <div class="features">
@@ -21,7 +21,7 @@
                   <?php for($i = 0; $i < $features, $i++): ?>
                     <li>
                       <h4><?php echo esc_html(get_post_meta($page_id, 'features_' . $i . '_feature_title', true)); ?></h4>
-                      <?php echo wp_kses_post(get_post_meta($page_id, 'features_' . $i . '_feature_description', true)); ?>
+                      <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'features_' . $i . '_feature_description', true))); ?>
                     </li>
                   <?php endfor; ?>
                 </ul>
@@ -33,7 +33,7 @@
 
     <section id="customize-call-handling">
       <h2><?php echo esc_html(get_post_meta($page_id, 'customize_call_handling_section_title', true)); ?></h2>
-      <?php echo wp_kses_post(get_post_meta($page_id, 'customize_call_handling_section_content', true)); ?>
+      <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'customize_call_handling_section_content', true))); ?>
       <div class="call-today">
         <h4><?php echo esc_html__('Call or email today!', 'conversational'); ?></h4>
         <?php

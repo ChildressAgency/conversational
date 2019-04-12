@@ -4,7 +4,7 @@
     <article class="features">
       <header class="narrow-container position-relative text-center">
         <h2><?php echo esc_html__('Features', 'conversational'); ?></h2>
-        <?php echo wp_kses_post(get_post_meta($page_id, 'home_page_features_section_intro', true)); ?>
+        <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'home_page_features_section_intro', true))); ?>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifying-glass.png" class="magnifying-glass d-none d-md-block" alt="magnifying glass" />
       </header>
       
@@ -22,7 +22,7 @@
               <?php endif; ?>
               <div class="media-body">
                 <h4 class="mt-0 mb-1"><?php echo esc_html(get_post_meta($page_id, 'home_page_features_' . $f . '_feature_title', true)); ?></h4>
-                <?php echo wp_kses_post(get_post_meta($page_id, 'home_page_features_' . $f . '_feature_description', true)); ?>
+                <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'home_page_features_' . $f . '_feature_description', true))); ?>
               </div>
             </li>
 

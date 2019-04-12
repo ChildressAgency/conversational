@@ -14,7 +14,7 @@
           <header>
             <h2><?php echo esc_html(get_post_meta($page_id, 'app_section_title', true)); ?></h2>
           </header>
-          <?php echo wp_kses_post(get_post_meta($page_id, 'app_section_content', true)); ?>
+          <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'app_section_content', true))); ?>
           <div class="media">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/SpeechBubbles.png" class="img-fluid mx-auto" alt="Speech bubbles" />
             <div class="media-body">

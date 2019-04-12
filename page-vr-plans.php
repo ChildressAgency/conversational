@@ -6,10 +6,10 @@
       <?php get_template_part('partials', 'page-intro'); ?>
       <div class="page-body">
         <div class="free-trial">
-          <?php echo wp_kses_post(get_post_meta($page_id, 'free_trial_section', true)); ?>
+          <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'free_trial_section', true))); ?>
         </div>
         <section class="vrplans-features">
-          <?php echo wp_kses_post(get_post_meta($page_id, 'page_content', true)); ?>
+          <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'page_content', true))); ?>
 
           <?php
             $features_btn = get_post_meta($page_id, 'features_button_link', true);
@@ -31,7 +31,7 @@
                 <div class="col-md-9">
                   <h3><?php echo esc_html($need_advanced_section_title); ?></h3>
                   <hr />
-                  <?php echo wp_kses_post(get_post_meta($page_id, 'need_advanced_section_content', true)); ?>
+                  <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'need_advanced_section_content', true))); ?>
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@
                   <p><?php echo esc_html(get_post_meta($page_id, 'advanced_call_section_1_subtitle', true)); ?></p>
                 </div>
                 <div class="card-body">
-                  <?php echo wp_kses_post(get_post_meta($page_id, 'advanced_call_section_1_details', true)); ?>
+                  <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'advanced_call_section_1_details', true))); ?>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@
                   <p><?php echo esc_html(get_post_meta($page_id, 'advanced_call_section_2_subtitle', true)); ?></p>
                 </div>
                 <div class="card-body">
-                  <?php echo wp_kses_post(get_post_meta($page_id, 'advanced_call_section_2_details', true)); ?>
+                  <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'advanced_call_section_2_details', true))); ?>
                 </div>
               </div>
             </div>

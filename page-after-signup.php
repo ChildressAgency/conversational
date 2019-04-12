@@ -26,7 +26,7 @@
             <div class="col-md-6">
               <div class="step-content">
                 <h3><?php echo esc_html(get_post_meta($page_id, 'step_1_title', true)); ?></h3>
-                <?php echo wp_kses_post(get_post_meta($page_id, 'step_1_description', true)); ?>
+                <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'step_1_description', true))); ?>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@
             <div class="col-md-6">
               <div class="step-content">
                 <h3><?php echo esc_html(get_post_meta($page_id, 'step_2_title', true)); ?></h3>
-                <?php echo wp_kses_post(get_post_meta($page_id, 'step_2_description', true)); ?>
+                <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'step_2_description', true))); ?>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@
             <div class="col-md-6">
               <div class="step-content">
                 <h3><?php echo esc_html(get_post_meta($page_id, 'step_3_title', true)); ?></h3>
-                <?php echo wp_kses_post(get_post_meta($page_id, 'step_3_description', true)); ?>
+                <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'step_3_description', true))); ?>
               </div>
             </div>
           </div>
