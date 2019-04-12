@@ -66,16 +66,16 @@
     <div id="header-quick-links">
       <div class="container">
         <div class="row">
-          <div class="col-6 col-sm-3">
+          <div class="col-6 col-sm-3 d-flex justify-content-stretch">
             <a href="<?php echo esc_url(home_url('north-american-answering-service')); ?>" id="north-america" class="header-quick-link<?php if(is_page('north-american-answering-service') || is_singular('state_service')){ echo ' active'; } ?>"><?php echo esc_html__('North American Answering Service', 'conversational'); ?></a>
           </div>
-          <div class="col-6 col-sm-3">
+          <div class="col-6 col-sm-3 d-flex justify-content-stretch">
             <a href="<?php echo esc_url(home_url('custom-business-voip-solutions')); ?>" id="voip-solutions" class="header-quick-link<?php if(is_page('custom-business-voip-solutions')){ echo ' active'; } ?>"><?php echo esc_html__('Custom Business VOIP Solutions', 'conversational'); ?></a>
           </div>
-          <div class="col-6 col-sm-3">
+          <div class="col-6 col-sm-3 d-flex justify-content-stretch">
             <a href="<?php echo esc_url(home_url('fully-customized-call-handling')); ?>" id="fully-customized" class="header-quick-link<?php if(is_page('fully-customized-call-handling')){ echo ' active'; } ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a>
           </div>
-          <div class="col-6 col-sm-3">
+          <div class="col-6 col-sm-3 d-flex justify-content-stretch">
             <a href="<?php echo esc_url(home_url('complete-client-call-reporting')); ?>" id="call-reporting" class="header-quick-link<?php if(is_page('complete-client-call-reporting')){ echo ' active'; } ?>"><?php echo esc_html__('Compete Client Call Reporting', 'conversational'); ?></a>
           </div>
         </div>
