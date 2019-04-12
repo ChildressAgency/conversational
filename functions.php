@@ -275,7 +275,7 @@ function conversational_wp_buttons($buttons){
 
 add_filter('tiny_mce_before_init', 'conversational_wp_font_sizes');
 function conversational_wp_font_sizes($initArray){
-  $initArray['fonsize_formats'] = '12px 14px 16px 18px 20px 24px 26px 28px 30px 32px 36px 38px 40px 42px 44px 46px 50px 52px 60px 66px';
+  $initArray['fontsize_formats'] = '12px 14px 16px 18px 20px 24px 26px 28px 30px 32px 36px 38px 40px 42px 44px 46px 50px 52px 60px 66px';
   $initArray['font_formats'] = 'Nunito=Nunito;Nunito Sans=Nunito Sans;Maitree=Maitree';
   return $initArray;
 }
