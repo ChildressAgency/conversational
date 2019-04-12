@@ -37,25 +37,25 @@
               $pinterest = get_option('options_pinterest');
             ?>
             <?php if($facebook): ?>
-              <a href="<?php echo esc_url($facebook); ?>" id="facebook" class="fa-stack fa-2x">
+              <a href="<?php echo esc_url($facebook); ?>" id="facebook" class="fa-stack fa-2x" target="_blank">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-facebook-f fa-stack-1x"></i>
                 <span class="sr-only">Facebook</span>
               </a>
             <?php endif; if($twitter): ?>
-              <a href="<?php echo esc_url($twitter); ?>" id="twitter" class="fa-stack fa-2x">
+              <a href="<?php echo esc_url($twitter); ?>" id="twitter" class="fa-stack fa-2x" target="_blank">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-twitter fa-stack-1x"></i>
                 <span class="sr-only">Twitter</span>
               </a>
             <?php endif; if($linkedin): ?>
-              <a href="<?php echo esc_url($linkedin); ?>" id="linkedin" class="fa-stack fa-2x">
+              <a href="<?php echo esc_url($linkedin); ?>" id="linkedin" class="fa-stack fa-2x" target="_blank">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-linkedin-in fa-stack-1x"></i>
                 <span class="sr-only">LinkedIn</span>
               </a>
             <?php endif; if($pinterest): ?>
-              <a href="<?php echo esc_url($pinterest); ?>" id="pinterest" class="fa-stack fa-2x">
+              <a href="<?php echo esc_url($pinterest); ?>" id="pinterest" class="fa-stack fa-2x" target="_blank">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-pinterest-p fa-stack-1x"></i>
                 <span class="sr-only">Pinterest</span>

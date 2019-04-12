@@ -73,13 +73,13 @@
                 $pinterest = get_option('options_pinterest');
               ?>
               <?php if($facebook): ?>
-                <a href="<?php echo esc_url($facebook); ?>" class="social-icon-small facebook"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                <a href="<?php echo esc_url($facebook); ?>" class="social-icon-small facebook" target="_blank"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
               <?php endif; if($twitter): ?>
-                <a href="<?php echo esc_url($twitter); ?>" class="social-icon-small twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                <a href="<?php echo esc_url($twitter); ?>" class="social-icon-small twitter" target="_blank"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
               <?php endif; if($linkedin): ?>
-                <a href="<?php echo esc_url($linkedin); ?>" class="social-icon-small linkedin"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
+                <a href="<?php echo esc_url($linkedin); ?>" class="social-icon-small linkedin" target="_blank"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
               <?php endif; if($pinterest): ?>
-                <a href="<?php echo esc_url($pinterest); ?>" class="social-icon-small pinterest"><i class="fab fa-pinterest-p"></i><span class="sr-only">Pinterest</span></a>
+                <a href="<?php echo esc_url($pinterest); ?>" class="social-icon-small pinterest" target="_blank"><i class="fab fa-pinterest-p"></i><span class="sr-only">Pinterest</span></a>
               <?php endif; ?>
             </div>
           </div>
