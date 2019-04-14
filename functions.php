@@ -163,7 +163,7 @@ function conversational_header_fallback_menu(){ ?>
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle text-nowrap" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo esc_html__('Services', 'conversational'); ?></a>
         <div class="dropdown-menu">
-          <a href="<?php echo esc_url(home_url('virtual-receptionist-plans')); ?>" class="dropdown-item<?php if(is_page('virtual-receptionist-plans')){ echo ' active'; } ?>"><?php echo esc_html__('Virtual Receptionist Plans', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('vr-plans')); ?>" class="dropdown-item<?php if(is_page('vr-plans')){ echo ' active'; } ?>"><?php echo esc_html__('Virtual Receptionist Plans', 'conversational'); ?></a>
           <a href="<?php echo esc_url(home_url('auto-attendant')); ?>" class="dropdown-item<?php if(is_page('auto-attendant')){ echo ' active'; } ?>"><?php echo esc_html__('Auto Attendant', 'conversation'); ?></a>
         </div>
       </li>
