@@ -1,0 +1,53 @@
+/******************************
+* styles for careers page
+******************************/
+
+.careers-callout{
+  background-color:$cyprus;
+  margin-left:-15px;
+  margin-right:-15px;
+  color:#fff;
+  padding-top:40px;
+  padding-bottom:40px;
+
+  .careers-callout-main{
+    @include max-width-centered(730px);
+  }
+
+  h2{
+    font-size:46px;
+
+    span{
+      font-family:$serif;
+      font-size:48px;
+      color:$citrus;
+      font-weight:$semibold;
+      display:block;
+      margin-left:80px;
+    }
+  }
+}
+
+#ready-to-join{
+  padding-top:40px;
+  padding-bottom:80px;
+
+  header{
+    text-align:center;
+    @include max-width-centered(830px);
+
+    h2{
+      font-family:$serif;
+      font-size:66px;
+      color:$cyprus;
+    }
+
+    hr{
+      max-width:730;
+    }
+  }
+
+  .apply-online{
+    padding-top:40px;
+  }
+}
