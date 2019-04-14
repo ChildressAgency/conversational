@@ -1,4 +1,8 @@
-<?php $page_id = get_the_ID(); ?>
+<?php //$page_id = get_the_ID(); ?>
+<?php
+  $homepage = get_page_by_path('home');
+  $page_id = $homepage->ID;
+?>
 <section id="get-started">
   <div class="container">
     <article>
