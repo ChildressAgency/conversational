@@ -7,7 +7,7 @@
     <div class="container">
       <article class="pricing-plans">
         <header>
-          <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'pricing_plans_section_intro', true))); ?>
+          <?php echo apply_filters('the_content', wp_kses_post(get_post_meta(get_the_ID(), 'pricing_plans_section_intro', true))); ?>
         </header>
 
         <div class="card-group">
