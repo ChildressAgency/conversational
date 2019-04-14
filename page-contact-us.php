@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div class="social">
+    <div class="social text-center">
       <h4>Follow Us</h4>
       <?php
         $facebook = get_option('options_facebook');
