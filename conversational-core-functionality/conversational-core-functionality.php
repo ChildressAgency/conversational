@@ -80,3 +80,5 @@ require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/heroes.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/template-industries.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/about-us.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/testimonials.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/auto-attendant.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/careers.php';
