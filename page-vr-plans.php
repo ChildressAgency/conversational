@@ -14,10 +14,12 @@
           <?php
             $features_btn = get_post_meta($page_id, 'features_button_link', true);
             $features_btn_style = get_post_meta($page_id, 'features_button_style', true);
-          ?>
-          <div class="text-center">
-            <a href="<?php echo esc_url($featured_btn['url']); ?>" class="btn-main <?php echo esc_attr($features_btn_style); ?>"><?php echo esc_html($features_btn['title']); ?></a>
-          </div>
+
+            if($features_btn): ?>
+              <div class="text-center">
+                <a href="<?php echo esc_url($featured_btn['url']); ?>" class="btn-main <?php echo esc_attr($features_btn_style); ?>"><?php echo esc_html($features_btn['title']); ?></a>
+              </div>
+          <?php endif; ?>
         </section>
 
         <?php
