@@ -7,11 +7,11 @@ if(!defined('ABSPATH')){ exit; }
 
 acf_add_local_field_group(array(
 	'key' => 'group_5cafb76192820',
-	'title' => esc_html__('VR Plans Page Settings', 'conversational'),
+	'title' => 'VR Plans Page Settings',
 	'fields' => array(
-		array(
+		/*array(
 			'key' => 'field_5cb0a14948742',
-			'label' => esc_html__('Free Trial Section', 'conversational'),
+			'label' => 'Free Trial Section',
 			'name' => 'free_trial_section',
 			'type' => 'wysiwyg',
 			'instructions' => '',
@@ -27,31 +27,10 @@ acf_add_local_field_group(array(
 			'toolbar' => 'full',
 			'media_upload' => 1,
 			'delay' => 0,
-		),
-		array(
-			'key' => 'field_5cb0a16448743',
-			'label' => esc_html__('Features', 'conversational'),
-			'name' => 'features',
-			'type' => 'clone',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'clone' => array(
-				0 => 'group_5cafac19ddd23',
-			),
-			'display' => 'group',
-			'layout' => 'block',
-			'prefix_label' => 1,
-			'prefix_name' => 1,
-		),
+		),*/
 		array(
 			'key' => 'field_5cb0a19b48744',
-			'label' => esc_html__('Need Advanced Section Title', 'conversational'),
+			'label' => 'Need Advanced Section Title',
 			'name' => 'need_advanced_section_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -70,7 +49,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a1a848745',
-			'label' => esc_html__('Need Advanced Section Content', 'conversational'),
+			'label' => 'Need Advanced Section Content',
 			'name' => 'need_advanced_section_content',
 			'type' => 'wysiwyg',
 			'instructions' => '',
@@ -89,7 +68,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a1bf48746',
-			'label' => esc_html__('Advanced Call Section Title', 'conversational'),
+			'label' => 'Advanced Call Section Title',
 			'name' => 'advanced_call_section_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -108,7 +87,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a1cd48747',
-			'label' => esc_html__('Advanced Call Section 1', 'conversational'),
+			'label' => 'Advanced Call Section 1',
 			'name' => '',
 			'type' => 'tab',
 			'instructions' => '',
@@ -124,7 +103,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a1da48748',
-			'label' => esc_html__('Advanced Call Section 1 Title', 'conversational'),
+			'label' => 'Advanced Call Section 1 Title',
 			'name' => 'advanced_call_section_1_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -143,7 +122,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a1e548749',
-			'label' => esc_html__('Advanced Call Section 1 Subtitle', 'conversational'),
+			'label' => 'Advanced Call Section 1 Subtitle',
 			'name' => 'advanced_call_section_1_subtitle',
 			'type' => 'text',
 			'instructions' => '',
@@ -162,7 +141,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a1f44874a',
-			'label' => esc_html__('Advanced Call Section 1 Details', 'conversational'),
+			'label' => 'Advanced Call Section 1 Details',
 			'name' => 'advanced_call_section_1_details',
 			'type' => 'wysiwyg',
 			'instructions' => '',
@@ -181,7 +160,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a2144874b',
-			'label' => esc_html__('Advanced Call Section 2', 'conversational'),
+			'label' => 'Advanced Call Section 2',
 			'name' => '',
 			'type' => 'tab',
 			'instructions' => '',
@@ -197,7 +176,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a2234874c',
-			'label' => esc_html__('Advanced Call Section 2 Title', 'conversational'),
+			'label' => 'Advanced Call Section 2 Title',
 			'name' => 'advanced_call_section_2_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -216,7 +195,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a22c4874d',
-			'label' => esc_html__('Advanced Call Section 2 Subtitle', 'conversational'),
+			'label' => 'Advanced Call Section 2 Subtitle',
 			'name' => 'advanced_call_section_2_subtitle',
 			'type' => 'text',
 			'instructions' => '',
@@ -235,7 +214,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cb0a24b4874e',
-			'label' => esc_html__('Advanced Call Section 2 Details', 'conversational'),
+			'label' => 'Advanced Call Section 2 Details',
 			'name' => 'advanced_call_section_2_details',
 			'type' => 'wysiwyg',
 			'instructions' => '',
@@ -269,8 +248,27 @@ acf_add_local_field_group(array(
 			'endpoint' => 1,
 		),
 		array(
+			'key' => 'field_5cb3a79fa24c8',
+			'label' => 'Pricing Plans Section Intro',
+			'name' => 'pricing_plans_section_intro',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
 			'key' => 'field_5cafb7805a92a',
-			'label' => esc_html__('Coverage Time Section Icon', 'conversational'),
+			'label' => 'Coverage Time Section Icon',
 			'name' => 'coverage_time_section_icon',
 			'type' => 'image',
 			'instructions' => '',
@@ -294,7 +292,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafb7955a92b',
-			'label' => esc_html__('Coverage Time Section Title', 'conversational'),
+			'label' => 'Coverage Time Section Title',
 			'name' => 'coverage_time_section_title',
 			'type' => 'text',
 			'instructions' => '',
@@ -313,7 +311,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cafb7a25a92c',
-			'label' => esc_html__('Coverage Time Section Content', 'conversational'),
+			'label' => 'Coverage Time Section Content',
 			'name' => 'coverage_time_section_content',
 			'type' => 'textarea',
 			'instructions' => '',
