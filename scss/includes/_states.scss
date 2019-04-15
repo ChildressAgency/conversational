@@ -1,0 +1,39 @@
+/*************************************
+* styles for States custom post type
+*************************************/
+
+.state-listing{
+  padding-top:60px;
+  padding-bottom:60px;
+
+  h2{
+    font-family:$serif;
+    font-size:42px;
+    font-weight:normal !important;
+  }
+
+  h4{
+    color:$olive;
+    font-size:24px;
+    font-weight:$semibold;
+  }
+
+  ul{
+    @include media-breakpoint-up(xs){
+      column-count:2;
+      column-gap:40px;
+    }
+    @include media-breakpoint-up(md){
+      column-count:3;
+      column-gap:40px;
+    }
+    @include media-breakpoint-up(lg){
+      column-count:4;
+      column-gap:40px;
+    }
+  }
+  ul>li>a{
+    color:#000;
+    text-decoration:none;
+  }
+}
