@@ -11,7 +11,7 @@
         <?php
           $testimonials_iframe = get_post_meta($page_id, 'testimonials_iframe', true);
           if($testimonials_iframe): ?>
-            <h1 style="reviews-title"><?php echo esc_html(get_the_title()); ?> answering service reviews</h1>
+            <h1 class="reviews-title"><?php echo esc_html(get_the_title()); ?> answering service reviews</h1>
             <div class="embed-responsive embed-responsive-16by9" style="min-height:800px;">
               <?php echo conversational_esc_iframe($testimonials_iframe); ?>
             </div>
