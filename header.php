@@ -76,7 +76,7 @@
             <a href="<?php echo esc_url(home_url('fully-customized-call-handling')); ?>" id="fully-customized" class="header-quick-link<?php if(is_page('fully-customized-call-handling')){ echo ' active'; } ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a>
           </div>
           <div class="col-6 col-sm-3 d-flex justify-content-stretch">
-            <a href="<?php echo esc_url(home_url('complete-client-call-reporting')); ?>" id="call-reporting" class="header-quick-link<?php if(is_page('complete-client-call-reporting')){ echo ' active'; } ?>"><?php echo esc_html__('Compete Client Call Reporting', 'conversational'); ?></a>
+            <a href="<?php echo esc_url(home_url('complete-client-call-reporting')); ?>" id="call-reporting" class="header-quick-link<?php if(is_page('complete-client-call-reporting')){ echo ' active'; } ?>"><?php echo esc_html__('Complete Client Call Reporting', 'conversational'); ?></a>
           </div>
         </div>
       </div>
@@ -132,7 +132,7 @@
     if(is_home() || is_singular('post')){
       $hero_title = esc_html__('Conversational Blog', 'conversational');
     }
-    elseif(is_singular('state')){
+    elseif(is_singular('states')){
       $hero_title = esc_html__('North American Based Service', 'conversational');
     }
     elseif(get_post_meta($page_id, 'hero_title', true)){
