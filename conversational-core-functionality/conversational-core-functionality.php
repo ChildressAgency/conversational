@@ -87,3 +87,4 @@ require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/auto-attendant
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/careers.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/north-american-answering-service.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/states.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/custom-voip-solutions.php';
