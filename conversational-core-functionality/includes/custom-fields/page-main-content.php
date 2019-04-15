@@ -72,6 +72,13 @@ acf_add_local_field_group(array(
 				'value' => 'templates/industries-template.php',
 			),
 		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'states'
+			),
+		),
 	),
 	'menu_order' => 2,
 	'position' => 'normal',
