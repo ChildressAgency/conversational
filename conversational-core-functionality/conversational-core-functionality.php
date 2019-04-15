@@ -53,6 +53,9 @@ function conversational_load_textdomain(){
   load_plugin_textdomain('conversational', false, basename(CONVERSATIONAL_PLUGIN_DIR) . '/languages');
 }
 
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/conversational-create-post-types.php';
+add_action('init', 'conversational_create_post_types');
+
 add_action('acf/init', 'conversational_acf_options_page');
 function conversational_acf_options_page(){
   acf_add_options_page(array(
@@ -82,3 +85,5 @@ require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/about-us.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/testimonials.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/auto-attendant.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/careers.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/north-american-answering-service.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/states.php';
