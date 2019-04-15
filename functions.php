@@ -309,6 +309,11 @@ function conversational_styles_dropdown($settings){
           'title' => esc_html__('Theme Button Rounded', 'conversational'),
           'selector' => 'a',
           'classes' => 'btn-main btn-rounded'
+        ),
+        array(
+          'title' => esc_html__('Bottom border, serif', 'conversational'),
+          'selector' => 'h2',
+          'classes' => 'bottom-border-serif'
         )
       )
     )
