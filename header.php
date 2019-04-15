@@ -130,7 +130,10 @@
 
     $hero_title = '';
     if(is_home() || is_singular('post')){
-      $hero_title = 'Conversational Blog';
+      $hero_title = esc_html__('Conversational Blog', 'conversational');
+    }
+    elseif(is_singular('state')){
+      $hero_title = esc_html__('North American Based Service', 'conversational');
     }
     elseif(get_post_meta($page_id, 'hero_title', true)){
       $hero_title = get_post_meta($page_id, 'hero_title', true);
