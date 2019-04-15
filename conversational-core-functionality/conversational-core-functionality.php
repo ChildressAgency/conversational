@@ -35,9 +35,10 @@ function conversational_acf_settings_dir($dir){
 /**
  * Prevent plugin from updating in case of plugin with same name in repo.
  */
-add_filter('http_request_args', 'conversational_dont_update_plugin', 5, 2);
+/*
+add_filter('http_request_args', 'conversational_dont_update_plugin', 10, 2);
 function conversational_dont_update_plugin($r, $url){
-  if(strpos($url, 'https://api.wordpress.org/plugins/update-check/1.1/') != 0){
+  if(strpos($url, 'https://api.wordpress.org/plugins/update-check/') != 0){
     return $r; //not a plugin update request
   }
 
@@ -47,6 +48,11 @@ function conversational_dont_update_plugin($r, $url){
   $r['body']['plugins'] = $plugins;
   return $r;
 }
+add_filter('site_transient_update_plugins', 'conversational_dont_update_this_plugin');
+function conversational_dont_update_this_plugin($value){
+  unset($value->response['conversational-core-functionality/conversational-core-functionality.php']);
+  return $value;
+}*/
 
 add_action('plugins_loaded', 'conversational_load_textdomain');
 function conversational_load_textdomain(){
