@@ -47,7 +47,7 @@
 .industries-main{
   position:relative;
   /*@include max-width-centered(1200px);*/
-  max-width:1200px;
+  max-width:750px;
 
   & *{
     position:relative;
@@ -110,7 +110,7 @@
 
   .industries-callout-main{
     /*@include max-width-centered(1200px);*/
-    max-width:1200px;
+    max-width:750px;
   }
 
   h2{
