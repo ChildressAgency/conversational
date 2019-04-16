@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php $page_id = get_the_ID(); ?>
-<main id="main">
+<main id="main" class="state">
   <div class="container-fluid">
     <article class="standard-page">
       <?php get_template_part('partials/page', 'intro'); ?>

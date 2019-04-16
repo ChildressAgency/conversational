@@ -2,6 +2,20 @@
 * styles for States custom post type
 *************************************/
 
+.state{
+  .page-body{
+    h2{
+      font-family:$serif;
+      font-size:36px;
+      font-weight:$normal !important;
+      color:$cyprus;
+      border-bottom:3px dashed $olive;
+      padding-bottom:10px;
+      margin-top:40px;
+      margin-bottom:25px;
+    }
+  }
+}
 .state-listing{
   padding-top:60px;
   padding-bottom:60px;
