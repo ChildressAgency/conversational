@@ -28,13 +28,14 @@ input{
 
 ul{
   list-style:none;
-}
-li::before{
-  content:"\2022";
-  color:#87C400;
-  display:inline-block;
-  width:1em;
-  margin-left:-1em;
+  
+  li::before{
+    content:"\2022";
+    color:#87C400;
+    display:inline-block;
+    width:1em;
+    margin-left:-1em;
+  }
 }
 ul.list-unstyled>li::before{
   content:"";

@@ -44,6 +44,10 @@
     font-size:36px;
     margin-top:40px;
 
+    @include media-breakpoint-only(xs){
+      font-size:24px;
+    }
+
     a{
       color:#000;
       text-decoration:none;

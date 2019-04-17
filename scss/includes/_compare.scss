@@ -111,11 +111,16 @@
 
     @include max-width-centered(340px);
 
+    @include media-breakpoint-only(lg){
+      font-size:24px;
+    }
+
     span{
       font-size:40px;
       font-weight:$bold;
       color:#2E4D64;
       display:block;
+      line-height:1em;
     }
   }
 }
