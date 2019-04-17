@@ -108,10 +108,10 @@
             wp_nav_menu($footer_nav_args);
           ?>
           <ul class="list-unstyled d-flex justify-content-around mb-0 sub-footer-nav text-center mt-4 flex-wrap">
-            <li><a href="<?php echo esc_url('north-american-answering-service'); ?>"><?php echo esc_html__('North American Answering Service', 'conversational'); ?></a></li>
-            <li><a href="<?php echo esc_url('custom-business-voip-solutions'); ?>"><?php echo esc_html__('Custom Business VOIP Solutions', 'conversational'); ?></a></li>
-            <li><a href="<?php echo esc_url('fully-customized-call-handling'); ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a></li>
-            <li><a href="<?php echo esc_url('complete-client-call-reporting'); ?>"><?php echo esc_html__('Complete Client Call Reporting', 'conversational'); ?></a></li>
+            <li><a href="<?php echo esc_url(home_url('north-american-answering-service')); ?>"><?php echo esc_html__('North American Answering Service', 'conversational'); ?></a></li>
+            <li><a href="<?php echo esc_url(home_url('custom-business-voip-solutions')); ?>"><?php echo esc_html__('Custom Business VOIP Solutions', 'conversational'); ?></a></li>
+            <li><a href="<?php echo esc_url(home_url('fully-customized-call-handling')); ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a></li>
+            <li><a href="<?php echo esc_url(home_url('complete-client-call-reporting')); ?>"><?php echo esc_html__('Complete Client Call Reporting', 'conversational'); ?></a></li>
           </ul>
         </nav>
       </div>
