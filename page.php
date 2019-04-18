@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 <?php $page_id = get_the_ID(); ?>
-<main id="main">
+<?php
+  $class = '';
+  if(is_page('privacy-policy')){
+    $class = 'stylized-headers';
+  }
+?>
+<main id="main" class="<?php echo $class; ?>">
   <div class="container-fluid">
     <article class="standard-page">
       <?php get_template_part('partials/page', 'intro'); ?>
