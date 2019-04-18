@@ -250,3 +250,18 @@ h1.reviews-title{
     font-size:46px;
   }
 }
+
+.stylized-headers{
+  .page-body{
+    h2{
+      font-family:$serif;
+      font-size:36px;
+      font-weight:$normal !important;
+      color:$cyprus;
+      border-bottom:3px dashed $olive;
+      padding-bottom:10px;
+      margin-top:40px;
+      margin-bottom:25px;
+    }
+  }
+}
