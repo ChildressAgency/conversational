@@ -29,7 +29,12 @@
           <?php while(have_posts()): the_post(); ?>
             <div class="grid-item col-12 col-sm-6 col-lg-4">
               <a href="<?php echo esc_url(get_permalink()); ?>" class="grid-item-content">
-                <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
+                <?php 
+                  $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); 
+                  if(!$featured_img_url){
+                    $featured_img_url = get_stylesheet_directory_uri() . '/images/logo-large.png';
+                  }
+                ?>
 
                 <div class="post-img" style="background-image:url(<?php echo esc_url($featured_img_url); ?>);"></div>
                 <h3><?php the_title(); ?></h3>
