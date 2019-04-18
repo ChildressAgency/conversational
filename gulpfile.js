@@ -40,7 +40,7 @@ gulp.task('serve', gulp.series('sass', function () {
     //index:'demo-after-signup.html'
     //index:'demo-testimonials.html'
     //index:'demo-faqs.html'
-    index:'demo-work-at-home.html'
+    //index:'demo-work-at-home.html'
     //index:'demo-small-business.html'
     //index:'demo-medical.html'
     //index:'demo-salon.html'
@@ -52,6 +52,7 @@ gulp.task('serve', gulp.series('sass', function () {
     //index:'demo-apply-now.html'
     //index:'demo-vr-services.html'
     //index:'demo-compare.html'
+    index:'demo-call-forwarding.html'
   });
 
   gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/**/*.scss'], gulp.series('sass'));
