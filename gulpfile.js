@@ -26,7 +26,7 @@ gulp.task('js', function(){
     ]))
     .pipe(concat('custom-scripts.min.js'))
     .pipe(uglify())
-    .pipe(sourcemaps.write('../../dev/maps',{includeContent:false, sourceRoot: 'wp-theme-files'}))
+    .pipe(sourcemaps.write('../../dev/maps'))
     .pipe(gulp.dest('wp-theme-files/js'))
 });
 
