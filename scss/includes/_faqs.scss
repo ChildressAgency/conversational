@@ -1,0 +1,88 @@
+/*******************************
+* styles for FAQs section
+*******************************/
+
+.search{
+  margin-top:25px;
+  margin-bottom:40px;
+}
+
+#faqs{
+  .card{
+    margin-top:40px;
+    background-color:transparent;
+    border:none;
+    padding-left:70px;
+    position:relative;
+  }
+  .card-header{
+    background-color:transparent;
+    border:none;
+    border-bottom:4px dashed $citrus;
+    padding:0;
+
+    a{
+      font-family:$serif;
+      color:#000;
+      font-size:26px;
+      position:relative;
+      display:block;
+      min-height:50px;
+      display:flex;
+      align-items:flex-end;
+      text-decoration:none;
+
+      &:hover,
+      &:focus{
+        color:#000;
+        text-decoration:none;
+      }
+
+      &>.expander{
+        position:absolute;
+        height:60px;
+        width:60px;
+        left:-70px;
+        top:0;
+        background-color:$tusk;
+        border-radius:50%;
+
+        &::before{
+          content:"";
+          position:absolute;
+          top:50%;
+          left:50%;
+          transform:translate(-50%, 0);
+          height:31px;
+          width:31px;
+          background-image:url(images/sprites.png);
+          background-repeat:no-repeat;
+          background-position:-330px -989px;
+        }
+      }
+
+      &.collapsed>.expander::before{
+        background-position:-330px -931px;
+        transform:translate(-50%, -50%);
+      }
+    }
+  }
+
+
+  .card-body{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+
+.still-have-questions{
+  margin-top:60px;
+
+  h2{
+    font-size:36px;
+  }
+  p{
+    font-size:24px;
+    padding-left:25px;
+  }
+}

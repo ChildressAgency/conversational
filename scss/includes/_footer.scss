@@ -1,0 +1,256 @@
+/******************************************
+ * footer
+******************************************/
+#try-free{
+  padding-top:60px;
+  padding-bottom:60px;
+  text-align:center;
+
+  header h2{
+    font-family:$serif;
+    color:$citrus;
+    font-size:66px;
+    font-weight:$bold;
+
+    @include media-breakpoint-only(xs){
+      font-size:54px;
+    }
+  }
+  header p.sub-header{
+    font-size:66px;
+    color:$cyprus;
+
+    @include media-breakpoint-only(xs){
+      font-size:38px;
+    }
+  }
+
+  .signup-intro p{
+    font-family:$serif;
+    font-size:26px;
+    margin-top:40px;
+    
+    @include max-width-centered(547px);
+  }
+
+  hr{
+    margin-top:40px;
+    margin-bottom:60px;
+
+    @include max-width-centered(400px);
+  }
+
+  .phone-email{
+    font-size:36px;
+    margin-top:40px;
+
+    @include media-breakpoint-only(xs){
+      font-size:24px;
+    }
+
+    a{
+      color:#000;
+      text-decoration:none;
+
+      &:hover{
+        color:#000;
+        text-decoration:underline;
+      }
+    }
+  }
+
+  .try-us-form{
+    .form-control{
+      border-radius:0;
+      border-color:$cyprus;
+
+      @include media-breakpoint-only(xs){
+        margin-bottom:10px;
+      }
+    }
+  }
+
+}
+  .social{
+    margin-top:80px;
+
+    h4{
+      display:inline;
+      font-size:44px;
+      font-weight:$bold;
+      color:$cyprus;
+      vertical-align:middle;
+      margin-right:25px;
+
+      @include media-breakpoint-down(lg){
+        display:block;
+      }
+    }
+
+    .fa-circle{
+      color:$olive;
+      transition:all .2s ease;
+    }
+    .fab{
+      color:$cyprus;
+      transition:all .2s ease;
+    }
+
+    .fa-stack:hover{
+      .fa-circle{
+        color:$cyprus;
+      }
+      .fab{
+        color:#fff;
+      }
+    }
+  }
+
+#footer-top{
+  background-color:#eee;
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#footer-top h5{
+  font-size:20px;
+  text-transform:uppercase;
+  font-weight:$semibold;
+}
+#footer-top ul{
+  padding-left:0;
+  margin-bottom:0;
+
+  @include media-breakpoint-down(xs){
+    padding-left:25px;
+  }
+}
+#footer-top ul>li{
+  padding-bottom:10px;
+}
+#footer-top ul>li>a{
+  color:#000;
+  text-decoration:none;
+}
+#footer-top ul>li>a:hover,
+#footer-top ul>li>a:focus{
+  color:#000;
+}
+#footer-top .footer-contact{
+  @include media-breakpoint-down(xs){
+    margin-top:60px;
+  }
+}
+#footer-top .footer-contact h5,
+#footer-top .footer-social h5{
+  color:$citrus;
+  font-weight:$bold;
+}
+#footer-top .footer-contact ul>li>a{
+  color:#000;
+  font-weight:$semibold;
+  text-decoration:none;
+}
+#footer-top .footer-contact ul>li>a:hover,
+#footer-top .footer-contact ul>li>a:focus{
+  color:#000;
+}
+#footer-top .footer-contact li::before{
+  content:"";
+  background-image:url(images/sprites.png);
+  background-repeat:no-repeat;
+  margin-right:10px;
+  margin-left:-2em;
+  vertical-align: middle;
+}
+#footer-top .footer-contact li.contact-phone::before{
+  background-position:-193px -880px;
+  height:25px;
+  width:25px;
+}
+#footer-top .footer-contact li.contact-email::before{
+  background-position:-225px -884px;
+  height:17px;
+  width:25px;
+}
+#footer-top .footer-social{
+  margin-top:60px;
+
+  @include media-breakpoint-down(xs){
+    margin-top:25px;
+  }
+}
+.social-icon-small{
+  color:$cyprus;
+}
+.social-icon-small + .social-icon-small{
+  margin-left:10px;
+}
+.social-icon-small:hover,
+.social-icon-small:focus{
+  color:$olive;
+}
+
+#footer-middle{
+  background-color:$cyprus;
+  padding-top:40px;
+  padding-bottom:40px;
+  position:relative;
+}
+#footer-middle .container{
+  max-width:675px;
+}
+#footer-nav .main-footer-nav>li>a{
+  color:#fff;
+  text-transform:uppercase;
+  font-size:22px;
+  font-weight: $bold;
+  padding-left:10px;
+  padding-right:10px;
+  text-decoration:none;
+}
+#footer-nav .sub-footer-nav{
+  border-top:3px dashed $citrus;
+  margin-top:15px;
+}
+#footer-nav .sub-footer-nav>li>a{
+  font-size:16px;
+  color:#fff;
+  font-weight:$semibold;
+  text-align:center;
+  display:block;
+  width:160px;
+  padding-left:10px;
+  padding-right:10px;
+  padding:10px 10px 0px;
+  text-decoration:none;
+}
+#footer-nav ul>li>a:hover,
+#footer-nav ul>li>a:focus{
+  text-decoration:none;
+  color:$olive;
+}
+#page-up{
+  position:absolute;
+  top:20px;
+  right:15px;
+  height:25px;
+  width:40px;
+  background-image:url(images/sprites.png);
+  background-repeat: no-repeat;
+  background-position: -256px -880px;
+}
+
+#copyright{
+  background-color:$olive;
+  text-align: center;
+  color:#fff;
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#copyright p{
+  margin-bottom:0;
+}
+#copyright a{
+  color:#fff;
+  text-decoration:none;
+}

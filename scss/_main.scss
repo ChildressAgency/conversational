@@ -1,0 +1,267 @@
+/*****************************
+ custom styles
+*****************************/
+
+
+body{
+  font-family:$main-font;
+  font-size:18px;
+  font-weight:$normal;
+  color:#000;
+}
+
+a{
+  color:$olive;
+  text-decoration:underline;
+  transition:all .2s ease;
+}
+a:hover,
+a:focus{
+  color:$cyprus;
+}
+p{
+  line-height:1.2em;
+}
+input{
+  transition:all .2s ease;
+}
+
+ul{
+  list-style:none;
+  
+  li::before{
+    content:"\2022";
+    color:#87C400;
+    display:inline-block;
+    width:1em;
+    margin-left:-1em;
+  }
+}
+ul.list-unstyled>li::before{
+  content:"";
+  width:auto;
+  margin-left:0;
+  display:block;
+}
+
+hr{
+  border-top:3px dashed $citrus;
+  margin-top:25px;
+  margin-bottom:25px;
+}
+
+.white-overlay{
+  position:absolute;
+  height:100%;
+  width:100%;
+  left:0;
+  top:0;
+  background-color:rgba(255,255,255,.6);
+  z-index:1;
+}
+.white-gradient{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  z-index:1;
+  background: rgba(255,255,255,0.35);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.35)), color-stop(38%, rgba(255,255,255,0.79)), color-stop(50%, rgba(255,255,255,0.79)), color-stop(62%, rgba(255,255,255,0.79)), color-stop(100%, rgba(255,255,255,0.35)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.79) 38%, rgba(255,255,255,0.79) 50%, rgba(255,255,255,0.79) 62%, rgba(255,255,255,0.35) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+}
+
+%post-img{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+.alignnone,
+.aligncenter{
+  @extend %post-img;
+  margin:20px auto;
+}
+.alignleft{
+  @extend %post-img;
+  float:left;
+  margin:20px 20px 20px 0px;
+}
+.alignright{
+  @extend %post-img;
+  float:right;
+  margin:20px 0px 20px 20px;
+}
+
+#main{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+
+.page-header{
+  text-align:center;
+  position:relative;
+  z-index:10;
+
+  @include max-width-centered(950px);
+
+  h2{
+    font-size:38px;
+    color:$cyprus;
+
+    @include media-breakpoint-only(xs){
+      font-size:29px;
+    }
+  }
+
+  p{
+    font-size:24px;
+
+    &.sub-title{
+      font-size:38px;
+
+      .hilight-text{
+        font-family:$serif;
+        font-weight:$bold;
+        font-size:46px;
+        color:$olive;
+        display:block;
+        text-align:right;
+      }
+
+      @include max-width-centered(870px);
+      @include media-breakpoint-only(xs){
+        font-size:29px;
+
+        .hilight-text{
+          font-size:35px;
+        }
+      }
+    }
+  }
+
+  hr{
+    @include max-width-centered(400px);
+  }
+}
+
+.page-body{
+  @include max-width-centered(870px);
+
+  h2{
+    font-weight:$semibold;
+    font-size:40px;
+    color:$cyprus;
+
+    &.bottom-border-serif{
+      font-family:$serif;
+      font-weight:$normal;
+      border-bottom:3px dashed $olive;
+      padding-bottom:10px;
+      margin-top:40px;
+      margin-bottom:25px;
+
+      &::before{
+        content:"";
+        display:block;
+        clear:both;
+      }
+    }
+  }
+  h3{
+    font-weight:$normal;
+    color:$cyprus;
+    font-size:32px;
+  }
+
+  ul{
+    @include media-breakpoint-up(sm){
+      column-count:2;
+      column-gap:40px;
+    }
+
+    li{
+      break-inside:avoid-column;
+    }
+  }
+}
+
+.page-callout{
+  background-color:$cyprus;
+  padding:40px 15px;
+  margin:40px -15px;
+  color:#fff;
+
+  .media{
+    @include max-width-centered(870px);
+
+    img{
+      margin-right:20px;
+    }
+
+    @include media-breakpoint-down(sm){
+      flex-direction:column;
+    }
+  }
+
+  .media-body{
+    padding-top:50px;
+  }
+
+  @include media-breakpoint-up(md){
+    .two-col{
+      column-count:2;
+      column-gap:60px;
+    }
+  }
+}
+
+blockquote{
+  font-family:$serif;
+  
+  p{
+    line-height: 1.4em;
+  }
+
+  cite{
+    font-family:$main-font;
+    font-weight:$bold;
+    font-size:18px;
+    font-style:normal;
+  }
+}
+
+.form-control{
+  border-radius:0;
+  border-color:$cyprus;
+}
+
+h1.reviews-title{
+  font-family:$serif;
+  font-size:66px;
+  padding-top:60px;
+  text-align:center;
+
+  @include media-breakpoint-only(xs){
+    font-size:46px;
+  }
+}
+
+.stylized-headers{
+  .page-body{
+    h2{
+      font-family:$serif;
+      font-size:36px;
+      font-weight:$normal !important;
+      color:$cyprus;
+      border-bottom:3px dashed $olive;
+      padding-bottom:10px;
+      margin-top:40px;
+      margin-bottom:25px;
+    }
+  }
+}

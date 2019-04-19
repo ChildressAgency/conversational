@@ -1,0 +1,164 @@
+/***********************************
+* styles for blog section
+***********************************/
+
+#cat-nav{
+  @include max-width-centered(975px);
+
+  .nav-link{
+    text-align:left;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:$semibold;
+    color:#000;
+    max-width:180px;
+    line-height:1.2em;
+    border-bottom:1px solid #000;
+    border-radius:0;
+    padding:15px 100px 15px 0;
+
+    &.active,
+    &:hover,
+    &:focus{
+      background-color:transparent;
+      color:$citrus;
+    }
+  }
+}
+.post-grid{
+  .grid-item-content{
+    display:block;
+    padding:20px 32px;
+    max-width:324px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:40px;
+    border-radius:6px;
+    text-decoration:none;
+
+    &:hover,
+    &:focus{
+      background-color:#EEEEEE;
+    }
+
+    .post-img{
+      display:block;
+      height:260px;
+      width:260px;
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position:center;
+      border-radius:6px;
+    }
+
+    h3{
+      font-size:26px;
+      color:#000;
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+
+    .post-date{
+      font-size:20px;
+      font-weight:$semibold;
+      color:$olive;
+    }
+  }
+}
+
+.blog-post{
+  margin-top:60px;
+
+  @include max-width-centered(750px);
+
+  h1{
+    font-size:44px;
+  }
+  h2{
+    font-size:40px;
+  }
+  h3{
+    font-size:32px;
+  }
+
+  .post-date{
+    font-size:25px;
+    font-weight:$semibold;
+    color:$olive;
+  }
+
+  .tags{
+    position:relative;
+    padding-left:40px;
+
+    &::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      height:26px;
+      width:27px;
+      background-image:url(images/sprites.png);
+      background-repeat:no-repeat;
+      background-position:0 -990px;
+    }
+  }
+}
+
+.post-nav{
+  @include max-width-centered(750px);
+
+  hr{
+    width:100%;
+    margin-top:60px;
+    margin-bottom:10px;
+  }
+
+  a{
+    font-size:20px;
+    color:#000;
+    text-decoration:none;
+
+    &:hover,
+    &:focus{
+      color:#000;
+      text-decoration:underline;
+    }
+  }
+
+  .post-pagination{
+    span{
+      color:$olive;
+    }
+  }
+}
+.related-cat-posts{
+  margin-top:60px;
+  @include max-width-centered(750px);
+
+  h3{
+    font-size:32px;
+    color:$olive;
+  }
+
+  ol>li{
+    font-weight:$bold;
+
+    &::before{
+      content:"";
+    }
+
+    a{
+      font-size:20px;
+      font-weight:$normal;
+      color:#000;
+      text-decoration:none;
+
+      &:hover,
+      &:focus{
+        color:#000;
+        text-decoration:underline;
+      }
+    }
+  }
+}

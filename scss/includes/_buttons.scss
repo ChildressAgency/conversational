@@ -1,0 +1,45 @@
+
+.btn-main{
+  color:#fff;
+  font-size:22px;
+  display:inline-block;
+  text-align:center;
+  background-color:$citrus;
+  padding:10px 35px;
+  border-radius:6px;
+  font-weight:$bold;
+  font-family:$alt-font;
+  border:none;
+  text-decoration:none;
+}
+.btn-main:hover,
+.btn-main:focus{
+  background-color:$cyprus;
+  color:#fff;
+  text-decoration:none;
+}
+.btn-main.btn-rounded{
+  border-radius:50px;
+}
+
+.btn-search{
+  background-color:transparent;
+  border:none;
+  position:relative;
+  height:42px;
+  width:45px;
+  vertical-align:middle;
+  text-decoration:none;
+
+  &::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    height:42px;
+    width:45px;
+    background-image:url(images/sprites.png);
+    background-repeat:no-repeat;
+    background-position:-322px -880px;
+  }
+}

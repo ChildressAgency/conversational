@@ -1,0 +1,76 @@
+/********************************
+** styles for meet the team page
+********************************/
+#team-members{
+  overflow:hidden;
+}
+.team-member{
+  padding-top:60px;
+  position:relative;
+
+  [class^="col"]{
+    z-index:10;
+  }
+
+  @include max-width-centered(870px);
+
+  &::after{
+    content:"";
+    position:absolute;
+    height:660px;
+    width:400px;
+    z-index:1;
+  }
+  &:nth-child(odd)::after{
+    background-color:$ecru;
+    top:0px;
+    left:50%;
+    transform:translateX(-50%);
+  }
+  &:nth-child(even)::after{
+    background-color:$light-green;
+    top:-100px;
+    left:-100px;
+  }
+}
+
+.team-member-info{
+  border-bottom:3px dashed $olive;
+  padding-bottom:25px;
+
+  header{
+    margin-bottom:20px;
+
+    h2{
+      font-family:$serif;
+      font-size:30px;
+
+      &>small{
+        font-family: $main-font;
+        font-size:26px;
+        color:$olive;
+        display:block;
+        font-weight:$semibold;
+      }
+
+      @include media-breakpoint-only(xs){
+        margin-top:15px;
+      }
+    }
+  }
+}
+
+.team-quote{
+  h4{
+    font-size:18px;
+    color:$olive;
+  }
+  p{
+    font-style:italic;
+    font-size:16px;
+  }
+  cite{
+    font-size:16px;
+    font-style:normal;
+  }
+}

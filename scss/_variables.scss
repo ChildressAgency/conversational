@@ -1,0 +1,41 @@
+/*************************
+ custom variables
+*************************/
+
+$main-font: "Nunito Sans", sans-serif;
+$alt-font: "Nunito", sans-serif;
+$serif: "Maitree", serif;
+
+$normal: 400;
+$semibold: 600;
+$bold: 700;
+
+$citrus: #87C400;
+$olive: #75AA00;
+$tusk: #D7E6BD;
+$cyprus: #06091C;
+
+$light-green:#E6EFD6;
+$ecru:#F5F8EF;
+
+
+@mixin top-sprite($padding-top){
+  position:relative;
+  padding-top:$padding-top;
+
+  &::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    background-image:url(images/sprites.png);
+    background-repeat:no-repeat;
+    top:0;
+  }
+}
+
+@mixin max-width-centered($max-width){
+  max-width:$max-width;
+  margin-left:auto;
+  margin-right:auto;
+}
