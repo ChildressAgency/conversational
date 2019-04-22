@@ -1,0 +1,27 @@
+/*******************************
+* some site animations
+*******************************/
+
+#jumbotron{
+  @include media-breakpoint-up(sm){
+    overflow:hidden;
+    
+    .jumbotron-caption{
+      margin-right:-100%;
+      animation:j-caption;
+      animation-duration:.5s;
+      animation-timing-function: ease-out;
+      animation-delay: .5s;
+      animation-fill-mode:forwards;
+    }
+  }
+}
+
+@keyframes j-caption{
+  0%{
+    margin-right:-100%;
+  }
+  100%{
+    margin-right:5%;
+  }
+}
