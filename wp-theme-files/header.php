@@ -15,7 +15,7 @@
 
 <body <?php body_class(); ?>>
   <header id="header">
-    <div class="container-fluid">
+    <div class="container">
       <div id="masthead" class="d-flex">
         <a href="<?php echo esc_url(home_url()); ?>" class="header-logo">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/HeaderLogo.png" alt="Conversational Logo" />
