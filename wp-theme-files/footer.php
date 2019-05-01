@@ -5,7 +5,8 @@
     !is_page('apply-now') && 
     !is_page('client-portal') && 
     !is_page('vr-services') && 
-    !is_page('vr-plans')){
+    !is_page('vr-plans') &&
+    !is_page('checkout')){
       get_template_part('partials/section', 'tryfree');
   }
 ?>
@@ -122,7 +123,7 @@
       <div class="container">
         <p>&copy;<?php echo date('Y'); ?> Conversational</p>
         <p>
-          <a href="<?php echo esc_url(home_url('privacy-policy')); ?>"><?php echo esc_html__('Privacy Policy', 'conversational'); ?></a>&nbsp;&bull;&nbsp;<a href="<?php echo esc_url(home_url('term-of-service')); ?>"><?php echo esc_html__('Terms of Service', 'conversational'); ?></a>
+          <a href="<?php echo esc_url(home_url('privacy-policy')); ?>"><?php echo esc_html__('Privacy Policy', 'conversational'); ?></a>&nbsp;&bull;&nbsp;<a href="<?php echo esc_url(home_url('terms-of-service')); ?>"><?php echo esc_html__('Terms of Service', 'conversational'); ?></a>
         </p>
         <p>website created by <a href="https://childressagency.com">The Childress Agency</a></p>
       </div>

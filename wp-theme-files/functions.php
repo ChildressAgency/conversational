@@ -41,6 +41,30 @@ function conversational_scripts(){
   );
 
   wp_register_script(
+    'chargeover-script',
+    '//assets.chargeover.com/minify/?g=chargeover.js',
+    array('jquery'),
+    '',
+    true
+  );
+
+  wp_register_script(
+    'jquery-validate',
+    '//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js',
+    array('jquery'),
+    '',
+    true
+  );
+
+  wp_register_script(
+    'additional-methods',
+    '//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js',
+    array('jquery', 'jquery-validate'),
+    '',
+    true
+  );
+
+  wp_register_script(
     'conversational-scripts',
     get_stylesheet_directory_uri() . '/js/custom-scripts.min.js',
     array('jquery', 'bootstrap-scripts'),
@@ -48,10 +72,53 @@ function conversational_scripts(){
     true
   );
 
+  //translations for checkout form
+  $translation_array = array(
+    'business_name_required'    => esc_html__('A company name is required.', 'conversational'),
+    'business_name_minlength'   => esc_html__('Your company name must be at least 3 characters long.', 'conversational'),
+    'address_line_1_required'   => esc_html__('Address line 1 is required', 'conversational'),
+    'address_line_1_minlength'  => esc_html__('Your address must be at least 5 characters long.', 'conversational'),
+    'address_city_required'     => esc_html__('The name of your city or town is required.', 'conversational'),
+    'address_city_minlength'    => esc_html__('Your city/town name must be at least 3 characters long.', 'conversational'),
+    'address_province_required' => esc_html__('The name of your state or province is required', 'conversational'),
+    'address_province_maxlenth' => esc_html__('Your state/province name must be no more than 2 characters long. Please use official state/province abbreviation codes.', 'conversational'),
+    'address_postal_required'   => esc_html__('Your postal code or zip code is required.', 'conversational'),
+    'address_postal_minlength'  => esc_html__('Your postal code or zip code must be at least 3 characters long.', 'conversational'),
+    'address_postal_maxlength'  => esc_html__('Your postal code or zip code must be no longer than 10 characters.', 'conversational'),
+    'address_country_required'  => esc_html__('You must select a country.', 'conversational'),
+    'card_number_required'      => esc_html__('Your credit card number is required.', 'conversational'),
+    'card_number_creditcard'    => esc_html__('You must enter a valid credit card number.', 'conversational'),
+    'expiry_month_required'     => esc_html__('You must enter you credit card expiry month.', 'conversational'),
+    'expiry_month_digits'       => esc_html__('You may only enter numeric values.', 'conversational'),
+    'expiry_year_required'      => esc_html__('You must enter your credit card expiry year.', 'conversational'),
+    'expiry_year_digits'        => esc_html__('You may only enter numeric values.', 'conversational'),
+    'cvv_required'              => esc_html__('You must enter your credit card CVV', 'conversational'),
+    'cvv_minlength'             => esc_html__('Your CVV must be at least 3 digits', 'conversational'),
+    'cvv_digits'                => esc_html__('You may only enter numeric values', 'conversational'),
+    'card_holder_name_required' => esc_html__('You must enter the name displayed on your credit card.', 'conversational'),
+    'email_address_required'    => esc_html__('You must enter your email address.', 'conversational'),
+    'email_address_email'       => esc_html__('You must enter an email address that is valid.', 'conversational'),
+    'phone_number_required'     => esc_html__('You must enter your phone number.', 'conversational'),
+    'phone_number_minlength'    => esc_html__('Your phone number must be at least 5 digits.', 'conversational'),
+    'phone_number_maxlength'    => esc_html__('Your phone number must be no longer than 15 digits.', 'conversational'),
+    'phone_number_digits'       => esc_html__('You may only enter numeric values.', 'conversational')
+  );
+
+  wp_localize_script(
+    'conversational-scripts',
+    'conversational_checkout',
+    $translation_array
+  );
+
   wp_enqueue_script('bootstrap-popper');
   wp_enqueue_script('bootstrap-scripts');
-  if(is_home()){
-    wp_enqueue_script('masonry');
+  //if(is_home()){
+  //  wp_enqueue_script('masonry');
+  // }
+  if(is_page('checkout')){
+    wp_enqueue_script('chargeover-script');
+    wp_enqueue_script('jquery-validate');
+    wp_enqueue_script('additional-methods');
   }
   wp_enqueue_script('conversational-scripts');
 }

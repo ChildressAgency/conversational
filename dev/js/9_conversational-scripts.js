@@ -1,14 +1,17 @@
+/*!
+ * theme custom scripts
+*/
 jQuery(document).ready(function($){
   $('#page-up').on('click', function(e){
     e.preventDefault();
     $('html, body').animate({ scrollTop: 0 }, 'slow');
   });
 
-  // animation check
+  /*animation check*/
   var $animationElements = $('.animation-trigger');
   var $window = $(window);
 
-  // disable on small devices
+  //disable on small devices
   var isMobile = window.matchMedia('(max-width:768px)');
   if(isMobile.matches){
     $animationElements.removeClass('animation-trigger');

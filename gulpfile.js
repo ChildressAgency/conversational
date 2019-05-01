@@ -22,10 +22,15 @@ gulp.task('js', function(){
     .pipe(sourcemaps.init())
     .pipe(order([
       'vendor/**/*.js',
-      '*.js'
+      '2_conversational_checkout.js',
+      '9_conversational_scripts.js'
     ]))
     .pipe(concat('custom-scripts.min.js'))
-    .pipe(uglify())
+    .pipe(uglify({
+      output: {
+        comments: '/^!/'
+      }
+    }))
     .pipe(sourcemaps.write('../../dev/maps'))
     .pipe(gulp.dest('wp-theme-files/js'))
 });
