@@ -1,0 +1,94 @@
+/**************************************
+* styles for the kickoff form
+**************************************/
+
+#progress-bar{
+  margin-top:40px;
+  margin-bottom:40px;
+
+  h4{
+    color: $olive;
+  }
+}
+.progress{
+  height:40px;
+}
+.progress-bar{
+  background-color: $citrus;
+}
+
+#cai-multistep{
+  ul{
+    column-count: 1;
+
+    li{
+      padding-bottom:10px;
+
+      &:before{
+        content:'';
+      }
+    }
+  }
+  .acf-field-message{
+    .acf-label{
+      display:none;
+    }
+  }
+
+  .acf-input-wrap{
+    height:48px;
+  }
+
+  .acf-field{
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    select{
+      border: 1px solid $cyprus;
+      height: 48px;
+      padding: 8px 16px;
+      font-size: 20px;
+      line-height:1.5;
+    }
+
+    textarea{
+      border: 1px solid $cyprus;
+      padding:8px 16px;
+      font-size:20px;
+      line-height:1.5;
+    }
+  }
+
+  .acf-form-submit{
+    input[type="submit"]{
+      color:#fff;
+      font-size:22px;
+      display:inline-block;
+      text-align:center;
+      background-color: $citrus;
+      padding:10px 35px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-family: $alt-font;
+      border: none;
+      margin-top: 40px;
+
+      &:hover,
+      &:focus{
+        background-color: $cyprus;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  ul.acf-radio-list li,
+  ul.acf-checkbox-list li{
+    font-size:20px;
+  }
+
+  .acf-field-group{
+    background-color:#ccc;
+  }
+}
