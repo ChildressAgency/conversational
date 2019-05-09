@@ -76,7 +76,7 @@
             <a href="<?php echo esc_url(home_url('fully-customized-call-handling')); ?>" id="fully-customized" class="header-quick-link<?php if(is_page('fully-customized-call-handling')){ echo ' active'; } ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a>
           </div>
           <div class="col-6 col-sm-3 d-flex justify-content-stretch">
-            <a href="<?php echo esc_url(home_url('complete-client-call-reporting')); ?>" id="call-reporting" class="header-quick-link<?php if(is_page('complete-client-call-reporting')){ echo ' active'; } ?>"><?php echo esc_html__('Complete Client Call Reporting', 'conversational'); ?></a>
+            <a href="<?php echo esc_url(home_url('client-portal')); ?>" id="call-reporting" class="header-quick-link<?php if(is_page('client-portal')){ echo ' active'; } ?>"><?php echo esc_html__('Complete Online Client Portal', 'conversational'); ?></a>
           </div>
         </div>
       </div>
