@@ -12,6 +12,12 @@
       <div class="col-md-8">
         <article>
           <header>
+            <?php
+              $show_banner = get_post_meta($page_id, 'show_coming_soon_banner', true);
+              if($show_banner){
+                echo '<img src="' . get_stylesheet_directory_uri() . '/images/ComingSoonBanner.jpg" class="img-fluid d-block mx-auto mb-5" alt="Coming Soon" />';
+              }
+            ?>
             <h2><?php echo esc_html(get_post_meta($page_id, 'app_section_title', true)); ?></h2>
           </header>
           <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'app_section_content', true))); ?>
