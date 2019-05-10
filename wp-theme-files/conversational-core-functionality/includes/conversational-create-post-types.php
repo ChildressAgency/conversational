@@ -57,23 +57,23 @@ function conversational_create_post_types(){
   );
 
   $kickoff_form_labels = array(
-    'name' => esc_html_x('KickOff Forms', 'post type name', 'caims'),
-    'singular_name' => esc_html_x('KickOff Form', 'post type singular name', 'caims'),
-    'menu_name' => esc_html_x('KickOff Forms', 'post type menu name', 'caims'),
-    'add_new_item' => esc_html__('Add New KickOff Form', 'caims'),
-    'search_items' => esc_html__('Search KickOff Forms', 'caims'),
-    'edit_item' => esc_html__('Edit KickOff Form', 'caims'),
-    'view_item' => esc_html__('View KickOff Form', 'caims'),
-    'all_items' => esc_html__('All KickOff Forms', 'caims'),
-    'new_item' => esc_html__('New KickOff Form', 'caims'),
-    'not_found' => esc_html__('No KickOff Forms Found', 'caims')
+    'name' => esc_html_x('KickOff Forms', 'post type name', 'conversational'),
+    'singular_name' => esc_html_x('KickOff Form', 'post type singular name', 'conversational'),
+    'menu_name' => esc_html_x('KickOff Forms', 'post type menu name', 'conversational'),
+    'add_new_item' => esc_html__('Add New KickOff Form', 'conversational'),
+    'search_items' => esc_html__('Search KickOff Forms', 'conversational'),
+    'edit_item' => esc_html__('Edit KickOff Form', 'conversational'),
+    'view_item' => esc_html__('View KickOff Form', 'conversational'),
+    'all_items' => esc_html__('All KickOff Forms', 'conversational'),
+    'new_item' => esc_html__('New KickOff Form', 'conversational'),
+    'not_found' => esc_html__('No KickOff Forms Found', 'conversational')
   );
   $kickoff_form_args = array(
     'labels' => $kickoff_form_labels,
     'capability_type' => 'post',
     'public' => true,
     'menu_position' => 5,
-    'menu_icon' => 'dashicons-clipboard',
+    'menu_icon' => 'dashicons-forms',
     'query_var' => 'kickoff_form',
     'has_archive' => false,
     'show_in_rest' => true,
@@ -85,4 +85,33 @@ function conversational_create_post_types(){
     )
   );
   register_post_type('kickoff_form', $kickoff_form_args);
+
+  $comparison_labels = array(
+    'name' => esc_html_x('Comparisons', 'post type name', 'conversational'),
+    'singular_name' => esc_html_x('Comparison', 'post type singular name', 'conversational'),
+    'menu_name' => esc_html_x('Comparisons', 'post type menu name', 'conversational'),
+    'add_new_item' => esc_html__('Add New Comparison', 'conversational'),
+    'search_items' => esc_html__('Search Comparisons', 'conversational'),
+    'edit_item' => esc_html__('Edit Comparison', 'conversational'),
+    'view_item' => esc_html__('View Comparison', 'conversational'),
+    'all_items' => esc_html__('All Comparisons', 'conversational'),
+    'new_item' => esc_html__('New Comparison', 'conversational'),
+    'not_found' => esc_html__('No Comparisons Found', 'conversational')
+  );
+  $comparison_args = array(
+    'labels' => $comparison_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 6,
+    'menu_icon' => 'dashicons-awards',
+    'query_var' => 'comparison',
+    'has_archive' => false,
+    'show_in_rest' => true,
+    'supports' => array(
+      'title',
+      'custom-fields',
+      'revisions',
+    )
+  );
+  register_post_type('comparison', $comparison_args);
 }
