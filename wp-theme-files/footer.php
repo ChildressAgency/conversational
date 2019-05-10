@@ -125,7 +125,6 @@
         <p>
           <a href="<?php echo esc_url(home_url('privacy-policy')); ?>"><?php echo esc_html__('Privacy Policy', 'conversational'); ?></a>&nbsp;&bull;&nbsp;<a href="<?php echo esc_url(home_url('terms-of-service')); ?>"><?php echo esc_html__('Terms of Service', 'conversational'); ?></a>
         </p>
-        <p>website created by <a href="https://childressagency.com">The Childress Agency</a></p>
       </div>
     </section>
   </footer>
