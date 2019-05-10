@@ -7,22 +7,18 @@
 
       <div class="page-body">
         <?php
-          $competitors = get_post_meta($page_id, 'competitors', true);
-          if($competitors): ?>
+          $competitors = new WP_Query(array(
+            'post_type' => 'comparison',
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC'
+          ));
+          if($competitors->have_posts()): ?>
             <div class="competitor-nav">
-              <select id="select-competitor" class="form-control form-control-lg">
-                <?php 
-                  for($n = 0; $n < $competitors; $n++){
-                    $competitor_name = esc_html(get_post_meta($page_id, 'competitors_' . $n . '_competitor_name', true));
-                    $competitor_slug = esc_html(sanitize_title($competitor_name));
-                    $aria_selected = 'false';
-                    if($n == 0){ $aria_selected = 'true'; }
-                    $selected = '';
-                    if($n == 0){ $selected = ' selected'; }
-
-                    echo '<option value="' . $competitor_slug . '" role="tab" aria-controls="' . $competitor_slug . '" aria-selected="' . $aria_selected . '"' . $selected . '>' . $competitor_name . '</option>';
-                  }
-                ?>
+              <select id="select-competitor" class="form-control form-control-lg" onchange="window.open(this.options[this.selectedIndex].value,' _top')">
+                <?php while($competitors->have_posts()): $competitors->the_post(); ?>
+                  <option value="<?php the_permalink(); ?>" <?php if(get_the_ID() == $page_id){ echo ' selected'; } ?>><?php the_title(); ?></option>
+                <?php endwhile; wp_reset_postdata(); ?>
               </select>
             </div>
         <?php endif; ?>
