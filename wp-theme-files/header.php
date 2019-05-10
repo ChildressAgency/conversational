@@ -89,6 +89,10 @@
     $blog_page = get_page_by_path('blog');
     $page_id = $blog_page->ID;
   }
+  if(is_singular('comparison')){
+    $compare_services_page = get_page_by_path('compare-services');
+    $page_id = $compare_services_page->ID;
+  }
 ?>
 
 <?php if(is_front_page()): ?>
@@ -129,16 +133,16 @@
     }
 
     $hero_title = '';
-    if(is_home() || is_singular('post')){
+    if(is_home() || is_singular('post')){ //main blog page or blog post
       $hero_title = esc_html__('Conversational Blog', 'conversational');
     }
-    elseif(is_singular('states')){
+    elseif(is_singular('states')){  //states cpt single page
       $hero_title = esc_html__('North American Based Service', 'conversational');
     }
-    elseif(get_post_meta($page_id, 'hero_title', true)){
+    elseif(get_post_meta($page_id, 'hero_title', true)){ //any other page, see if hero title is set
       $hero_title = get_post_meta($page_id, 'hero_title', true);
     }
-    else{
+    else{ //any other page and hero title is not set, just show the title
       $hero_title = get_the_title();
     }
   
