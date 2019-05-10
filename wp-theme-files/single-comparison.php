@@ -68,7 +68,7 @@
                             <tr>
                               <th scope="row"><?php echo esc_html(get_post_meta($page_id, 'comparison_chart_' . $c . '_category', true)); ?></th>
                               <td><?php echo esc_html(get_post_meta($page_id, 'comparison_chart_' . $c . '_conversational_value', true)); ?></td>
-                              <td><?php echo esc_html(get_post_meta($page_id, 'comparison_chart' . $c . '_competitor_value', true)); ?></td>
+                              <td><?php echo esc_html(get_post_meta($page_id, 'comparison_chart_' . $c . '_competitor_value', true)); ?></td>
                             </tr>
                           <?php endfor; ?>
                         </tbody>
