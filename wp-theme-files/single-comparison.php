@@ -24,7 +24,7 @@
           ));
           if($competitors->have_posts()): ?>
             <div class="competitor-nav">
-              <select id="select-competitor" class="form-control form-control-lg" onchange="window.open(this.options[this.selectedIndex].value,' _top')">
+              <select id="select-competitor" class="form-control form-control-lg" onchange="window.location.replace(this.options[this.selectedIndex].value,' _self')">
                 <?php while($competitors->have_posts()): $competitors->the_post(); ?>
                   <option value="<?php the_permalink(); ?>" <?php if(get_the_ID() == $page_id){ echo ' selected'; } ?>><?php the_title(); ?></option>
                 <?php endwhile; wp_reset_postdata(); ?>
