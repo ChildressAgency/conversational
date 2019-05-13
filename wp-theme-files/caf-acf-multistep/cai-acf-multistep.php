@@ -48,6 +48,8 @@ if(!class_exists('CAI_MultiStep')){
 
       add_shortcode('cai_multistep_form', array($this, 'output_shortcode'));
 
+      add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
+
       add_action('acf/init', array($this, 'create_acf_options_page'));
       add_action('init', array($this, 'load_textdomain'));
 
@@ -55,6 +57,9 @@ if(!class_exists('CAI_MultiStep')){
 
       //process ACF form submission
       add_action('acf/save_post', array($this, 'process_acf_form'), 20);
+
+      add_action('wp_ajax_nopriv_send_form_link', array($this, 'send_form_link'));
+      add_action('wp_ajax_send_form_link', array($this, 'send_form_link'));
     }
 
     public function load_dependencies(){
@@ -69,6 +74,23 @@ if(!class_exists('CAI_MultiStep')){
 
     public function load_textdomain(){
       load_plugin_textdomain('caims', false, basename(dirname(__FILE__)) . '/languages');
+    }
+
+    public function enqueue_scripts(){
+      wp_register_script(
+        'cai-acf-scripts',
+        CAI_MULTISTEP_PLUGIN_URL . 'js/cai-acf-scripts.js',
+        array('jquery'),
+        false,
+        true
+      );
+
+      wp_enqueue_script('cai-acf-scripts');
+
+      wp_localize_script('cai-acf-scripts', 'cai_acf_multistep', array(
+        'cai_acf_multistep_ajax' => admin_url('admin-ajax.php'),
+        'valid_email_address_error' => esc_html__('Please enter a valid email address.', 'caims')
+      ));
     }
 
     public function acf_settings_path($path){
@@ -134,28 +156,88 @@ if(!class_exists('CAI_MultiStep')){
 
     public function output_shortcode(){
       //check if user is logged in first
-      if(!is_user_logged_in()){
-        $login_message = get_field('login_message', 'option');
-        echo apply_filters('the_content', wp_kses_post($login_message));
+      //if(!is_user_logged_in()){
+      //  $login_message = get_field('login_message', 'option');
+      //  echo apply_filters('the_content', wp_kses_post($login_message));
 
-        return wp_login_form(array('echo' => false));
-      }
+      //  return wp_login_form(array('echo' => false));
+      //}
 
       ob_start();
 
       if(!function_exists('acf_form')){ return; }
 
-      //user is currently filling out the form
-      if(!$this->current_multistep_form_is_finished()){
-        $this->output_acf_form(array('post_type' => $this->form_post_type));
+      if(isset($_GET['saveforlater'])){
+        $this->output_finish_later();
       }
       else{
-        //form has been filled entirely
-        $form_complete_message = get_field('form_complete_message', 'option');
-        echo apply_filters('the_content', wp_kses_post($form_complete_message));
+        //user is currently filling out the form
+        if(!$this->current_multistep_form_is_finished()){
+          $this->output_acf_form(array('post_type' => $this->form_post_type));
+        }
+        else{
+          //form has been filled entirely
+          $form_complete_message = get_field('form_complete_message', 'option');
+          echo apply_filters('the_content', wp_kses_post($form_complete_message));
+        }
       }
 
       return ob_get_clean();
+    }
+
+    private function output_finish_later(){
+      $saveforlater_query_args = array(
+        'step' => $_GET['step'],
+        'post_id' => $_GET['post_id'],
+        'token' => $_GET['token']
+      );
+
+      $saveforlater_url = add_query_arg($saveforlater_query_args, wp_get_referer());
+
+      $saveforlater_message = get_option('options_save_for_later_message');
+
+      echo apply_filters('the_content', wp_kses_post($saveforlater_message));
+      echo $saveforlater_url;
+
+      $nonce = wp_create_nonce('email_form_link_' . $saveforlater_query_args['token']);
+      echo '<div class="email-form-link">
+              <h4>' . esc_html__('Enter your email address to send the link by email.', 'caims') . '</h4>
+              <div class="form-inline">
+                <label for="email_form_email_address" class="sr-only">Email Address</label>
+                <input type="email" id="email_form_email_address" class="form-control mr-sm-3" placeholder="Email Address" required />
+                <button class="btn-main send-email" data-nonce="' . $nonce . '" data-step="' . $saveforlater_query_args['step'] . '" data-post_id="' . $saveforlater_query_args['post_id'] . '" data-token="' . $saveforlater_query_args['token'] . '">' . esc_html__('Send Link', 'caims') . '</button>
+                <p class="email-response"></p>
+              </div>
+            </div>';
+    }
+
+    public function send_form_link(){
+      $form_step = $_POST['step'];
+      $form_post_id = $_POST['post_id'];
+      $form_token = $_POST['token'];
+      $form_email = sanitize_email($_POST['email_form_email_address']);
+      $form_location = $_POST['form_location'];
+
+      if(check_ajax_referer('email_form_link_' . $form_token, 'nonce', false) == false){
+        wp_send_json_error();
+      }
+
+      $form_link = add_query_arg(array('step' => $form_step, 'post_id' => $form_post_id, 'token' => $form_token), $form_location);
+
+      $subject = get_option('options_form_link_email_subject');
+      $headers = '';
+      $message = get_option('options_form_link_email_message');
+
+      $message .= "\r\n" . $form_link;
+
+      $result = wp_mail($form_email, $subject, $message, $headers);
+
+      if($results == true){
+        wp_send_json_success(esc_html('Email sent.', 'caims'));
+      }
+      else{
+        wp_send_json_error();
+      }
     }
 
     /**
@@ -180,7 +262,7 @@ if(!class_exists('CAI_MultiStep')){
         )
       );
 
-      $submit_label = $args['step'] < count($this->step_ids) ? esc_html__('Save and Continue', 'caims') : esc_html__('Finish', 'caims');
+      $submit_label = $args['step'] < count($this->step_ids) ? esc_html__('Next', 'caims') : esc_html__('Finish', 'caims');
       $current_step_group = ($args['post_id'] !== 'new_post' && $args['step'] > 1) ? $this->step_ids[(int) $args['step'] - 1] : $this->step_ids[0];
 
       //show the progress bar before the form
@@ -205,7 +287,7 @@ if(!class_exists('CAI_MultiStep')){
     }
 
     /**
-     * hidden fields
+     * hidden fields and buttons
      * 
      * @param array $args - form arguments passed to acf_form()
      * @return string html hidden input fields
@@ -214,6 +296,20 @@ if(!class_exists('CAI_MultiStep')){
       $inputs = array();
       $inputs[] = sprintf('<input type="hidden" name="caims-form-id" value="%1$s" />', $this->form_id);
       $inputs[] = isset($args['step']) ? sprintf('<input type="hidden" name="caims-current-step" value="%1$s" />', $args['step']) : '';
+
+      if($this->get_requested_step() != 1){
+        $inputs[] = '<input type="button" id="cai-previous" name="previous" class="btn-main cai-submit" value="Previous" />';
+      }
+
+      if($args['step'] < count($this->step_ids)){
+        $inputs[] = '<input type="button" id="cai-next" name="next" class="btn-main cai-submit" value="Next" />';
+      }
+      else{
+        $inputs[] = '<input type="button" id="cai-finish" name="finish" class="btn-main cai-submit" value="Finish" />';
+      }
+
+      $inputs[] = '<input type="button" id="cai-finish-later" name="saveforlater" class="btn-main cai-submit" value="Finish Later" />';
+      $inputs[] = '<input type="hidden" id="direction" name="direction" value="" />';
 
       return implode(' ', $inputs);
     }
@@ -245,23 +341,8 @@ if(!class_exists('CAI_MultiStep')){
       //}
 
       if(isset($_GET['post_id'])){
-        if($this->requested_post_is_valid() && $this->can_continue_current_form() && $this->post_belongs_to_user()){
+        if($this->requested_post_is_valid() && $this->can_continue_current_form()){
           return (int) $_GET['post_id'];
-        }
-      }
-      else{
-        $user_id = get_current_user_id();
-        $user_form_id = new WP_Query(array(
-          'post_type' => $this->form_post_type,
-          'posts_per_page' => 1,
-          'author' => $user_id,
-          'fields' => 'ids'
-        ));
-
-        if($user_form_id->have_posts()){
-          $form_post_id = $user_form_id->posts[0];
-          wp_reset_postdata();
-          return $form_post_id;
         }
       }
 
@@ -310,20 +391,6 @@ if(!class_exists('CAI_MultiStep')){
       return false;
     }
 
-    /**
-     * does the post belong to the user
-     */
-    private function post_belongs_to_user(){
-      $author_id = get_post_field('post_author', $_GET['post_id']);
-      $current_user_id = get_current_user_id();
-
-      if($author_id == $current_user_id){
-        return true;
-      }
-
-      return false;
-    }
-
     private function current_multistep_form_is_finished(){
       return (isset($_GET['finished']) && 1 === (int) $_GET['finished']);
     }
@@ -342,7 +409,7 @@ if(!class_exists('CAI_MultiStep')){
       $current_step = $this->get_requested_step();
 
       //if it was a new post create a title and security token for it
-      if($current_step == 1){
+      if($current_step == 1 && !isset($_GET['post_id'])){
         $company_name = get_field('company_name', $post_id);
         wp_update_post(array(
           'ID' => $post_id,
@@ -355,12 +422,26 @@ if(!class_exists('CAI_MultiStep')){
       }
 
       //if not done with the form put post_id and step number in the url
+
       if($current_step < count($this->step_ids)){
         $query_args = array(
-          'step' => ++$current_step,
+          //'step' => $next_step,
           'post_id' => $post_id,
           'token' => isset($token) ? $token : $_GET['token']
         );
+
+        if(isset($_POST['direction'])){
+          if($_POST['direction'] == 'previous'){
+            $query_args['step'] = --$current_step;
+          }
+          elseif($_POST['direction'] == 'next'){
+            $query_args['step'] = ++$current_step;
+          }
+          elseif($_POST['direction'] == 'saveforlater'){
+            $query_args['step'] = $current_step;
+            $query_args['saveforlater'] = 1;
+          }
+        }
       }
       else{
         //we are done so put finished in the url
@@ -370,6 +451,7 @@ if(!class_exists('CAI_MultiStep')){
       }
 
       $redirect_url = add_query_arg($query_args, wp_get_referer());
+      //$redirect_url = add_query_arg($query_args, home_url('kick-off-form'));
       wp_safe_redirect($redirect_url);
       exit();
     }
