@@ -70,6 +70,7 @@ if(!class_exists('CAI_MultiStep')){
       }
 
       require_once CAI_MULTISTEP_PLUGIN_DIR . '/includes/custom-fields/cai-acf-multistep-form-settings.php';
+        require_once CAI_MULTISTEP_PLUGIN_DIR . '/includes/class-email-completed-form.php';
     }
 
     public function load_textdomain(){
@@ -197,7 +198,8 @@ if(!class_exists('CAI_MultiStep')){
       $saveforlater_message = get_option('options_save_for_later_message');
 
       echo apply_filters('the_content', wp_kses_post($saveforlater_message));
-      echo $saveforlater_url;
+
+      echo '<a href="' . $saveforlater_url . '" class="d-block text-center mt-5">' . $saveforlater_url . '</a>';
 
       $nonce = wp_create_nonce('email_form_link_' . $saveforlater_query_args['token']);
       echo '<div class="email-form-link">
@@ -225,10 +227,12 @@ if(!class_exists('CAI_MultiStep')){
       $form_link = add_query_arg(array('step' => $form_step, 'post_id' => $form_post_id, 'token' => $form_token), $form_location);
 
       $subject = get_option('options_form_link_email_subject');
-      $headers = '';
+      $headers = array('Content-Type: text/html; charset=UTF-8');
+      $headers[] = 'From: Conversational.com <noreply@conversational.com>';
+
       $message = get_option('options_form_link_email_message');
 
-      $message .= "\r\n" . $form_link;
+      $message .= "\r\n" . '<a href="' . $form_link . '" class="mt-5">' . $form_link . '</a>';
 
       $result = wp_mail($form_email, $subject, $message, $headers);
 
@@ -448,12 +452,24 @@ if(!class_exists('CAI_MultiStep')){
         $query_args = array('finished' => 1);
 
         //maybe send an email to someone here
+        //$this->email_completed_form($post_id);
+        $email_form = new CAI_Email_Form($post_id, $this->step_ids);
       }
 
       $redirect_url = add_query_arg($query_args, wp_get_referer());
       //$redirect_url = add_query_arg($query_args, home_url('kick-off-form'));
       wp_safe_redirect($redirect_url);
       exit();
+    }
+
+    private function sanitize_email_addresses($form_emails){
+      $email_addresses = explode(',', $form_emails);
+      $sanitized_email_addresses = [];
+      foreach($email_addresses as $email_address){
+        $sanitized_email_addresses[] = sanitize_email($email_address);
+      }
+  
+      return implode(',', $sanitized_email_addresses);
     }
   } //end class
 } //end class check
