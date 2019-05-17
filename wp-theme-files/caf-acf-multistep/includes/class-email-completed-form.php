@@ -17,7 +17,7 @@ if(!class_exists('CAI_Email_Form')){
     }
 
     public function email_completed_form(){
-      $form_emails = get_options('options_finished_form_email_addresses');
+      $form_emails = get_option('options_finished_form_email_addresses');
       $to = $this->sanitize_email_addresses($form_emails);
 
       $subject = get_option('options_finished_form_email_subject');
@@ -70,7 +70,7 @@ if(!class_exists('CAI_Email_Form')){
 
       //send the email
       //echo $this->message;
-      return wp_mail($to, $subject, $message, $headers);
+      return wp_mail($to, $subject, $this->message, $headers);
 
     }//end email_completed_form
 
