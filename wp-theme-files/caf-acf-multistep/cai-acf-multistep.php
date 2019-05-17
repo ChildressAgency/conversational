@@ -436,7 +436,7 @@ if(!class_exists('CAI_MultiStep')){
 
       //if not done with the form put post_id and step number in the url
 
-      if($current_step < count($this->step_ids)){
+      if(($current_step < count($this->step_ids)) || ($_POST['direction'] == 'previous' || $_POST['direction'] == 'saveforlater')){
         $query_args = array(
           //'step' => $next_step,
           'post_id' => $post_id,
