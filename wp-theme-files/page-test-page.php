@@ -2,7 +2,7 @@
 
 <?php
 
-  $test = 'additional_contacts';
+  /*$test = 'additional_contacts';
   if(have_rows($test, 1271)){
     while(have_rows($test, 1271)){
       the_row();
@@ -25,20 +25,21 @@
       //print_r($row_label);
       print '</pre>';
     }
-  }
+  }*/
 
 
-/*
+
 print '<pre>';
-print_r(get_field_object('field_5cd09c9b7a368', 1271));
+//print_r(get_field_object('field_5cd09c9b7a368', 1271));
+print_r(get_field_objects(1271));
 print '</pre>';
-*/
+
 ?>
 
 <?php get_footer();
 
 
-
+/*
 private function get_message_line($field_row, $post_id){
   foreach($field_row as $field_row_key => $field_row_value){
     $field_row_object = get_sub_field_object($field_row_key, $post_id);
@@ -109,3 +110,4 @@ private function get_message_line($field_row, $post_id){
     //return $return_message;
   }//end foreach
 }
+*/
