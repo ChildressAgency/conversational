@@ -54,6 +54,7 @@ if(!class_exists('CAI_MultiStep')){
       add_action('init', array($this, 'load_textdomain'));
 
       add_filter('acf/load_field/key=field_5ccb5995c506e', array($this , 'load_post_type_choices'));
+      add_action('acf/validate_save_post', array($this, 'skip_validation'), 10, 0);
 
       //process ACF form submission
       add_action('acf/save_post', array($this, 'process_acf_form'), 20);
@@ -112,6 +113,14 @@ if(!class_exists('CAI_MultiStep')){
         'capability' => 'edit_posts',
         'redirect' => false
       ));
+    }
+
+    public function skip_validation(){
+      if(isset($_POST['direction'])){
+        if($_POST['direction'] == 'previous' || $_POST['direction'] == 'saveforlater'){
+          acf_reset_validation_errors();
+        }
+      }
     }
 
     public function load_post_type_choices($field){
@@ -205,8 +214,8 @@ if(!class_exists('CAI_MultiStep')){
       echo '<div class="email-form-link">
               <h4>' . esc_html__('Enter your email address to send the link by email.', 'caims') . '</h4>
               <div class="form-inline">
-                <label for="email_form_email_address" class="sr-only">Email Address</label>
-                <input type="email" id="email_form_email_address" class="form-control mr-sm-3" placeholder="Email Address" required />
+                <label for="email_form_email_address" class="sr-only">' . esc_html__('Email Address', 'caims') . '</label>
+                <input type="email" id="email_form_email_address" class="form-control mr-sm-3" placeholder="' . esc_html__('Email Address', 'caims') . '" required />
                 <button class="btn-main send-email" data-nonce="' . $nonce . '" data-step="' . $saveforlater_query_args['step'] . '" data-post_id="' . $saveforlater_query_args['post_id'] . '" data-token="' . $saveforlater_query_args['token'] . '">' . esc_html__('Send Link', 'caims') . '</button>
                 <p class="email-response"></p>
               </div>
@@ -302,17 +311,17 @@ if(!class_exists('CAI_MultiStep')){
       $inputs[] = isset($args['step']) ? sprintf('<input type="hidden" name="caims-current-step" value="%1$s" />', $args['step']) : '';
 
       if($this->get_requested_step() != 1){
-        $inputs[] = '<input type="button" id="cai-previous" name="previous" class="btn-main cai-submit" value="Previous" />';
+        $inputs[] = '<input type="button" id="cai-previous" name="previous" class="btn-main cai-submit" value="' . esc_html__('Previous', 'caims') . '" />';
       }
 
       if($args['step'] < count($this->step_ids)){
-        $inputs[] = '<input type="button" id="cai-next" name="next" class="btn-main cai-submit" value="Next" />';
+        $inputs[] = '<input type="button" id="cai-next" name="next" class="btn-main cai-submit" value="' . esc_html__('Next', 'caims') . '" />';
       }
       else{
-        $inputs[] = '<input type="button" id="cai-finish" name="finish" class="btn-main cai-submit" value="Finish" />';
+        $inputs[] = '<input type="button" id="cai-finish" name="finish" class="btn-main cai-submit" value="' . esc_html__('Finish', 'caims') . '" />';
       }
 
-      $inputs[] = '<input type="button" id="cai-finish-later" name="saveforlater" class="btn-main cai-submit" value="Finish Later" />';
+      $inputs[] = '<input type="button" id="cai-finish-later" name="saveforlater" class="btn-main cai-submit" value="' . esc_html__('Finish Later', 'caims') . '" />';
       $inputs[] = '<input type="hidden" id="direction" name="direction" value="" />';
 
       return implode(' ', $inputs);
@@ -329,7 +338,7 @@ if(!class_exists('CAI_MultiStep')){
       $percent_complete = ($current_step / $number_of_steps) * 100;
 
       echo '<div id="progress-bar">';
-        echo '<h4>Step ' . $current_step . ' of ' . $number_of_steps . '</h4>';
+        echo '<h4>' . sprintf(esc_html('Step %1$d of %2$d', 'caims'), $current_step, $number_of_steps) . '</h4>';
         echo '<div class="progress">';
           echo '<div class="progress-bar" role="progressbar" style="width:' . $percent_complete . '%" aria-valuenow="' . $percent_complete . '" aria-valuemin="0" aria-valuemax="100"></div>';
       echo '</div></div>';
@@ -460,16 +469,6 @@ if(!class_exists('CAI_MultiStep')){
       //$redirect_url = add_query_arg($query_args, home_url('kick-off-form'));
       wp_safe_redirect($redirect_url);
       exit();
-    }
-
-    private function sanitize_email_addresses($form_emails){
-      $email_addresses = explode(',', $form_emails);
-      $sanitized_email_addresses = [];
-      foreach($email_addresses as $email_address){
-        $sanitized_email_addresses[] = sanitize_email($email_address);
-      }
-  
-      return implode(',', $sanitized_email_addresses);
     }
   } //end class
 } //end class check
