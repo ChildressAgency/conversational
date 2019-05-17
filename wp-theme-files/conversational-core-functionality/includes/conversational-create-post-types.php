@@ -57,16 +57,16 @@ function conversational_create_post_types(){
   );
 
   $kickoff_form_labels = array(
-    'name' => esc_html_x('KickOff Forms', 'post type name', 'conversational'),
-    'singular_name' => esc_html_x('KickOff Form', 'post type singular name', 'conversational'),
-    'menu_name' => esc_html_x('KickOff Forms', 'post type menu name', 'conversational'),
-    'add_new_item' => esc_html__('Add New KickOff Form', 'conversational'),
-    'search_items' => esc_html__('Search KickOff Forms', 'conversational'),
-    'edit_item' => esc_html__('Edit KickOff Form', 'conversational'),
-    'view_item' => esc_html__('View KickOff Form', 'conversational'),
-    'all_items' => esc_html__('All KickOff Forms', 'conversational'),
-    'new_item' => esc_html__('New KickOff Form', 'conversational'),
-    'not_found' => esc_html__('No KickOff Forms Found', 'conversational')
+    'name' => esc_html_x('Get Started Forms', 'post type name', 'conversational'),
+    'singular_name' => esc_html_x('Get Started Form', 'post type singular name', 'conversational'),
+    'menu_name' => esc_html_x('Get Started Forms', 'post type menu name', 'conversational'),
+    'add_new_item' => esc_html__('Add New Get Started Form', 'conversational'),
+    'search_items' => esc_html__('Search Get Started Forms', 'conversational'),
+    'edit_item' => esc_html__('Edit Get Started Form', 'conversational'),
+    'view_item' => esc_html__('View Get Started Form', 'conversational'),
+    'all_items' => esc_html__('All Get Started Forms', 'conversational'),
+    'new_item' => esc_html__('New Get Started Form', 'conversational'),
+    'not_found' => esc_html__('No Get Started Forms Found', 'conversational')
   );
   $kickoff_form_args = array(
     'labels' => $kickoff_form_labels,
@@ -74,7 +74,7 @@ function conversational_create_post_types(){
     'public' => true,
     'menu_position' => 5,
     'menu_icon' => 'dashicons-forms',
-    'query_var' => 'kickoff_form',
+    'query_var' => 'getstarted_form',
     'has_archive' => false,
     'show_in_rest' => true,
     'supports' => array(
@@ -84,7 +84,7 @@ function conversational_create_post_types(){
       'author'
     )
   );
-  register_post_type('kickoff_form', $kickoff_form_args);
+  register_post_type('getstarted_form', $kickoff_form_args);
 
   $comparison_labels = array(
     'name' => esc_html_x('Comparisons', 'post type name', 'conversational'),
