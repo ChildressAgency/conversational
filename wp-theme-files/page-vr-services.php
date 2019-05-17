@@ -18,7 +18,7 @@
               $features = get_post_meta($page_id, 'features', true);
               if($features): ?>
                 <ul class="features-list list-unstyled text-left">
-                  <?php for($i = 0; $i < $features, $i++): ?>
+                  <?php for($i = 0; $i < $features; $i++): ?>
                     <li>
                       <h4><?php echo esc_html(get_post_meta($page_id, 'features_' . $i . '_feature_title', true)); ?></h4>
                       <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'features_' . $i . '_feature_description', true))); ?>

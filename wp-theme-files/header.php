@@ -23,7 +23,7 @@
         <div id="header-contact" class="ml-auto d-flex">
           <div class="header-trial mt-2">
             <h3>FREE 30-Day Trial</h3>
-            <a href="<?php echo esc_url(home_url('contact-us')); ?>" class="btn-main">Get Started Today</a>
+            <a href="<?php echo esc_url(home_url('vr-plans')); ?>" class="btn-main">Get Started Today</a>
           </div>
           <div class="header-contact mt-2">
             <?php
