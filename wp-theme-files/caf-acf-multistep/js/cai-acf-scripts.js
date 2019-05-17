@@ -36,7 +36,7 @@ jQuery(document).ready(function($){
         $button.remove();
         $('#email_form_email_address').remove();
 
-        $('.email-response').text(response.data);
+        $('.email-response').text('Email Sent');
       }
       else{
         $('.email-response').html(response.data);
