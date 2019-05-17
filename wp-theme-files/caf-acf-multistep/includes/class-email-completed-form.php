@@ -17,6 +17,13 @@ if(!class_exists('CAI_Email_Form')){
     }
 
     public function email_completed_form(){
+      $form_emails = get_options('options_finished_form_email_addresses');
+      $to = $this->sanitize_email_addresses($form_emails);
+
+      $subject = get_option('options_finished_form_email_subject');
+      $headers = array('Content-Type: text/html; charset=UTF-8');
+      $headers[] = 'From: Conversational.com <noreply@conversational.com>';
+
       $form_groups = $this->step_ids;
 
       foreach($form_groups as $form_group){
@@ -62,7 +69,8 @@ if(!class_exists('CAI_Email_Form')){
       }//end foreach field_groups
 
       //send the email
-      echo $this->message;
+      //echo $this->message;
+      return wp_mail($to, $subject, $message, $headers);
 
     }//end email_completed_form
 
@@ -133,9 +141,44 @@ if(!class_exists('CAI_Email_Form')){
 
     private function conditional_met($form_field){
       $conditional_logic = $form_field['conditional_logic'];
-      if(!is_array($conditional_logic)){ return false; }
+      if(!is_array($conditional_logic)){ return true; }
 
-      
+      for($i = 0; $i < count($conditional_logic); $i++){
+        $conditions = $conditional_logic[$i];
+        for($ii = 0; $ii < count($conditions); $ii++){
+          $conditional_field_object = get_field_object($conditions[$ii]['field'], $this->post_id);
+          $conditional_field_value = $conditional_field_object['value'];
+
+          $conditional_operator = $conditions[$ii]['operator'];
+          $conditional_value = $conditions[$ii]['value'];
+
+          switch($conditional_operator){
+            case '!=':
+              if($conditional_field_value == $conditional_value){
+                return false;
+              }
+            break;
+
+            case '==':
+              if($conditional_field_value != $conditional_value){
+                return false;
+              }
+            break;
+          }
+        }
+      }
+
+      return true;
+    }
+
+    private function sanitize_email_addresses($form_emails){
+      $email_addresses = explode(',', $form_emails);
+      $sanitized_email_addresses = [];
+      foreach($email_addresses as $email_address){
+        $sanitized_email_addresses[] = sanitize_email($email_address);
+      }
+  
+      return implode(',', $sanitized_email_addresses);
     }
   }//end class
 }
