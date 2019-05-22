@@ -65,7 +65,7 @@
 
     <div id="header-quick-links">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-between">
           <div class="col-6 col-sm-3 d-flex justify-content-stretch">
             <a href="<?php echo esc_url(home_url('north-american-answering-service')); ?>" id="north-america" class="header-quick-link<?php if(is_page('north-american-answering-service') || is_singular('state_service')){ echo ' active'; } ?>"><?php echo esc_html__('North American Answering Service', 'conversational'); ?></a>
           </div>

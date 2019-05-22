@@ -105,3 +105,10 @@
 .acf-form-submit{
   display:none;
 }
+.acf-repeater .acf-actions{
+  text-align:left;
+
+  &>a{
+    font-weight: $bold;
+  }
+}
