@@ -294,6 +294,11 @@
     @include media-breakpoint-down(sm){
       flex:1 0 auto;
     }
+
+    .card-footer{
+      background-color:#272828;
+      padding-bottom:25px;
+    }
   }
 }
 .pricing-plans{

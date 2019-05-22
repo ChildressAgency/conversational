@@ -47,6 +47,7 @@
         <p><?php echo esc_html__('Sorry, no posts were found.', 'conversational'); ?></p>
       <?php endif; ?>
     </div>
+    <?php dynamic_sidebar('conversational_subscribe');?>
   </div>
 </main>
 <?php get_footer();
