@@ -38,8 +38,11 @@
       <?php
         $boost_btn = get_post_meta($page_id, 'boost_section_learn_more_button_link', true);
         $boost_btn_style = get_post_meta($page_id, 'boost_section_learn_more_button_style', true);
+
+        if($boost_btn):
       ?>
-      <a href="<?php echo esc_url($boost_btn['url']); ?>" class="btn-main <?php echo esc_attr($boost_btn_style); ?>"><?php echo esc_html($boost_btn['title']); ?></a>
+        <a href="<?php echo esc_url($boost_btn['url']); ?>" class="btn-main <?php echo esc_attr($boost_btn_style); ?>"><?php echo esc_html($boost_btn['title']); ?></a>
+      <?php endif; ?>
     </article>
   </div>
 </section>
