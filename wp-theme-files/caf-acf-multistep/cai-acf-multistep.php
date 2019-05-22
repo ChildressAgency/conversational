@@ -149,10 +149,11 @@ if(!class_exists('CAI_MultiStep')){
       global $wpdb;
       $groups = $wpdb->get_results($wpdb->prepare("
         SELECT post_name
-        FROM wp_posts
+        FROM {$wpdb->prefix}posts
         WHERE post_type = %s
           AND post_content LIKE '%%%s%%'
-        ORDER BY menu_order ASC", 'acf-field-group', $this->form_post_type));
+          AND post_status NOT LIKE %s
+        ORDER BY menu_order ASC", 'acf-field-group', $this->form_post_type, 'acf-disabled'));
 
       $g = 0;
       foreach($groups as $group){
