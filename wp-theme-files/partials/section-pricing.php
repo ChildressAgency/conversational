@@ -30,6 +30,8 @@
                 $pricing_plan_1_btn = get_post_meta($page_id, 'pricing_plan_1_learn_more_button_link', true);
                 $pricing_plan_1_btn_style = get_post_meta($page_id, 'pricing_plan_1_learn_more_button_style', true);
               ?>
+            </div>
+            <div class="card-footer">
               <a href="<?php echo esc_url($pricing_plan_1_btn['url']); ?>" class="btn-main <?php echo esc_attr($pricing_plan_1_btn_style); ?>"><?php echo esc_html($pricing_plan_1_btn['title']); ?></a>
             </div>
           </div>
@@ -53,6 +55,8 @@
                 $pricing_plan_2_btn = get_post_meta($page_id, 'pricing_plan_2_learn_more_button_link', true);
                 $pricing_plan_2_btn_style = get_post_meta($page_id, 'pricing_plan_2_learn_more_button_style', true);
               ?>
+            </div>
+            <div class="card-footer">
               <a href="<?php echo esc_url($pricing_plan_2_btn['url']); ?>" class="btn-main <?php echo esc_attr($pricing_plan_2_btn_style); ?>"><?php echo esc_html($pricing_plan_2_btn['title']); ?></a>
             </div>
           </div>
@@ -76,6 +80,8 @@
                 $pricing_plan_3_btn = get_post_meta($page_id, 'pricing_plan_3_learn_more_button_link', true);
                 $pricing_plan_3_btn_style = get_post_meta($page_id, 'pricing_plan_3_learn_more_button_style', true);
               ?>
+            </div>
+            <div class="card-footer">
               <a href="<?php echo esc_url($pricing_plan_3_btn['url']); ?>" class="btn-main <?php echo esc_attr($pricing_plan_3_btn_style); ?>"><?php echo esc_html($pricing_plan_3_btn['title']); ?></a>
             </div>
           </div>
