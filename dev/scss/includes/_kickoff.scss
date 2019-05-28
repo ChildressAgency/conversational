@@ -91,6 +91,11 @@
   .acf-field-group{
     background-color:#ccc;
   }
+
+  .acf-switch.-on{
+    background: $olive;
+    border-color: $olive;
+  }
 }
 
 .email-form-link{
