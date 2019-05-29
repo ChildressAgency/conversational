@@ -411,3 +411,8 @@ add_filter('show_admin_bar', 'conversational_hide_admin_bar');
 function conversational_hide_admin_bar($content){
   return current_user_can('edit_posts') ? $content : false;
 }*/
+
+add_filter('safe_style_css', function($styles){
+  $styles[] = 'column-count';
+  return $styles;
+});
