@@ -73,6 +73,7 @@
                 $twitter = get_option('options_twitter');
                 $linkedin = get_option('options_linkedin');
                 $pinterest = get_option('options_pinterest');
+                $instagram = get_option('options_instagram');
               ?>
               <?php if($facebook): ?>
                 <a href="<?php echo esc_url($facebook); ?>" class="social-icon-small facebook" target="_blank"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
@@ -82,6 +83,8 @@
                 <a href="<?php echo esc_url($linkedin); ?>" class="social-icon-small linkedin" target="_blank"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
               <?php endif; if($pinterest): ?>
                 <a href="<?php echo esc_url($pinterest); ?>" class="social-icon-small pinterest" target="_blank"><i class="fab fa-pinterest-p"></i><span class="sr-only">Pinterest</span></a>
+              <?php endif; if($instagram): ?>
+                <a href="<?php echo esc_url($instagram); ?>" class="social-icon-small instagram" target="_blank"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
               <?php endif; ?>
             </div>
           </div>

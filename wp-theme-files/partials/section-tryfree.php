@@ -35,6 +35,7 @@
               $twitter = get_option('options_twitter');
               $linkedin = get_option('options_linkedin');
               $pinterest = get_option('options_pinterest');
+              $instagram = get_option('options_instagram');
             ?>
             <?php if($facebook): ?>
               <a href="<?php echo esc_url($facebook); ?>" id="facebook" class="fa-stack fa-2x" target="_blank">
@@ -59,6 +60,12 @@
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-pinterest-p fa-stack-1x"></i>
                 <span class="sr-only">Pinterest</span>
+              </a>
+            <?php endif; if($instagram): ?>
+              <a href="<?php echo esc_url($instagram); ?>" id="instagram" class="fa-stack fa-2x" target="_blank">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x"></i>
+                <span class="sr-only">Instagram</span>
               </a>
             <?php endif; ?>
           </div>
