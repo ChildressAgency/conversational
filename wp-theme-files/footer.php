@@ -1,4 +1,5 @@
 <?php
+/*
   if(
     !is_page('contact-us') &&
     !is_page('careers') && 
@@ -8,6 +9,12 @@
     !is_page('vr-plans') &&
     !is_page('checkout')){
       get_template_part('partials/section', 'tryfree');
+  }*/
+
+  $page_id = get_the_ID();
+  $show_try_us_free = get_post_meta($page_id, 'show_try_us_free', true);
+  if($show_try_us_free == '' || $show_try_us_free == 1){
+    get_template_part('partials/section', 'tryfree');
   }
 ?>
 

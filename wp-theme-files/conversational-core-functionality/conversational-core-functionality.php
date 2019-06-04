@@ -113,3 +113,4 @@ require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/states.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/custom-voip-solutions.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/call-forwarding.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/checkout-page.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/try-us-free-section.php';
