@@ -49,6 +49,7 @@ if(!class_exists('CAI_MultiStep')){
       add_shortcode('cai_multistep_form', array($this, 'output_shortcode'));
 
       add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
+      add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
 
       add_action('acf/init', array($this, 'create_acf_options_page'));
       add_action('init', array($this, 'load_textdomain'));
@@ -61,6 +62,45 @@ if(!class_exists('CAI_MultiStep')){
 
       add_action('wp_ajax_nopriv_send_form_link', array($this, 'send_form_link'));
       add_action('wp_ajax_send_form_link', array($this, 'send_form_link'));
+
+      if(is_admin()){
+        add_action('load-post.php', array($this, 'init_metabox'));
+      }
+    }
+
+    public function init_metabox(){
+      add_action('add_meta_boxes', array($this, 'add_form_link_metabox'));
+    }
+
+    public function add_form_link_metabox(){
+      add_meta_box(
+        'edit-form-link',
+        esc_html__('Edit Form Link', 'caims'),
+        array($this, 'render_metabox'),
+        'getstarted_form',
+        'side'
+      );
+    }
+
+    public function render_metabox($post){
+      $token = get_post_meta($post->ID, 'secret_token', true);
+      $nonce = wp_create_nonce('email_form_link_' . $token);
+
+      $form_link_args = array(
+        'step' => '1',
+        'post_id' => $post->ID,
+        'token' => $token
+      );
+
+      $form_location = home_url('get-started');
+
+      echo '<div class="email-form-link" style="text-align:center;">
+              <h4>' . esc_html__('Enter an email address to send link for this form.', 'caims') . '</h4>
+              <label for="email_form_email_address" class="sr-only" style="visibility:hidden; position:absolute;">' . esc_html__('Email Address', 'caims') . '</label>
+              <input type="email" id="email_form_email_address" class="form-control mr-sm-3" placeholder="' . esc_html__('Email Address', 'caims') . '" style="display:block; margin:10px auto; width:100%;" />
+              <button type="button" class="btn-main send-email button button-primary button-large" data-nonce="' . $nonce . '" data-step="' . $form_link_args['step'] . '" data-post_id="' . $form_link_args['post_id'] . '" data-token="' . $form_link_args['token'] . '">' . esc_html__('Send Link', 'caims') . '</button>
+              <p class="email-response"></p>
+            </div>';
     }
 
     public function load_dependencies(){
@@ -91,7 +131,8 @@ if(!class_exists('CAI_MultiStep')){
 
       wp_localize_script('cai-acf-scripts', 'cai_acf_multistep', array(
         'cai_acf_multistep_ajax' => admin_url('admin-ajax.php'),
-        'valid_email_address_error' => esc_html__('Please enter a valid email address.', 'caims')
+        'valid_email_address_error' => esc_html__('Please enter a valid email address.', 'caims'),
+        'get_started_url' => esc_url(home_url('get-started'))
       ));
     }
 
@@ -242,7 +283,7 @@ if(!class_exists('CAI_MultiStep')){
 
       $message = get_option('options_form_link_email_message');
 
-      $message .= "\r\n" . '<a href="' . $form_link . '" class="mt-5">' . $form_link . '</a>';
+      $message .= "<br /><br />" . '<a href="' . $form_link . '" class="mt-5">' . $form_link . '</a>';
 
       $result = wp_mail($form_email, $subject, $message, $headers);
 
@@ -308,6 +349,7 @@ if(!class_exists('CAI_MultiStep')){
      */
     private function output_hidden_fields($args){
       $inputs = array();
+      $inputs[] = '<div class="clearfix"></div>';
       $inputs[] = sprintf('<input type="hidden" name="caims-form-id" value="%1$s" />', $this->form_id);
       $inputs[] = isset($args['step']) ? sprintf('<input type="hidden" name="caims-current-step" value="%1$s" />', $args['step']) : '';
 
