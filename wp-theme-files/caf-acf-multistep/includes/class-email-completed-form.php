@@ -62,7 +62,9 @@ if(!class_exists('CAI_Email_Form')){
                 }
               }
 
-              $this->message .= '<p><strong>' . $form_field['label'] . '</strong><br />' . $form_field_value . '</p>';
+              if($form_field_value != '' && $form_field_value != 'No'){ //don't show empty or no fields
+                $this->message .= '<p><strong>' . $form_field['label'] . '</strong><br />' . $form_field_value . '</p>';
+              }
             }
           }
         }//end foreach form_fields
@@ -78,16 +80,16 @@ if(!class_exists('CAI_Email_Form')){
       if(have_rows($field_row_object['name'], $this->post_id) && $field_row_object['type'] != 'checkbox' && $field_row_object['type'] != 'select'){
         while(have_rows($field_row_object['name'], $this->post_id)){
           the_row();
-          $this->message .= '<h3>' . $field_row_object['label'] . '</h4>';
+            $this->message .= '<h3>' . $field_row_object['label'] . '</h3>';
 
-          $sub_field_row = get_row();
+            $sub_field_row = get_row();
 
-          foreach($sub_field_row as $sub_field_row_key => $sub_field_row_value){
-            $sub_field_row_object = get_sub_field_object($sub_field_row_key, $this->post_id);
+            foreach($sub_field_row as $sub_field_row_key => $sub_field_row_value){
+              $sub_field_row_object = get_sub_field_object($sub_field_row_key, $this->post_id);
 
-                $this->message .= $this->get_message_line($sub_field_row_object);
+                  $this->message .= $this->get_message_line($sub_field_row_object);
 
-          }//end foreach field_row
+            }//end foreach field_row
         }//end while
       }//end if have_rows
       elseif(is_array($field_row_object['value']) && $field_row_object['type'] != 'checkbox' && $field_row_object['type'] != 'select'){
@@ -97,17 +99,21 @@ if(!class_exists('CAI_Email_Form')){
 
         $sub_field_values = $field_row_sub_field['value'];
 
-        $this->message .= '<h3>' . $field_row_sub_field['label'] . '</h3>';
-        for($i = 0; $i < count($sub_field_values); $i++){
-          if(!empty($sub_field_values[$i])){
-            foreach($sub_field_values[$i] as $sub_field_key => $sub_field_value){
-              $sub_field_label = $this->get_sub_field_label($sub_field_key, $field_row_sub_field);
+        if($this->conditional_met($field_row_sub_field)){
+          $this->message .= '<h3>' . $field_row_sub_field['label'] . '</h3>';
+          for($i = 0; $i < count($sub_field_values); $i++){
+            if(!empty($sub_field_values[$i])){
+              foreach($sub_field_values[$i] as $sub_field_key => $sub_field_value){
+                $sub_field_label = $this->get_sub_field_label($sub_field_key, $field_row_sub_field);
 
-              if(is_bool($sub_field_value)){
-                $sub_field_value = $sub_field_value === true ? 'Yes' : 'No';
+                if(is_bool($sub_field_value)){
+                  $sub_field_value = $sub_field_value === true ? 'Yes' : 'No';
+                }
+
+                if($sub_field_value != '' && $sub_field_value != 'No'){ //don't show empty or No fields
+                  $this->message .= '<p><strong>' . $sub_field_label . '</strong><br />' . $sub_field_value . '</p>';
+                }
               }
-
-              $this->message .= '<p><strong>' . $sub_field_label . '</strong><br />' . $sub_field_value . '</p>';
             }
           }
         }
@@ -125,7 +131,9 @@ if(!class_exists('CAI_Email_Form')){
           }
         }
 
-        $this->message .= '<p><strong>' . $field_row_object['label'] . '</strong><br />' . $form_field_value . '</p>';
+        if($form_field_value != '' && $form_field_value != 'No'){ //don't show empty or no fields
+          $this->message .= '<p><strong>' . $field_row_object['label'] . '</strong><br />' . $form_field_value . '</p>';
+        }
       }
     }//end get_meassage_line
 
