@@ -39,10 +39,12 @@ if(!class_exists('CAI_Email_Form')){
               while(have_rows($form_field['name'], $this->post_id)){
                 the_row();
 
-                $this->message .= '<h3>' . $form_field['label'] . '</h3>';
-
                 $field_row = get_row();
+
+                $this->message .= '<h3>t1' . $form_field['label'] . '</h3>';
+
                 foreach($field_row as $field_row_key => $field_row_value){
+                  
                   $field_row_object = get_sub_field_object($field_row_key, $this->post_id);
 
                   $this->message .= $this->get_message_line($field_row_object);
@@ -80,6 +82,7 @@ if(!class_exists('CAI_Email_Form')){
       if(have_rows($field_row_object['name'], $this->post_id) && $field_row_object['type'] != 'checkbox' && $field_row_object['type'] != 'select'){
         while(have_rows($field_row_object['name'], $this->post_id)){
           the_row();
+
             $this->message .= '<h3>' . $field_row_object['label'] . '</h3>';
 
             $sub_field_row = get_row();
@@ -95,11 +98,12 @@ if(!class_exists('CAI_Email_Form')){
       elseif(is_array($field_row_object['value']) && $field_row_object['type'] != 'checkbox' && $field_row_object['type'] != 'select'){
         //acf seems to break its repeater field naming at certain depths so this catches those
         //need to get field by key since the repeater field name in db is wrong
+        if( $this->rows_are_not_empty($field_row_object['value'])){
         $field_row_sub_field = get_sub_field_object($field_row_object['key'], $this->post_id);
 
         $sub_field_values = $field_row_sub_field['value'];
 
-        if($this->conditional_met($field_row_sub_field)){
+        //if($this->conditional_met($field_row_sub_field)){
           $this->message .= '<h3>' . $field_row_sub_field['label'] . '</h3>';
           for($i = 0; $i < count($sub_field_values); $i++){
             if(!empty($sub_field_values[$i])){
@@ -116,6 +120,7 @@ if(!class_exists('CAI_Email_Form')){
               }
             }
           }
+        //}
         }
       }
       else{
@@ -136,6 +141,16 @@ if(!class_exists('CAI_Email_Form')){
         }
       }
     }//end get_meassage_line
+
+    private function rows_are_not_empty($row_values){
+      for($i = 0; $i < count($row_values); $i++){
+        if(!empty($row_values[$i])){
+          return true;
+        }
+      }
+
+      return false;
+    }
 
     private function get_sub_field_label($sub_field_key, $field_row_sub_field){
       foreach($field_row_sub_field['sub_fields'] as $sub_field){
