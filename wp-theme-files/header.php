@@ -23,7 +23,7 @@
         <div id="header-contact" class="ml-auto d-flex">
           <div class="header-trial mt-2">
             <h3>FREE 30-Day Trial</h3>
-            <a href="<?php echo esc_url(home_url('contact-us')); ?>" class="btn-main">Get Started Today</a>
+            <a href="<?php echo esc_url(home_url('vr-plans')); ?>" class="btn-main">Get Started Today</a>
           </div>
           <div class="header-contact mt-2">
             <?php
@@ -65,7 +65,7 @@
 
     <div id="header-quick-links">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-between">
           <div class="col-6 col-sm-3 d-flex justify-content-stretch">
             <a href="<?php echo esc_url(home_url('north-american-answering-service')); ?>" id="north-america" class="header-quick-link<?php if(is_page('north-american-answering-service') || is_singular('state_service')){ echo ' active'; } ?>"><?php echo esc_html__('North American Answering Service', 'conversational'); ?></a>
           </div>
@@ -73,7 +73,7 @@
             <a href="<?php echo esc_url(home_url('custom-business-voip-solutions')); ?>" id="voip-solutions" class="header-quick-link<?php if(is_page('custom-business-voip-solutions')){ echo ' active'; } ?>"><?php echo esc_html__('Custom Business VOIP Solutions', 'conversational'); ?></a>
           </div>
           <div class="col-6 col-sm-3 d-flex justify-content-stretch">
-            <a href="<?php echo esc_url(home_url('fully-customized-call-handling')); ?>" id="fully-customized" class="header-quick-link<?php if(is_page('fully-customized-call-handling')){ echo ' active'; } ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a>
+            <a href="<?php echo esc_url(home_url('vr-services')); ?>" id="fully-customized" class="header-quick-link<?php if(is_page('vr-services')){ echo ' active'; } ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a>
           </div>
           <div class="col-6 col-sm-3 d-flex justify-content-stretch">
             <a href="<?php echo esc_url(home_url('client-portal')); ?>" id="call-reporting" class="header-quick-link<?php if(is_page('client-portal')){ echo ' active'; } ?>"><?php echo esc_html__('Complete Online Client Portal', 'conversational'); ?></a>
@@ -88,6 +88,10 @@
   if(is_home()){
     $blog_page = get_page_by_path('blog');
     $page_id = $blog_page->ID;
+  }
+  if(is_singular('comparison')){
+    $compare_services_page = get_page_by_path('compare-services');
+    $page_id = $compare_services_page->ID;
   }
 ?>
 
@@ -129,16 +133,16 @@
     }
 
     $hero_title = '';
-    if(is_home() || is_singular('post')){
+    if(is_home() || is_singular('post')){ //main blog page or blog post
       $hero_title = esc_html__('Conversational Blog', 'conversational');
     }
-    elseif(is_singular('states')){
+    elseif(is_singular('states')){  //states cpt single page
       $hero_title = esc_html__('North American Based Service', 'conversational');
     }
-    elseif(get_post_meta($page_id, 'hero_title', true)){
+    elseif(get_post_meta($page_id, 'hero_title', true)){ //any other page, see if hero title is set
       $hero_title = get_post_meta($page_id, 'hero_title', true);
     }
-    else{
+    else{ //any other page and hero title is not set, just show the title
       $hero_title = get_the_title();
     }
   

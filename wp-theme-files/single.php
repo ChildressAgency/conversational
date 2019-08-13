@@ -78,6 +78,7 @@
           </ol>
         </div>
     <?php endif; ?>
+    <?php dynamic_sidebar('conversational_subscribe');?>
   </div>
 </main>
 <?php get_footer();

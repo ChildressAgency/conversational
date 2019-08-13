@@ -32,6 +32,23 @@ function conversational_acf_settings_dir($dir){
   return $dir;
 }
 
+
+//require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/class-subscribe-widget.php';
+add_action('widgets_init', 'init_subscribe_widget');
+function init_subscribe_widget(){
+  register_sidebar(array(
+    'name' => esc_html__('Conversational Subscribe Form', 'conversational'),
+    'id' => 'conversational_subscribe',
+    'description' => esc_html__('Widget area for subscribe form.', 'conversational'),
+    'before_widget' => '<div class="subscribe_form">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>'
+  ));
+
+  //register_widget('Conversational_Subscribe_Widget');
+}
+
 /**
  * Prevent plugin from updating in case of plugin with same name in repo.
  */
@@ -96,3 +113,4 @@ require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/states.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/custom-voip-solutions.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/call-forwarding.php';
 require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/checkout-page.php';
+require_once CONVERSATIONAL_PLUGIN_DIR . '/includes/custom-fields/try-us-free-section.php';

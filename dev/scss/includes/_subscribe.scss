@@ -1,0 +1,43 @@
+/******************************************
+ subscribe form styles
+******************************************/
+
+.subscribe_form{
+  margin-top:80px;
+  text-align:center;
+
+  @include max-width-centered(750px);
+
+  .sendgrid_mc_input_email{
+    border-color: $cyprus;
+    font-size: 1.25rem;
+    height: calc(1.5em + 1rem + 2px);
+    padding:.5rem 1rem;
+    line-height: 1.5;
+  }
+
+  .sendgrid_mc_button{
+    background-color: $citrus;
+    padding:10px 35px;
+    color:#fff;
+    font-size:22px;
+    border:none;
+    border-radius: 6px;
+    font-weight: $bold;
+    text-decoration:none;
+
+    &:hover,
+    &:focus{
+      background-color: $cyprus;
+      color:#fff;
+      text-decoration:none;
+    }
+  }
+
+  h4{
+    font-family: $serif;
+    color: $citrus;
+    font-size: 34px;
+    font-weight: 700;
+  }
+}

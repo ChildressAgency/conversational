@@ -10,7 +10,11 @@
 <main id="main" class="<?php echo $class; ?>">
   <div class="container-fluid">
     <article class="standard-page">
-      <?php get_template_part('partials/page', 'intro'); ?>
+      <?php 
+        if(!isset($_GET['step']) || $_GET['step'] == '1'){
+          get_template_part('partials/page', 'intro');
+         }
+      ?>
 
       <div class="page-body">
         <?php echo apply_filters('the_content', wp_kses_post(get_post_meta($page_id, 'page_content', true))); ?>

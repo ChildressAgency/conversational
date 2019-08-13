@@ -1,4 +1,5 @@
 <?php
+/*
   if(
     !is_page('contact-us') &&
     !is_page('careers') && 
@@ -8,6 +9,12 @@
     !is_page('vr-plans') &&
     !is_page('checkout')){
       get_template_part('partials/section', 'tryfree');
+  }*/
+
+  $page_id = get_the_ID();
+  $show_try_us_free = get_post_meta($page_id, 'show_try_us_free', true);
+  if($show_try_us_free == '' || $show_try_us_free == 1){
+    get_template_part('partials/section', 'tryfree');
   }
 ?>
 
@@ -73,6 +80,7 @@
                 $twitter = get_option('options_twitter');
                 $linkedin = get_option('options_linkedin');
                 $pinterest = get_option('options_pinterest');
+                $instagram = get_option('options_instagram');
               ?>
               <?php if($facebook): ?>
                 <a href="<?php echo esc_url($facebook); ?>" class="social-icon-small facebook" target="_blank"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
@@ -82,6 +90,8 @@
                 <a href="<?php echo esc_url($linkedin); ?>" class="social-icon-small linkedin" target="_blank"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
               <?php endif; if($pinterest): ?>
                 <a href="<?php echo esc_url($pinterest); ?>" class="social-icon-small pinterest" target="_blank"><i class="fab fa-pinterest-p"></i><span class="sr-only">Pinterest</span></a>
+              <?php endif; if($instagram): ?>
+                <a href="<?php echo esc_url($instagram); ?>" class="social-icon-small instagram" target="_blank"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
               <?php endif; ?>
             </div>
           </div>
@@ -111,8 +121,8 @@
           <ul class="list-unstyled d-flex justify-content-around mb-0 sub-footer-nav text-center mt-4 flex-wrap">
             <li><a href="<?php echo esc_url(home_url('north-american-answering-service')); ?>"><?php echo esc_html__('North American Answering Service', 'conversational'); ?></a></li>
             <li><a href="<?php echo esc_url(home_url('custom-business-voip-solutions')); ?>"><?php echo esc_html__('Custom Business VOIP Solutions', 'conversational'); ?></a></li>
-            <li><a href="<?php echo esc_url(home_url('fully-customized-call-handling')); ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a></li>
-            <li><a href="<?php echo esc_url(home_url('complete-client-call-reporting')); ?>"><?php echo esc_html__('Complete Client Call Reporting', 'conversational'); ?></a></li>
+            <li><a href="<?php echo esc_url(home_url('vr-services')); ?>"><?php echo esc_html__('Fully Customized Call Handling', 'conversational'); ?></a></li>
+            <li><a href="<?php echo esc_url(home_url('client-portal')); ?>"><?php echo esc_html__('Complete Online Client Portal', 'conversational'); ?></a></li>
           </ul>
         </nav>
       </div>
@@ -125,7 +135,6 @@
         <p>
           <a href="<?php echo esc_url(home_url('privacy-policy')); ?>"><?php echo esc_html__('Privacy Policy', 'conversational'); ?></a>&nbsp;&bull;&nbsp;<a href="<?php echo esc_url(home_url('terms-of-service')); ?>"><?php echo esc_html__('Terms of Service', 'conversational'); ?></a>
         </p>
-        <p>website created by <a href="https://childressagency.com">The Childress Agency</a></p>
       </div>
     </section>
   </footer>

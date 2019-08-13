@@ -397,6 +397,7 @@ function conversational_styles_dropdown($settings){
  * This is so clients can login to access the kickoff form
  * but they don't need to do anything else.
  */
+/*
 add_action('init', 'conversational_lock_dashboard');
 function conversational_lock_dashboard(){
   if(is_admin() && !current_user_can('edit_posts') && !(defined('DOING_AJAX') && DOING_AJAX)){
@@ -409,4 +410,9 @@ function conversational_lock_dashboard(){
 add_filter('show_admin_bar', 'conversational_hide_admin_bar');
 function conversational_hide_admin_bar($content){
   return current_user_can('edit_posts') ? $content : false;
-}
+}*/
+
+add_filter('safe_style_css', function($styles){
+  $styles[] = 'column-count';
+  return $styles;
+});

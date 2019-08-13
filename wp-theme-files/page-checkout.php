@@ -495,7 +495,7 @@
               </div>
 
               <div class="form-group text-center">
-                <button class="btn-main btn-square" id="submit" type="button"><?php echo esc_html__('Pay Now', 'conversational'); ?></button>
+                <button class="btn-main btn-square" id="submit" type="button"><?php echo esc_html__('Sign Me Up!', 'conversational'); ?></button>
               </div>
             </fieldset>
           </form>

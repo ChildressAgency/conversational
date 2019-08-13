@@ -91,4 +91,29 @@
   .acf-field-group{
     background-color:#ccc;
   }
+
+  .acf-switch.-on{
+    background: $citrus;
+    border-color: $citrus;
+  }
+}
+
+.email-form-link{
+  margin-top:40px;
+  text-align: center;
+
+  .form-inline{
+    justify-content: center;
+    margin-top:25px;
+  }
+}
+.acf-form-submit{
+  display:none;
+}
+.acf-repeater .acf-actions{
+  text-align:left;
+
+  &>a{
+    font-weight: $bold;
+  }
 }
