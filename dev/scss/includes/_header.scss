@@ -1,0 +1,215 @@
+/*********************************************
+ * header
+*********************************************/
+#masthead{
+  padding-top:15px;
+
+  @include media-breakpoint-down(sm){
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+#header-contact{
+  @include media-breakpoint-down(xs){
+    flex-direction:column;
+  }
+
+  @include media-breakpoint-down(sm){
+    margin-right:auto;
+  }
+
+  .header-trial h3{
+    font-family:$main-font;
+    font-size:22px;
+    text-align:center;
+    color:#000;
+    font-weight:$semibold;
+  }
+  .header-contact{
+    text-align:left;
+    font-size:16px;
+    margin-left:25px;
+    h3{
+      font-family:$main-font;
+      font-size:26px;
+      text-align:left;
+      font-weight:$bold;
+      color:$olive;
+    }
+    p{
+      margin-bottom:0;
+    }
+    p>span{
+      font-weight:$bold;
+      border-bottom:2px solid $citrus;
+    }
+    a{
+      color:#000;
+      text-decoration:none;
+    }
+    a:hover,
+    a:focus{
+      color:#000;
+    }
+  }
+}
+
+/* navbar */
+.navbar-nav{
+  .nav-item>.nav-link{
+    font-weight:$bold;
+    color:$cyprus;
+    text-transform:uppercase;
+    text-decoration:none;
+  }
+  .nav-item.active>.nav-link,
+  .nav-item>.nav-link:hover,
+  .nav-item>.nav-link:focus{
+    color:$olive;
+  }
+
+  .nav-item:last-child>.dropdown-menu{
+    left:auto;
+    right:0;
+  }
+
+  .dropdown-toggle{
+    white-space:nowrap;
+  }
+  .dropdown-toggle::after{
+    transition:all .2s ease;
+  }
+  .nav-item.show>.dropdown-toggle::after{
+    transform:rotate(-180deg);
+    transition:all .2s ease;
+  }
+  .last-nav-item .nav-link{
+    @include media-breakpoint-up(lg){
+      text-transform:none;
+      box-shadow:-11px 0px 0px -9px $cyprus;
+      margin-left:25px;
+      text-decoration:none;
+    }
+  }
+}
+
+ul.dropdown-menu{
+  background-color:#eee;
+  padding-top:0;
+  padding-bottom:0;
+
+  li.nav-item::before{
+    content:"" !important;
+    display:block;
+  }
+}
+.dropdown-item{
+  color:#4D4D4D;
+  border-bottom:1px solid #ccc;
+  padding-left:40px;
+  padding:.5rem 1.5rem .5rem 60px;
+  text-decoration:none;
+
+  @include top-sprite(.5rem);
+
+  /*&:last-child{
+    border-bottom:none;
+  }*/
+  &:hover,
+  &:focus,
+  &.active{
+    background-color:$tusk;
+  }
+  &:hover::before,
+  &.active::before{
+    left:20px;
+    height:28px;
+    width:31px;
+    background-position:-499px -119px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+}
+.dropdown-menu>.nav-item.active>.dropdown-item{
+  background-color:$tusk;
+
+  &::before{
+    left:20px;
+    height:28px;
+    width:31px;
+    background-position:-499px -119px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+}
+
+/* navbar toggler */
+#header-nav{
+  .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(6, 9, 28, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .navbar-toggler{
+    border-color:rgba(6, 9, 28, 1);
+  }
+}
+
+/* quick links section */
+#header-quick-links{
+  background-color:$cyprus;
+
+  @include media-breakpoint-down(xs){
+    padding-bottom:0;
+  }
+
+  ul{
+    text-align:center;
+  }
+}
+
+.header-quick-link{
+  display:block;
+  color:#fff;
+  font-size:16px;
+  line-height:1.2em;
+  text-align:center;
+  text-decoration:none;
+  padding-bottom:15px;
+
+  @include max-width-centered(145px);
+
+  @include top-sprite(85px);
+
+  &:hover,
+  &:focus,
+  &.active{
+    color:#fff;
+    text-decoration:none;
+    background-color:$citrus;
+  }
+
+  &::before{
+    top:15px;
+  }
+
+  &#north-america::before{
+    background-position:-400px -261px;
+    height:66px;
+    width:84px;
+  }
+  &#voip-solutions::before{
+    background-position:-400px -190px;
+    height:64px;
+    width:72px;
+  }
+  &#fully-customized::before{
+    background-position:-394px -110px;
+    height:64px;
+    width:79px;
+  }
+  &#call-reporting::before{
+    background-position:-330px -220px;
+    height:64px;
+    width:45px;
+  }
+}

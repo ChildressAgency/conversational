@@ -1,63 +1,43 @@
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+var order = require('gulp-order');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 
-// Compile sass into CSS, minify & auto-inject into browsers
-gulp.task('sass', function () {
-  return gulp.src('scss/**/*.scss')
+gulp.task('sass', function(){
+  return gulp.src('dev/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cssnano())
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest("./"))
-    .pipe(browserSync.stream())
+    .pipe(sourcemaps.write('../dev/maps'))
+    .pipe(gulp.dest('wp-theme-files'))
 });
 
-//concat js, uglify and inject into browser
-gulp.task('js', function () {
-  return gulp.src('js/src/*.js')
+gulp.task('js', function(){
+  return gulp.src('dev/js/**/*.js')
     .pipe(sourcemaps.init())
+    .pipe(order([
+      'vendor/**/*.js',
+      '2_conversational_checkout.js',
+      '9_conversational_scripts.js'
+    ]))
     .pipe(concat('custom-scripts.min.js'))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest("./js"))
-    .pipe(browserSync.stream())
+    .pipe(uglify({
+      output: {
+        comments: '/^!/'
+      }
+    }))
+    .pipe(sourcemaps.write('../../dev/maps'))
+    .pipe(gulp.dest('wp-theme-files/js'))
 });
 
-// Static Server + watching scss/html files
-gulp.task('serve', gulp.series('sass', function () {
+gulp.task('watch', function(){
+  gulp.watch('dev/scss/**/*.scss', gulp.series('sass'));
+  gulp.watch('dev/js/*.js', gulp.series('js'));
+});
 
-  browserSync.init({
-    server: "./",
-    //index:'demo-home.html'
-    //index:'demo-meet-team.html'
-    //index:'demo-after-signup.html'
-    //index:'demo-testimonials.html'
-    //index:'demo-faqs.html'
-    //index:'demo-work-at-home.html'
-    //index:'demo-small-business.html'
-    //index:'demo-medical.html'
-    //index:'demo-salon.html'
-    //index:'demo-franchise.html'
-    //index:'demo-vrplans.html'
-    //index:'demo-blog.html'
-    //index:'demo-single.html'
-    //index:'demo-contact.html'
-    //index:'demo-apply-now.html'
-    //index:'demo-vr-services.html'
-    //index:'demo-compare.html'
-    index:'demo-call-forwarding.html'
-  });
-
-  gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/**/*.scss'], gulp.series('sass'));
-  gulp.watch("*.html").on('change', browserSync.reload);
-  gulp.watch('js/src/*.js', gulp.series('js'));
-}));
-
-gulp.task('default', gulp.parallel(['js', 'serve']));
+gulp.task('default', gulp.parallel(['js', 'sass', 'watch']));
